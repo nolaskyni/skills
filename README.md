@@ -1,14 +1,14 @@
 # Agent Skills
 
-A collection of Agent Skills for extending AI capabilities related to science,
-programming, learning, and so on.
+A collection of Agent Skills for extending AI capabilities in science,
+programming, learning, and more.
 
 ## Available Skills
 
 ### `commit-message-guidelines`
 
-Conventions to follow when writing commit messages that adhere to the
-Conventional Commits specification with a handful of extensions.
+Guidelines for writing commit messages that follow the Conventional Commits
+specification, with a few extensions.
 
 ## Installation
 
@@ -18,5 +18,5 @@ npx skills add nolaskyni/skills
 
 ## AI Usage
 
-During Agent Skills creation, AI is used to draft, review, refine, and test
-skills with human review.
+AI assists with drafting, reviewing, refining, and testing Agent Skills, with a
+human in the loop.
