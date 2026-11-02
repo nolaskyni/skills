@@ -1,6 +1,6 @@
 ---
 name: commit-message-guidelines
-description: >
+description: >-
   Write and review Git commit messages using the required header format, body,
   and footer conventions, including agent co-author trailers. Use when creating
   a Git commit or drafting, revising, or reviewing a commit message.
