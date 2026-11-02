@@ -5,7 +5,9 @@ programming, science, and more.
 
 ## Available Skills
 
-### `commit-message-guidelines`
+### Programming
+
+#### `commit-message-guidelines`
 
 Guidelines for writing commit messages that follow the Conventional Commits
 specification, with a few extensions.
