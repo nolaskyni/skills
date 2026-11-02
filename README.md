@@ -1,7 +1,7 @@
 # Agent Skills
 
-A collection of Agent Skills for extending AI capabilities in science,
-programming, learning, and more.
+A collection of Agent Skills for extending AI capabilities in learning,
+programming, science, and more.
 
 ## Available Skills
 
