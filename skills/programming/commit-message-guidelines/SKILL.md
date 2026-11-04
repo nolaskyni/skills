@@ -24,7 +24,7 @@ does not establish why a change was made, describe the supported behavior change
 without guessing.
 
 Enclose commands, identifiers, and file paths in single backticks throughout the
-commit message. See the backticks documentation below for details and
+commit message. See the [Backticks](#backticks) section for details and
 exceptions.
 
 Compose body and footer prose in short lines. Before returning the message,
@@ -33,10 +33,13 @@ and backticks. Keep indivisible code references or URLs intact on their own line
 when they exceed 72 characters. Keep Git metadata trailers (for instance,
 `Signed-off-by`) on one line, even when they exceed 72 characters.
 
+In the templates below, `<placeholder>` marks a value to replace and square
+brackets mark an optional part. Everything else is literal.
+
 ## Commit Message Header
 
-```
-<type>[(optional scope)][!]: <short summary>
+```text
+<type>[(<scope>)][!]: <short-summary>
 ```
 
 Aim for a header of about 50 characters or fewer; do not exceed 72 characters.
@@ -76,7 +79,7 @@ introducing a new scope only when it would materially improve clarity.
 
 ### Summary
 
-The summary should:
+The summary must:
 
 - Use imperative, present tense.
 - Start lowercase unless the first word is a case-sensitive identifier or proper
@@ -102,30 +105,30 @@ one blank line.
 ### Breaking Changes and Deprecations
 
 Omit the trailing period from the summary on `BREAKING CHANGE` and `DEPRECATED`
-lines. Use normal sentence punctuation in the description and migration
-instructions below them.
+lines. Use normal sentence punctuation in the migration instructions or
+recommended update path below them.
 
-Use the following format for breaking-change footers:
+Use the following template for breaking-change footers:
 
-```
-BREAKING CHANGE: <short summary>
+```text
+BREAKING CHANGE: <short-summary>
 
-<description with migration instructions>
+<migration-instructions>
 ```
 
 When a change deprecates supported behavior, include a `DEPRECATED` footer with
 a recommended update path.
 
-Use the following format for deprecation footers:
+Use the following template for deprecation footers:
 
+```text
+DEPRECATED: <short-summary>
+
+<recommended-update-path>
 ```
-DEPRECATED: <short summary>
 
-<description with recommended update path>
-```
-
-Any sections following breaking changes or deprecations should be separated by
-a single blank line.
+Separate any sections that follow a breaking change or deprecation with exactly
+one blank line.
 
 ### Issue References
 
@@ -138,14 +141,14 @@ line. When multiple label groups are present, list them alphabetically:
 For a commit that completes feature issue #81 and relates to pull request #93,
 the correct format is:
 
-```
+```text
 Closes: #81
 References: #93
 ```
 
 This is incorrect:
 
-```
+```text
 References: #81, #93
 ```
 
@@ -153,11 +156,11 @@ References: #81, #93
 
 When applicable, use `Reviewed-by`, `Tested-by`, and `Reported-by` to credit
 reviews, testing, and problem reports. Use `Co-authored-by` to credit additional
-authors. Use the following format, with one trailer per person and contribution
-type:
+authors. Use one trailer per person and contribution type, with the email
+address in angle brackets. For example:
 
-```
-<token>: <name> <<email address>>
+```text
+Reviewed-by: Jane Doe <jane@example.com>
 ```
 
 For each attribution trailer, verify three facts from the supplied context: the
@@ -190,8 +193,8 @@ at the end of the message, with no blank lines between them.
 
 Use backticks when referring to a code symbol, such as `enqueue`. Use plain text
 when describing the general concept, such as insertion. Keep backticks around
-standalone code references, including overlong paths. Leave type, scope, and
-trailer labels unquoted.
+standalone code references, including overlong paths. Write type, scope, and
+trailer labels without backticks.
 
 When referring to these files generally, use the names below without backticks.
 Use the exact filename or path in backticks when that detail matters.
@@ -206,7 +209,7 @@ Use the exact filename or path in backticks when that detail matters.
 
 Before returning the commit message, verify that it accurately describes the
 intended changes and makes no unsupported claims. Check the header and prose
-lengths, code quoting, type and scope, breaking-change and deprecation markers,
+lengths, backtick use, type and scope, breaking-change and deprecation markers,
 issue labels, and confirmed attribution against these rules.
 
 ## Examples
@@ -216,13 +219,13 @@ already exist, and listed agents contributed to the changes.
 
 ### Header Only
 
-```
+```text
 docs: clarify local setup requirements
 ```
 
 ### Header with Agent Co-Author Trailer
 
-```
+```text
 docs: clarify README setup instructions
 
 Co-authored-by: Codex <noreply@openai.com>
@@ -230,7 +233,7 @@ Co-authored-by: Codex <noreply@openai.com>
 
 ### Bug Fix with Regression Tests
 
-```
+```text
 fix: preserve `0` when applying timeout defaults
 
 A timeout of `0` was replaced by the default, preventing callers from
@@ -242,7 +245,7 @@ Fixes: #26
 
 ### Revert with Rationale
 
-```
+```text
 revert: restore synchronous indexing
 
 Revert `7e4b9c2` because background indexing allowed searches to return
@@ -251,7 +254,7 @@ stale results immediately after an update.
 
 ### Breaking Change with Migration Instructions and Trailers
 
-```
+```text
 feat(api)!: paginate project responses
 
 Large workspaces could exceed the response size limit when listing
@@ -269,7 +272,7 @@ Co-authored-by: Cursor <cursoragent@cursor.com>
 
 ### Deprecation with Recommended Update Path
 
-```
+```text
 feat(auth): accept scoped access tokens
 
 Scoped tokens let integrations request only the permissions they need.
@@ -284,7 +287,7 @@ using the `Bearer` scheme.
 
 ### Multiple Footers and Agent Co-Author Trailers
 
-```
+```text
 feat(search): add an option to clear all filters
 
 Clearing a complex search required removing each filter individually.
