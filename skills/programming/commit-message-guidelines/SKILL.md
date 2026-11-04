@@ -24,8 +24,7 @@ does not establish why a change was made, describe the supported behavior change
 without guessing.
 
 Enclose commands, identifiers, and file paths in single backticks throughout the
-commit message. See the [Backticks](#backticks) section for details and
-exceptions.
+commit message. See the "Backticks" section for details and exceptions.
 
 Compose body and footer prose in short lines. Before returning the message,
 ensure each prose line is at most 72 characters, including spaces, punctuation,
