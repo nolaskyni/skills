@@ -7,6 +7,12 @@ programming, science, and more.
 
 ### Programming
 
+#### `collaborative-coding`
+
+Guidelines for working with an agent that writes most of the code, so that the
+user can still explain what it does, why it is designed that way, and how it
+works.
+
 #### `commit-message-guidelines`
 
 Guidelines for writing commit messages that follow the Conventional Commits
