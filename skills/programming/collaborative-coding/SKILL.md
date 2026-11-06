@@ -271,18 +271,15 @@ and no policy covers them. Reusing the library is routine; deciding how to
 handle those readings affects the interpretation of results.
 
 ```markdown
-**Decision needed:** Should readings without timestamps be excluded from daily
-averages? I recommend excluding them and displaying the excluded count,
-because assigning a day would require an assumption.
+**Decision needed:** Should I exclude readings without timestamps from the daily averages? I recommend excluding them and showing how many were excluded, because any day I assigned them would be a guess.
 
-**Done:** Added the dashboard layout using the project's existing plotting
-library.
+**Done:** Added the dashboard layout in `src/dashboard.py`, using the project's existing plotting library.
 
-**How:** Timestamped readings will be grouped by day before their averages are
-plotted.
+**How:** The dashboard groups timestamped readings by day, then plots each day's average.
 
-**Next:** I'll test grouping with fully timestamped inputs while your decision
-is pending. Handling readings with missing timestamps remains unresolved.
+**Review:** `src/dashboard.py:31` sets day boundaries from each timestamp's UTC offset. If an offset is wrong, readings near midnight land in the wrong day without any error.
+
+**Next:** While you decide, I'll test the grouping with fully timestamped inputs.
 ```
 
 If the user answers an unrelated question or requests another layout change,
@@ -343,8 +340,7 @@ front turns recall into lookup. Handle the two separately:
 For example:
 
 ```markdown
-**Question:** Why does the loader drop rows with missing timestamps instead of
-interpolating them?
+**Question:** Why does the loader drop rows with missing timestamps instead of interpolating them?
 
 **If stuck:** see the "Decisions" section of `PLAN.md`, or `src/loader.py:42`.
 ```
