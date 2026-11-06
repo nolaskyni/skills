@@ -342,7 +342,7 @@ For example:
 ```markdown
 **Question:** Why does the loader drop rows with missing timestamps instead of interpolating them?
 
-**If stuck:** see the "Decisions" section of `PLAN.md`, or `src/loader.py:42`.
+**If stuck:** See the "Decisions" section of `PLAN.md`, or `src/loader.py:42`.
 ```
 
 #### Give Feedback
