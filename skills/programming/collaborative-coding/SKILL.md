@@ -86,7 +86,7 @@ may ask for updates after each feature or file, or only when a decision is
 needed, and may turn explain-back checks off. Progress updates do not require a
 reply.
 
-If the project has a `PLAN.md`, record the preferences under Check-Ins, mark
+If the project has a `PLAN.md`, record the preferences under "Check-Ins," mark
 which are defaults and which the user chose, and carry them across sessions.
 Otherwise, keep them for the session. Let the user change them at any time.
 
@@ -123,7 +123,7 @@ displayed plan or sections.
 
 If explain-back checks are on, end with explain-back questions about the plan.
 Because the relevant plan text is on screen, a question such as "Why was X
-chosen?" can be answered by copying the Decisions section. Ask instead what
+chosen?" can be answered by copying the "Decisions" section. Ask instead what
 would break under a rejected alternative, or which step is most likely to
 produce silently wrong results. See the "Explain-Back Checks" section.
 
@@ -346,7 +346,7 @@ For example:
 **Question:** Why does the loader drop rows with missing timestamps instead of
 interpolating them?
 
-**If stuck:** see the Decisions section of `PLAN.md`, or `src/loader.py:42`.
+**If stuck:** see the "Decisions" section of `PLAN.md`, or `src/loader.py:42`.
 ```
 
 #### Give Feedback
@@ -360,7 +360,7 @@ unclear explanation or question of yours, say so and correct it.
 #### Revisit Weak Points
 
 When the user struggled with a point, ask about it again in a different form a
-few check-ins later or early in the next session. Add the point to the Revisit
+few check-ins later or early in the next session. Add the point to the "Revisit"
 list in `PLAN.md`, and check it off once the user explains it correctly. If the
 project has no `PLAN.md`, keep the list in the session.
 
@@ -373,7 +373,7 @@ For tests:
 
 - Derive tests from the requested behavior and agreed acceptance criteria, and
   describe the most important checks in plain language, in the plan's
-  Verification section or the check-in. Test design within agreed behavior
+  "Verification" section or the check-in. Test design within agreed behavior
   needs no separate approval; ask only when the expected behavior is
   unresolved.
 - When fixing a bug, add a test that fails without the fix.
