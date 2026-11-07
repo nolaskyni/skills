@@ -84,9 +84,9 @@ may ask for updates after each feature or file, or only when a decision is
 needed, and may turn explain-back checks off. Progress updates do not require a
 reply.
 
-If the project has a `PLAN.md`, record the preferences under "Check-Ins," mark
-which are defaults and which the user chose, and carry them across sessions.
-Otherwise, keep them for the session. Let the user change them at any time.
+If there is a plan, record the preferences under "Check-Ins," mark which are
+defaults and which the user chose, and carry them across sessions. Otherwise,
+keep them for the session. Let the user change them at any time.
 
 ## Plan Larger Work
 
@@ -96,10 +96,15 @@ Write a plan before writing code when the work involves any of the following:
 - Changes across several modules, or a change to the architecture.
 - Work expected to span several sessions.
 
-Keep the plan in `PLAN.md` at the repository root, unless the project already
-has a planning document. Draft it from the request, the codebase, and decisions
-already made. Mark which choices the user approved and which are your defaults,
-and list unresolved questions separately.
+Keep each plan in its own file in a `plans` directory at the repository root,
+named after the work it covers in lowercase words separated by hyphens, such as
+`plans/sensor-dashboard.md`. If the project already has a planning document, use
+it instead. Draft the plan from the request, the codebase, and decisions already
+made. Mark which choices the user approved and which are your defaults, and list
+unresolved questions separately.
+
+When work splits into parts that are planned separately, give each part its own
+plan.
 
 Once the plan is shown, start work within the authorized scope, unless the user
 asked to approve the plan first. Do not treat an unanswered proposal as approval
@@ -108,10 +113,10 @@ decisions need a reply.
 
 ### Show the Plan
 
-When first presenting `PLAN.md`, show the full plan if it is short enough to
-review comfortably. For a longer plan, show the goal, scope, key design
-decisions, verification approach, and milestones, and link to the complete file.
-Include enough context for the user to assess any decision you need.
+When first presenting a plan, show all of it if it is short enough to review
+comfortably. For a longer plan, show the goal, scope, key design decisions,
+verification approach, and milestones, and link to the complete file. Include
+enough context for the user to assess any decision you need.
 
 For later revisions, lead with what changed and why, then show the affected
 sections and identify which sections they replace. Link to the complete plan.
@@ -127,13 +132,13 @@ produce silently wrong results. See the "Explain-Back Checks" section.
 
 ### Plan Template
 
-Use the following template for `PLAN.md`. Replace each placeholder, and list
+Use the following template for each plan. Replace each placeholder, and list
 milestones in the order they will be done. Set each `STATUS` to `approved` for a
 choice the user made or confirmed, or `default` for a choice you made within the
 authorized scope. Set each `SOURCE` to `user` or `default` in the same way.
 
 ```markdown
-# PROJECT-NAME
+# WORK-NAME
 
 ## Goal
 
@@ -191,7 +196,10 @@ When the implementation departs from the plan, update the plan in the same
 change and tell the user. A plan that no longer describes the code is itself a
 form of drift.
 
-`PLAN.md` carries context across sessions. When a session has become muddled by
+When the work in a plan is finished, ask the user what to do with the plan, such
+as keeping or deleting it.
+
+The plan carries context across sessions. When a session has become muddled by
 failed attempts, suggest starting a new session from the plan. First add
 whatever was missing from the plan that caused the confusion.
 
@@ -202,8 +210,10 @@ implemented, what was verified, what remains unverified or blocked, and the next
 authorized step. Record the commands or procedures used for important checks and
 their outcomes. Distinguish completed implementation from verified behavior.
 
-When resuming, read the plan and inspect the current code and working-tree
-changes before editing. Reconcile any differences, preserving the user's
+When resuming, read the plan for the work being resumed. If more than one plan
+could apply, or none clearly does, ask the user which one to use instead of
+starting a new plan. Inspect the current code and working-tree changes before
+editing, and reconcile any differences with the plan, preserving the user's
 changes. Treat recorded verification as evidence about the state that was
 checked; rerun relevant checks when subsequent changes could invalidate it.
 
@@ -329,7 +339,7 @@ front turns recall into lookup. Handle the two separately:
   not a broad area. Ask "Why does the loader drop rows with missing timestamps
   instead of interpolating them?" rather than "How does data loading work?"
 - Ask the user to answer from memory first. Below the question, under the label
-  "If stuck," point to where the answer can be found: a `PLAN.md` section, a
+  "If stuck," point to where the answer can be found: a section of the plan, a
   `<file-path>:<line-number>` reference, a test, or an earlier check-in.
 - If the user is still stuck, give a narrower hint about which pieces matter or
   what to trace before explaining the answer yourself. For example, suggest
@@ -341,7 +351,7 @@ For example:
 ```markdown
 **Question:** Why does the loader drop rows with missing timestamps instead of interpolating them?
 
-**If stuck:** See the "Decisions" section of `PLAN.md`, or `src/loader.py:42`.
+**If stuck:** See the "Decisions" section of `plans/sensor-dashboard.md`, or `src/loader.py:42`.
 ```
 
 #### Give Feedback
@@ -356,8 +366,8 @@ explanation or question of yours, say so and correct it.
 
 When the user struggled with a point, ask about it again in a different form a
 few check-ins later or early in the next session. Add the point to the "Revisit"
-list in `PLAN.md`, and check it off once the user explains it correctly. If the
-project has no `PLAN.md`, keep the list in the session.
+list in the plan, and check it off once the user explains it correctly. If there
+is no plan, keep the list in the session.
 
 ## Keep Results Trustworthy
 
@@ -399,7 +409,7 @@ questions from your check-ins and the plan, if there is one:
 - **How** does it work, at the level of components and data flow?
 - Which parts carry the most risk, and how were they checked?
 - Which decisions are still waiting on the user?
-- If the project has a `PLAN.md`, does it still describe the code?
+- If there is a plan, does it still describe the code?
 
 If the user could answer a question only by asking you, explain that part before
 you stop.
