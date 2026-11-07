@@ -1,0 +1,62 @@
+line-length = 88
+
+[format]
+docstring-code-format = true
+
+[lint]
+extend-select = ["B", "D", "FBT", "I", "ICN", "N", "PGH", "W505"]
+
+[lint.per-file-ignores]
+# Tests need no docstrings, because each test name describes the behavior
+# it checks.
+"**/test_*.py" = ["D1"]
+"**/tests/**" = ["D1"]
+"**/conftest.py" = ["D1"]
+
+[lint.pycodestyle]
+# The numpydoc style guide wraps docstrings at 75 characters.
+max-doc-length = 75
+
+[lint.pydocstyle]
+convention = "numpy"
+
+[lint.pep8-naming]
+# `torch.nn.functional` is conventionally imported as `F`.
+ignore-names = ["F"]
+
+[lint.flake8-import-conventions]
+banned-aliases = { scipy = ["sp"] }
+
+# This table replaces Ruff's default aliases instead of extending them, so
+# that `datetime` has no alias, because `dt` usually means a time step in
+# scientific code.
+[lint.flake8-import-conventions.aliases]
+altair = "alt"
+"astropy.units" = "u"
+cupy = "cp"
+"dask.array" = "da"
+"dask.dataframe" = "dd"
+geopandas = "gpd"
+holoviews = "hv"
+"jax.numpy" = "jnp"
+matplotlib = "mpl"
+"matplotlib.pyplot" = "plt"
+networkx = "nx"
+numpy = "np"
+"numpy.typing" = "npt"
+pandas = "pd"
+panel = "pn"
+"plotly.express" = "px"
+"plotly.graph_objects" = "go"
+polars = "pl"
+pyarrow = "pa"
+"pyarrow.parquet" = "pq"
+seaborn = "sns"
+"statsmodels.api" = "sm"
+"statsmodels.formula.api" = "smf"
+tensorflow = "tf"
+tkinter = "tk"
+"torch.nn" = "nn"
+"torch.nn.functional" = "F"
+xarray = "xr"
+"xml.etree.ElementTree" = "ET"

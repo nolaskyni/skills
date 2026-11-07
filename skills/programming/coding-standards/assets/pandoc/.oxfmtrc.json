@@ -1,0 +1,9 @@
+{
+  "printWidth": 80,
+  "singleQuote": true,
+  "bracketSpacing": false,
+  "proseWrap": "preserve",
+  "jsdoc": {
+    "addDefaultToDescription": false
+  }
+}

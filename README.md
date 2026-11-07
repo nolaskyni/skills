@@ -7,6 +7,12 @@ programming, science, and more.
 
 ### Programming
 
+#### `coding-standards`
+
+Guidelines for file structure, formatting, naming, comments, documentation, and
+tooling in Markdown, Python, and TypeScript, with configuration files for their
+formatters, linters, and type checkers.
+
 #### `collaborative-coding`
 
 Guidelines for working with an agent that writes most of the code, so that the

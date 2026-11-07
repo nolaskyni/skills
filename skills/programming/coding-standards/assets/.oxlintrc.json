@@ -1,0 +1,33 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "oxc", "import", "jsdoc", "vitest"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error"
+  },
+  "rules": {
+    "eslint/default-case": "error",
+    "eslint/eqeqeq": ["error", "always", {"null": "ignore"}],
+    "eslint/guard-for-in": "error",
+    "eslint/no-array-constructor": "error",
+    "eslint/no-new-wrappers": "error",
+    "eslint/no-throw-literal": "error",
+    "eslint/no-var": "error",
+    "eslint/prefer-const": "error",
+    "import/no-default-export": "error",
+    "typescript/array-type": ["error", {"default": "array-simple"}],
+    "typescript/ban-ts-comment": "error",
+    "typescript/consistent-type-assertions": [
+      "error",
+      {"assertionStyle": "as", "objectLiteralTypeAssertions": "never"}
+    ],
+    "typescript/consistent-type-definitions": ["error", "interface"],
+    "typescript/explicit-function-return-type": "error",
+    "typescript/no-explicit-any": "error",
+    "typescript/no-namespace": "error",
+    "typescript/no-non-null-assertion": "error",
+    "typescript/only-throw-error": "error",
+    "typescript/switch-exhaustiveness-check": "error",
+    "unicorn/filename-case": ["error", {"case": "kebabCase"}]
+  }
+}

@@ -1,0 +1,177 @@
+---
+name: coding-standards
+description: >-
+  Apply the user's coding conventions for file structure, formatting, naming,
+  language features, types, comments, documentation, and tooling across
+  Markdown, Python, and TypeScript. Use whenever writing, editing, refactoring,
+  or reviewing files in these languages.
+---
+
+# Coding Standards
+
+## Overview
+
+Use this skill when writing, editing, refactoring, or reviewing code so that it
+follows explicit conventions rather than unstated habits. When a codebase
+already has its own conventions, follow them over the ones in this skill.
+
+These rules do not apply to code that an agent writes only for agents to use,
+such as a throwaway script that checks an idea. They apply to all other code,
+including examples shown to the user, wherever the code is stored.
+
+## Language References
+
+Before writing or reviewing a file, read the reference for its language. Read
+only the references for the languages you are touching.
+
+Before writing or reviewing code in a language for the first time in a
+session, read every style guide that its reference links to, such as PEP 8 or
+the numpydoc style guide. Read the current version instead of relying on
+memory, because the guides change. If a guide cannot be retrieved, tell the
+user, then follow the reference and your knowledge of the guide.
+
+| Language   | Files           | Reference                  |
+| ---------- | --------------- | -------------------------- |
+| Markdown   | `*.md`          | `references/markdown.md`   |
+| Python     | `*.py`, `*.pyi` | `references/python.md`     |
+| TypeScript | `*.ts`, `*.tsx` | `references/typescript.md` |
+
+## Naming
+
+Choose names that read clearly where they are used, not just where they are
+defined. Clarity matters more than brevity: a reader should understand what a
+name refers to without looking up its definition.
+
+- Spell words out. Write `number_of_choices`, not `n_choices` or `num_choices`,
+  and `message`, not `msg`. Keep abbreviations that are more familiar than their
+  expansions, such as `id`, `url`, and `http`, and conventional short names,
+  such as `i` for a loop index or `x` and `y` for coordinates.
+- Include every word needed to make the meaning unambiguous, and drop words that
+  repeat what the type or surrounding context already says. Write `user.name`,
+  not `user.user_name`.
+- Name variables, parameters, and types for their role, not their type. Write
+  `greeting`, not `string`, and `contacts`, not `contact_list`.
+- When a value is a plain number or string, name its unit or format, because the
+  type does not tell the reader what it measures. Write `timeout_seconds`, not
+  `timeout`, and `created_at_utc`, not `created_at`. Spell out units as well,
+  such as `sampling_rate_hertz`, not `sampling_rate_hz`, and
+  `delay_milliseconds`, not `delay_ms`, unless the abbreviation is more
+  familiar than the name, as with `utc`. A count needs no unit when its name
+  says what it counts, such as `number_of_samples` or `samples_per_segment`. If
+  the type already says this, as a `Duration` or a time-zone-aware `datetime`
+  does, leave it out of the name.
+- Name functions that have side effects as imperative verb phrases, such as
+  `sort()` or `send_request()`. Name functions without side effects for what
+  they return, using a noun phrase, such as `distance_to(point)`, or a past
+  participle, such as `sorted()`.
+- Name Boolean values and functions that return as assertions about their
+  subject, such as `is_empty`, `has_children`, or `has_permission(user)`.
+
+Use the case style that the language reference sets for each kind of name, such
+as `snake_case` for Python functions. Treat each acronym, initialism, or
+abbreviation as one unit with uniform case: all capitals where the word would
+start with a capital letter, and all lowercase where it would start with a
+lowercase letter or the style is lowercase throughout.
+
+| Style        | Use                        | Avoid                      |
+| ------------ | -------------------------- | -------------------------- |
+| `PascalCase` | `EncodeUTF8`, `HTTPServer` | `EncodeUtf8`, `HttpServer` |
+| `camelCase`  | `parseURL`, `urlString`    | `parseUrl`, `URLString`    |
+| `snake_case` | `parse_json`, `user_id`    | `parse_JSON`, `user_ID`    |
+
+When two capitalized abbreviations meet, keep each in uniform case rather than
+changing one to make the boundary visible. If the result is hard to read, add a
+word that says how they relate or choose a different name. Write
+`HTMLToXMLConverter`, not `HTMLXMLConverter` or `HTMLXmlConverter`.
+
+Keep the exact spelling of names that come from outside the code you are
+writing, such as standard library or third-party APIs, even when they do not
+follow these rules.
+
+## Comments
+
+Write a comment only when it tells the reader something the code cannot: why the
+code exists, or why it works the way it does. Do not restate what the code does
+when names and structure already make that clear.
+
+Base every stated reason on supplied context, such as the user's instructions,
+linked issues, commit history, or existing documentation. The one exception is
+a design choice you make in the same change: you may state the reason you made
+it. Do not invent rationale, such as compatibility, performance, or workaround
+claims, for code whose reasons you do not know. If the context does not
+establish a reason, omit the comment, or, if the code's behavior is not
+obvious, briefly describe what it does.
+
+- Do not describe the edit itself (for instance, "Updated to use the new API").
+  That belongs in the commit message.
+- Do not leave commented-out code.
+- When changing code, update or remove any comments it invalidates.
+
+Write comments as complete sentences in present tense, starting with a capital
+letter and ending with a period. Keep an identifier's case when it starts a
+comment. Short inline comments may be fragments; start a fragment with a capital
+letter and omit the final period. Leave tool directives, such as `# noqa`,
+exactly as the tool requires.
+
+Write comments as plain text that reads cleanly without rendering. Put
+identifiers in backticks, and use `-` bullets or indented code examples where
+they help. Do not use markup that only works when rendered, such as bold or
+italic emphasis, `[<link-text>](<url>)` links, headings, or tables. State
+emphasis in words, and give links as bare URLs.
+
+This formatting applies to line and block comments. For documentation comments
+that tools render, such as Python docstrings or JSDoc comments, follow the
+language reference.
+
+## Documentation Comments
+
+Documentation comments, such as Python docstrings and JSDoc comments, describe
+the interface of a function, class, or module: its parameters, attributes,
+return values, and raised errors, often with their types. Linters can check
+that the documented parameters match the signature, but not that the types,
+descriptions, and stated behavior are still correct, so the comment can become
+wrong without anything failing.
+
+Whenever you change a function, class, or module, review its documentation
+comment in the same change:
+
+- Add, remove, or rename entries to match the parameters, attributes, and
+  return values in the code.
+- Update each type to match the signature or type hint.
+- Update the errors listed as raised.
+- Check that stated requirements and behavior, such as input order or skipped
+  values, still hold.
+- Update examples so that they still run and show the current output.
+
+## Tooling
+
+Each language reference names the formatter, the linter, and, where the
+language has one, the type checker for its files. Where one exists, a
+configuration file for each tool is in `assets/`.
+
+- When the project configures one of these tools, use that configuration. Do
+  not change it, or add rule suppressions to it, without asking the user.
+- When the project has no configuration:
+  - In a new project that you create, copy the configuration from `assets/`
+    into the project root.
+  - In an existing project, ask the user before adding the configuration.
+    Until they agree, pass it on the command line for the files you change.
+  - For a single file outside any project, such as a standalone script, pass
+    the configuration on the command line instead of copying it.
+- Run these tools on every file you change before reporting the work as done.
+  Do not format or fix files you did not otherwise change, because unrelated
+  changes make the real change harder to review.
+- Fix each finding in the code. When code must break a rule, as when it
+  follows a signature defined elsewhere, suppress only that rule on that line,
+  name the rule, and tell the user. Never suppress every rule at once.
+- Report any finding you could not fix.
+
+For every project, also use `assets/.editorconfig` under the rules above. It
+sets the encoding, line endings, indentation, and line length of each language
+in the table, so that editors write files as the formatters do. EditorConfig has
+no command-line option, so until the user agrees to add the file, follow its
+settings yourself in files that no formatter covers, such as YAML files. Oxfmt
+reads indentation and line width from `.editorconfig`, and its own configuration
+overrides only the options it sets. Any section you add to a project's
+`.editorconfig` must therefore match the formatter configuration for the same
+files.
