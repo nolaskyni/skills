@@ -24,11 +24,11 @@ including examples shown to the user, wherever the code is stored.
 Before writing or reviewing a file, read the reference for its language. Read
 only the references for the languages you are touching.
 
-Before writing or reviewing code in a language for the first time in a
-session, read every style guide that its reference links to, such as PEP 8 or
-the numpydoc style guide. Read the current version instead of relying on
-memory, because the guides change. If a guide cannot be retrieved, tell the
-user, then follow the reference and your knowledge of the guide.
+Before writing or reviewing code in a language for the first time in a session,
+read every style guide that its reference links to, such as PEP 8 or the
+numpydoc style guide. Read the current version instead of relying on memory,
+because the guides change. If a guide cannot be retrieved, tell the user, then
+follow the reference and your knowledge of the guide.
 
 | Language   | Files           | Reference                  |
 | ---------- | --------------- | -------------------------- |
@@ -55,11 +55,11 @@ name refers to without looking up its definition.
   type does not tell the reader what it measures. Write `timeout_seconds`, not
   `timeout`, and `created_at_utc`, not `created_at`. Spell out units as well,
   such as `sampling_rate_hertz`, not `sampling_rate_hz`, and
-  `delay_milliseconds`, not `delay_ms`, unless the abbreviation is more
-  familiar than the name, as with `utc`. A count needs no unit when its name
-  says what it counts, such as `number_of_samples` or `samples_per_segment`. If
-  the type already says this, as a `Duration` or a time-zone-aware `datetime`
-  does, leave it out of the name.
+  `delay_milliseconds`, not `delay_ms`, unless the abbreviation is more familiar
+  than the name, as with `utc`. A count needs no unit when its name says what it
+  counts, such as `number_of_samples` or `samples_per_segment`. If the type
+  already says this, as a `Duration` or a time-zone-aware `datetime` does, leave
+  it out of the name.
 - Name functions that have side effects as imperative verb phrases, such as
   `sort()` or `send_request()`. Name functions without side effects for what
   they return, using a noun phrase, such as `distance_to(point)`, or a past
@@ -95,12 +95,12 @@ code exists, or why it works the way it does. Do not restate what the code does
 when names and structure already make that clear.
 
 Base every stated reason on supplied context, such as the user's instructions,
-linked issues, commit history, or existing documentation. The one exception is
-a design choice you make in the same change: you may state the reason you made
-it. Do not invent rationale, such as compatibility, performance, or workaround
+linked issues, commit history, or existing documentation. The one exception is a
+design choice you make in the same change: you may state the reason you made it.
+Do not invent rationale, such as compatibility, performance, or workaround
 claims, for code whose reasons you do not know. If the context does not
-establish a reason, omit the comment, or, if the code's behavior is not
-obvious, briefly describe what it does.
+establish a reason, omit the comment, or, if the code's behavior is not obvious,
+briefly describe what it does.
 
 - Do not describe the edit itself (for instance, "Updated to use the new API").
   That belongs in the commit message.
@@ -127,16 +127,16 @@ language reference.
 
 Documentation comments, such as Python docstrings and JSDoc comments, describe
 the interface of a function, class, or module: its parameters, attributes,
-return values, and raised errors, often with their types. Linters can check
-that the documented parameters match the signature, but not that the types,
+return values, and raised errors, often with their types. Linters can check that
+the documented parameters match the signature, but not that the types,
 descriptions, and stated behavior are still correct, so the comment can become
 wrong without anything failing.
 
 Whenever you change a function, class, or module, review its documentation
 comment in the same change:
 
-- Add, remove, or rename entries to match the parameters, attributes, and
-  return values in the code.
+- Add, remove, or rename entries to match the parameters, attributes, and return
+  values in the code.
 - Update each type to match the signature or type hint.
 - Update the errors listed as raised.
 - Check that stated requirements and behavior, such as input order or skipped
@@ -145,25 +145,25 @@ comment in the same change:
 
 ## Tooling
 
-Each language reference names the formatter, the linter, and, where the
-language has one, the type checker for its files. Where one exists, a
-configuration file for each tool is in `assets/`.
+Each language reference names the formatter, the linter, and, where the language
+has one, the type checker for its files. Where one exists, a configuration file
+for each tool is in `assets/`.
 
-- When the project configures one of these tools, use that configuration. Do
-  not change it, or add rule suppressions to it, without asking the user.
+- When the project configures one of these tools, use that configuration. Do not
+  change it, or add rule suppressions to it, without asking the user.
 - When the project has no configuration:
-  - In a new project that you create, copy the configuration from `assets/`
-    into the project root.
-  - In an existing project, ask the user before adding the configuration.
-    Until they agree, pass it on the command line for the files you change.
-  - For a single file outside any project, such as a standalone script, pass
-    the configuration on the command line instead of copying it.
-- Run these tools on every file you change before reporting the work as done.
-  Do not format or fix files you did not otherwise change, because unrelated
+  - In a new project that you create, copy the configuration from `assets/` into
+    the project root.
+  - In an existing project, ask the user before adding the configuration. Until
+    they agree, pass it on the command line for the files you change.
+  - For a single file outside any project, such as a standalone script, pass the
+    configuration on the command line instead of copying it.
+- Run these tools on every file you change before reporting the work as done. Do
+  not format or fix files you did not otherwise change, because unrelated
   changes make the real change harder to review.
-- Fix each finding in the code. When code must break a rule, as when it
-  follows a signature defined elsewhere, suppress only that rule on that line,
-  name the rule, and tell the user. Never suppress every rule at once.
+- Fix each finding in the code. When code must break a rule, as when it follows
+  a signature defined elsewhere, suppress only that rule on that line, name the
+  rule, and tell the user. Never suppress every rule at once.
 - Report any finding you could not fix.
 
 For every project, also use `assets/.editorconfig` under the rules above. It

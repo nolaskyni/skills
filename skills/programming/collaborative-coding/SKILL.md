@@ -1,8 +1,8 @@
 ---
 name: collaborative-coding
 description: >-
-  Keep the user able to explain what the code does, why it is designed that
-  way, and how it works while the agent writes most of it. Use when building,
+  Keep the user able to explain what the code does, why it is designed that way,
+  and how it works while the agent writes most of it. Use when building,
   extending, or substantially changing a project or feature on the user's
   behalf.
 ---
@@ -17,8 +17,7 @@ line. They must still be able to explain three things about the project without
 your help:
 
 - **What** the code is meant to achieve.
-- **Why** it is designed the way it is, including the alternatives you
-  rejected.
+- **Why** it is designed the way it is, including the alternatives you rejected.
 - **How** it works at the level of components, data flow, and key algorithms.
 
 Your job is to prevent drift between the user's understanding and the code.
@@ -29,29 +28,28 @@ explains nothing.
 
 If the user wants to write the code themselves and have you review it, use the
 `craft-coding` skill when available and containing usable instructions.
-Otherwise, let the user write the code, review their changes, and explain
-issues and possible improvements without taking over implementation unless
-asked.
+Otherwise, let the user write the code, review their changes, and explain issues
+and possible improvements without taking over implementation unless asked.
 
-To teach a concept the code depends on, use `teach` when available and containing
-usable instructions; to check the user's understanding in more depth, use
-`test` under the same condition. If either skill is unavailable or lacks usable
-instructions, provide the requested explanation or understanding check
+To teach a concept the code depends on, use `teach` when available and
+containing usable instructions; to check the user's understanding in more depth,
+use `test` under the same condition. If either skill is unavailable or lacks
+usable instructions, provide the requested explanation or understanding check
 directly. Neither changes the check-ins or approval points agreed under this
 one.
 
 ## Clarify Before Writing Code
 
-Before writing code, ask about anything unclear in the purpose, inputs,
-outputs, or constraints. A request such as "Make a website for looking at
-analyzed data" leaves open:
+Before writing code, ask about anything unclear in the purpose, inputs, outputs,
+or constraints. A request such as "Make a website for looking at analyzed data"
+leaves open:
 
 - What the data is, where it is stored, and how large it is.
 - Who will use the site and what they need to learn from it.
 - Which views or interactions matter most.
 - Constraints such as hosting, existing tools, or deadlines.
-- Domain conventions, standard libraries, or existing implementations the
-  result should follow.
+- Domain conventions, standard libraries, or existing implementations the result
+  should follow.
 - How the user will know the result is correct.
 
 Ask only questions whose answers would change what you build, and send them
@@ -112,8 +110,8 @@ decisions need a reply.
 
 When first presenting `PLAN.md`, show the full plan if it is short enough to
 review comfortably. For a longer plan, show the goal, scope, key design
-decisions, verification approach, and milestones, and link to the complete
-file. Include enough context for the user to assess any decision you need.
+decisions, verification approach, and milestones, and link to the complete file.
+Include enough context for the user to assess any decision you need.
 
 For later revisions, lead with what changed and why, then show the affected
 sections and identify which sections they replace. Link to the complete plan.
@@ -130,9 +128,9 @@ produce silently wrong results. See the "Explain-Back Checks" section.
 ### Plan Template
 
 Use the following template for `PLAN.md`. Replace each placeholder, and list
-milestones in the order they will be done. Set each `STATUS` to `approved` for
-a choice the user made or confirmed, or `default` for a choice you made within
-the authorized scope. Set each `SOURCE` to `user` or `default` in the same way.
+milestones in the order they will be done. Set each `STATUS` to `approved` for a
+choice the user made or confirmed, or `default` for a choice you made within the
+authorized scope. Set each `SOURCE` to `user` or `default` in the same way.
 
 ```markdown
 # PROJECT-NAME
@@ -199,11 +197,10 @@ whatever was missing from the plan that caused the confusion.
 
 ### Resume Across Sessions
 
-Before ending a session, update the plan's "Current State" section with what
-was implemented, what was verified, what remains unverified or blocked, and the
-next authorized step. Record the commands or procedures used for important
-checks and their outcomes. Distinguish completed implementation from verified
-behavior.
+Before ending a session, update the plan's "Current State" section with what was
+implemented, what was verified, what remains unverified or blocked, and the next
+authorized step. Record the commands or procedures used for important checks and
+their outcomes. Distinguish completed implementation from verified behavior.
 
 When resuming, read the plan and inspect the current code and working-tree
 changes before editing. Reconcile any differences, preserving the user's
@@ -234,24 +231,24 @@ Sort each choice you make during implementation into one of these cases:
   behavior, compatibility, cost, or how results should be interpreted, when
   existing instructions do not settle it. Examples include a breaking schema
   change or deciding whether to drop missing observations. State the tradeoff,
-  recommend an option, and continue any work that does not depend on the
-  answer. The question stays open until the user answers; do not treat silence
-  as approval.
+  recommend an option, and continue any work that does not depend on the answer.
+  The question stays open until the user answers; do not treat silence as
+  approval.
 - **Stop at approval checkpoints:** a hard-to-reverse action outside existing
-  authorization, or an approval point the user asked for. Do not take the
-  action or pass the checkpoint until the user approves.
+  authorization, or an approval point the user asked for. Do not take the action
+  or pass the checkpoint until the user approves.
 - **Revise a failed approach:** explain why the approach failed and what you
-  will do instead. Continue if the revision fits the authorized task, and ask
-  if it would change the task materially. If repeated fixes to one approach
-  fail, reconsider the approach instead of patching it again.
+  will do instead. Continue if the revision fits the authorized task, and ask if
+  it would change the task materially. If repeated fixes to one approach fail,
+  reconsider the approach instead of patching it again.
 
 Do not reopen a choice the user approved unless new evidence materially changes
 it.
 
 ### Write the Check-In
 
-Keep each check-in short. If it needs a decision, state the decision in one
-line at the top, then use this structure, leaving out any item with nothing to
+Keep each check-in short. If it needs a decision, state the decision in one line
+at the top, then use this structure, leaving out any item with nothing to
 report:
 
 1. **Done:** what changed, in a few bullets, and where.
@@ -265,11 +262,12 @@ report:
    expected.
 6. **Next:** the next batch of work, and the details of any decision you need.
 
-For example, suppose the user requests a dashboard of daily sensor averages.
-The project already uses a plotting library, but some readings lack timestamps
-and no policy covers them. Reusing the library is routine; deciding how to
-handle those readings affects the interpretation of results.
+For example, suppose the user requests a dashboard of daily sensor averages. The
+project already uses a plotting library, but some readings lack timestamps and
+no policy covers them. Reusing the library is routine; deciding how to handle
+those readings affects the interpretation of results.
 
+<!-- prettier-ignore -->
 ```markdown
 **Decision needed:** Should I exclude readings without timestamps from the daily averages? I recommend excluding them and showing how many were excluded, because any day I assigned them would be a guess.
 
@@ -295,9 +293,9 @@ not a test.
 Explain-back questions do not require a reply before you continue authorized
 work. If the user leaves one unanswered or moves on to another request, follow
 their direction without repeating the question as a prerequisite. If an answer
-reveals a misunderstanding, explain the correction and continue. Pause
-dependent work only if the exchange exposes an unresolved choice that requires
-the user's decision under "Decide Whether to Ask."
+reveals a misunderstanding, explain the correction and continue. Pause dependent
+work only if the exchange exposes an unresolved choice that requires the user's
+decision under "Decide Whether to Ask."
 
 #### Choose How Many to Ask
 
@@ -339,6 +337,7 @@ front turns recall into lookup. Handle the two separately:
 
 For example:
 
+<!-- prettier-ignore -->
 ```markdown
 **Question:** Why does the loader drop rows with missing timestamps instead of interpolating them?
 
@@ -348,10 +347,10 @@ For example:
 #### Give Feedback
 
 After the user answers, say specifically what they got right, correct the
-specific gap or misconception, and point to the code, test, or plan section
-that settles it. Do not give a vague verdict, such as "close" or "not quite,"
-and then just state the correct answer. If the misunderstanding came from an
-unclear explanation or question of yours, say so and correct it.
+specific gap or misconception, and point to the code, test, or plan section that
+settles it. Do not give a vague verdict, such as "close" or "not quite," and
+then just state the correct answer. If the misunderstanding came from an unclear
+explanation or question of yours, say so and correct it.
 
 #### Revisit Weak Points
 
@@ -362,20 +361,18 @@ project has no `PLAN.md`, keep the list in the session.
 
 ## Keep Results Trustworthy
 
-The user relies on your tests and reports instead of reading every line, so
-both must be accurate.
+The user relies on your tests and reports instead of reading every line, so both
+must be accurate.
 
 For tests:
 
 - Derive tests from the requested behavior and agreed acceptance criteria, and
   describe the most important checks in plain language, in the plan's
   "Verification" section or the check-in. Test design within agreed behavior
-  needs no separate approval; ask only when the expected behavior is
-  unresolved.
+  needs no separate approval; ask only when the expected behavior is unresolved.
 - When fixing a bug, add a test that fails without the fix.
 - Never weaken, skip, or rewrite a test just to make it pass. If a test
-  conflicts with agreed requirements, explain the evidence and correct the
-  test.
+  conflicts with agreed requirements, explain the evidence and correct the test.
 - Write tests that exercise production behavior and can fail when that behavior
   is wrong. Use controlled fixtures and mock external boundaries when needed,
   while keeping the logic under test real. Assert on its observable results or
@@ -384,18 +381,18 @@ For tests:
 
 For code and reports:
 
-- Do not add silent fallbacks, catch-all exception handling, or placeholder
-  data that hide failures.
-- Do not claim that something works unless you have checked it. Say plainly
-  when you did not run the code, lacked the data, or used a stub.
+- Do not add silent fallbacks, catch-all exception handling, or placeholder data
+  that hide failures.
+- Do not claim that something works unless you have checked it. Say plainly when
+  you did not run the code, lacked the data, or used a stub.
 - Suggest a commit before each large change so the user can revert it.
 - Make improvements one aspect at a time, such as performance or readability,
   and check each against the tests before starting the next.
 
 ## Final Check
 
-Before ending a turn that changed code, confirm that the user could answer
-these questions from your check-ins and the plan, if there is one:
+Before ending a turn that changed code, confirm that the user could answer these
+questions from your check-ins and the plan, if there is one:
 
 - **What** does this change do, and how does it fit into the project?
 - **Why** was it done this way rather than the obvious alternative?
@@ -404,8 +401,8 @@ these questions from your check-ins and the plan, if there is one:
 - Which decisions are still waiting on the user?
 - If the project has a `PLAN.md`, does it still describe the code?
 
-If the user could answer a question only by asking you, explain that part
-before you stop.
+If the user could answer a question only by asking you, explain that part before
+you stop.
 
 End with a brief report stating what behavior changed, which checks you
 performed and their outcomes, anything incomplete or unverified, and any
