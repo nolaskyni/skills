@@ -2,24 +2,17 @@
 
 ## Baseline
 
-Write Markdown that follows the CommonMark specification, in the style of the
-[Google Markdown Style Guide](https://google.github.io/styleguide/docguide/style.html).
-The sections below extend them and take precedence where they differ.
+Follow the [Google Markdown Style Guide][google-markdown]. The sections below
+extend it and take precedence where they differ.
+
+[google-markdown]: https://google.github.io/styleguide/docguide/style.html
 
 The guide is written for Google's own documentation. Its `[TOC]` directive,
 which only Gitiles, Google's Git viewer, supports, does not apply.
 
 ## Flavors
 
-Each Markdown file is a GitHub file or a Pandoc file. GitHub Flavored Markdown
-extends CommonMark. Pandoc's Markdown is older than CommonMark and parses some
-syntax differently, but Pandoc's CommonMark reader does not support citations,
-so Pandoc files use Pandoc's Markdown. Follow the rules in "CommonMark" in both
-flavors, so that both read a file the same way. Use a flavor's own extensions
-only in files of that flavor, because the other flavor shows them as literal
-text or renders them differently.
-
-A file is a Pandoc file when any of the following is true:
+Treat a Markdown file as a Pandoc file when any of the following is true:
 
 - The project builds it with Pandoc, such as through a defaults file or a script
   that calls `pandoc`.
@@ -30,7 +23,15 @@ A file is a Pandoc file when any of the following is true:
   table captions. Tell the user when you treat a file as a Pandoc file because
   of its syntax.
 
-Every other Markdown file, including a `SKILL.md` file, is a GitHub file.
+Treat every other Markdown file, including a `SKILL.md` file, as a GitHub file.
+GitHub files use GitHub Flavored Markdown, which extends CommonMark. Pandoc
+files use Pandoc's Markdown, because Pandoc's CommonMark reader does not support
+citations.
+
+The two flavors parse some syntax differently, and each shows the other's
+extensions as literal text or renders them differently. Follow the rules in "All
+Files" so that both flavors read a file the same way, and use a flavor's own
+extensions only in files of that flavor.
 
 ## Formatting
 
@@ -47,7 +48,7 @@ as Markdown and Oxfmt leaves as written. Put a `<!-- prettier-ignore -->`
 comment before any other Markdown example whose line breaks must stay as
 written, such as a chat message or a pull request description.
 
-## CommonMark
+## All Files
 
 ### Blocks
 
@@ -103,7 +104,7 @@ of the sentence case that the guide uses:
 
 Do not use HTML, as the guide asks. This includes `<details>`.
 
-## Extensions in Both Flavors
+### Math and Strikethrough
 
 GitHub and Pandoc read these extensions to CommonMark the same way:
 
