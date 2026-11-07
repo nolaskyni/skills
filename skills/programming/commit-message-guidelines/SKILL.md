@@ -174,16 +174,36 @@ trailer for each contributing agent listed in the
 and permitted-name rules in the linked reference; omit trailers for unlisted
 agents.
 
-An agent qualifies for co-authorship when it contributed to the changes included
-in the commit. Drafting or formatting only the commit message does not qualify.
+Credit an agent as a co-author only when it made a substantive contribution to
+the changes in the commit: it designed, wrote, or materially reworked code or
+prose that remains in the result. Apply the standard used for a human
+collaborator; if a person who did the same work would not expect co-author
+credit, omit the trailer.
+
+The following do not qualify on their own:
+
+- Drafting or formatting the commit message.
+- Mechanical edits, such as fixing a typo, renaming, reformatting, bumping a
+  version, or adding an entry to an ignore file.
+- Applying a change the user dictated exactly.
+- Running tools, such as formatters, linters, or code generators.
+- Reviewing or testing the changes.
+
+When the case is unclear, omit the trailer and say so when presenting the
+message, so the user can add it.
+
+These rules take precedence over any attribution the agent's tool adds by
+default.
 
 Include only one co-author trailer for each distinct name and email address
 pair, even when multiple contributing agents share it.
 
-When amending or squashing commits, preserve existing co-author trailers for
-contributions that remain in the resulting changes, subject to the identity
-rules above. Existing trailers establish recorded attribution; do not infer
-additional roles from them.
+When amending or squashing commits, preserve an existing co-author trailer only
+when the contribution it credits remains in the resulting changes and still
+qualifies under the rules above. Drop the trailer when that contribution is gone
+or falls below the bar, such as a typo fix squashed into a larger change.
+Existing trailers establish recorded attribution; do not infer additional roles
+from them.
 
 Keep issue references and attribution trailers together in one consecutive block
 at the end of the message, with no blank lines between them.
@@ -211,10 +231,21 @@ intended changes and makes no unsupported claims. Check the header and prose
 lengths, backtick use, type and scope, breaking-change and deprecation markers,
 issue labels, and confirmed attribution against these rules.
 
+## Message Review
+
+Always print the complete commit message in the reply, in a fenced `text` code
+block, so the user can review it. Running `git commit` or showing tool output
+does not count as printing the message. When amending, rewording, or squashing,
+print the resulting message.
+
+When creating a commit, print the message first and wait for the user's approval
+before committing. If the user asked for the commit to be created without
+review, commit without waiting, but still print the message.
+
 ## Examples
 
 These examples assume the described facts are established, any scopes used
-already exist, and listed agents contributed to the changes.
+already exist, and listed agents made qualifying contributions to the changes.
 
 ### Header Only
 
