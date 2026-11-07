@@ -58,9 +58,8 @@ block quote that directly follows a line of text as part of that paragraph.
 ### Headings
 
 Write headings in title case, following the title-style rules in the
-[capitalization](https://support.apple.com/guide/applestyleguide/c-apsgb744e4a3/web#apdca93e113f1d64)
-entry of the Apple Style Guide, instead of the sentence case that the guide
-uses:
+[capitalization][apple-capitalization] entry of the Apple Style Guide, instead
+of the sentence case that the guide uses:
 
 - Lowercase articles (`a`, `an`, `the`), coordinating conjunctions (`and`,
   `but`, `or`, `nor`, `for`, `yet`, `so`), `to` in infinitives, `as`, and
@@ -76,13 +75,17 @@ uses:
   and `Plug-in`.
 - Keep the spelling of names and code, such as `macOS` or `kebab-case`.
 
+[apple-capitalization]:
+  https://support.apple.com/guide/applestyleguide/c-apsgb744e4a3/web#apdca93e113f1d64
+
 ### Lists
 
 - Use `-` bullets with one space after them. Indent nested items 2 spaces, or 3
   under a numbered item, as Oxfmt writes them, instead of the guide's 4-space
   indent.
-- Introduce every list with a sentence that ends with a colon. This also keeps
-  two lists from meeting, where Oxfmt would switch the second to `*` bullets.
+- Introduce every list with a sentence that ends with a colon, unless the list
+  directly follows a heading. This also keeps two lists from meeting, where
+  Oxfmt would switch the second to `*` bullets.
 
 ### Links and URLs
 

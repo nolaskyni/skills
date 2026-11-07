@@ -40,7 +40,8 @@ follow the reference and your knowledge of the guide.
 
 Choose names that read clearly where they are used, not just where they are
 defined. Clarity matters more than brevity: a reader should understand what a
-name refers to without looking up its definition.
+name refers to without looking up its definition. Follow these rules for every
+name:
 
 - Spell words out. Write `number_of_choices`, not `n_choices` or `num_choices`,
   and `message`, not `msg`. Keep abbreviations that are more familiar than their
@@ -102,6 +103,8 @@ claims, for code whose reasons you do not know. If the context does not
 establish a reason, omit the comment, or, if the code's behavior is not obvious,
 briefly describe what it does.
 
+Also follow these rules for comments:
+
 - Do not describe the edit itself (for instance, "Updated to use the new API").
   That belongs in the commit message.
 - Do not leave commented-out code.
@@ -147,7 +150,7 @@ comment in the same change:
 
 Each language reference names the formatter, the linter, and, where the language
 has one, the type checker for its files. Where one exists, a configuration file
-for each tool is in `assets/`.
+for each tool is in `assets/`. Use the tools and their configuration as follows:
 
 - When the project configures one of these tools, use that configuration. Do not
   change it, or add rule suppressions to it, without asking the user.
