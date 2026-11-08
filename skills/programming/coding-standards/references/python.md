@@ -2,14 +2,14 @@
 
 ## Baseline
 
-Follow [PEP 8](https://peps.python.org/pep-0008/). The sections below extend it
-and take precedence where they differ.
+Follow [PEP 8](https://peps.python.org/pep-0008/). The following sections extend
+it and take precedence where they differ.
 
 ## Formatting
 
 Limit lines of code to 88 characters, the default line length of `ruff format`.
 Wrap docstrings at 75 characters, as the numpydoc guide asks, and comments at 72
-characters, as PEP 8 asks. `ruff format` does not rewrap docstrings or comments,
+characters, as PEP 8 asks. `ruff format` doesn't rewrap docstrings or comments,
 so wrap them yourself.
 
 ## File Layout
@@ -17,10 +17,10 @@ so wrap them yourself.
 PEP 8 covers the module docstring, module-level dunder names, and imports. After
 the imports, order a module as follows:
 
-1. Constants.
-2. Exceptions and records.
-3. Public functions and classes.
-4. Private functions and classes.
+1. Constants
+2. Exceptions and records
+3. Public functions and classes
+4. Private functions and classes
 
 Define `__all__` in every module that other code imports, listing its public
 names. Leave it out of scripts and test modules.
@@ -49,17 +49,17 @@ Write docstrings exactly as the
 [numpydoc style guide](https://numpydoc.readthedocs.io/en/latest/format.html)
 describes, including its advice to keep LaTeX to a minimum and to show simple
 equations as code. Treat that guide as the authority on docstrings, because it
-may change after this reference was written.
+might change after this reference was written.
 
-The guide does not say which objects need a docstring, so follow these rules:
+The guide doesn't say which objects need a docstring, so follow these rules:
 
 - Give every module a docstring with at least a summary line.
 - Give every public function, class, and method a docstring with the sections
   that apply to it, such as Parameters and Returns.
-- Document a constructor's parameters in the class docstring, and do not give
+- Document a constructor's parameters in the class docstring, and don't give
   `__init__` its own docstring.
 - Give a private function or method, whose name starts with an underscore, a
-  docstring only when its behavior is not obvious from its name and body. This
+  docstring only when its behavior isn't obvious from its name and body. This
   replaces the PEP 8 advice to describe every non-public method in a comment
   after its `def` line.
 - Test functions need no docstring. Name each test for the behavior it checks.
@@ -85,20 +85,20 @@ not change a project's minimum or pinned Python version without asking the user.
   including private ones. Write `-> None` for a function that returns nothing.
 - Annotate each parameter with the most general type that the function needs, so
   that callers can pass what they have:
-  - `Iterable[Reading]` when the function loops over the argument once.
-  - `Sequence[float]` when it needs `len()` or indexing.
-  - `Mapping[str, float]` when it only reads a dictionary.
-  - `numpy.typing.ArrayLike` when it converts the argument with `np.asarray`.
+  - `Iterable[Reading]` when the function loops over the argument once
+  - `Sequence[float]` when it needs `len()` or indexing
+  - `Mapping[str, float]` when it only reads a dictionary
+  - `numpy.typing.ArrayLike` when it converts the argument with `np.asarray`
   - `numpy.typing.NDArray` with a data type, such as `NDArray[np.float64]`, when
-    it needs array behavior, such as `.shape` or changes in place.
+    it needs array behavior, such as `.shape` or changes in place
 - Annotate each return value with the specific type that the function returns,
   such as `list[Reading]`, `dict[str, float]`, or `NDArray[np.float64]`.
-- Annotate a local variable only when a type checker cannot infer its type, such
+- Annotate a local variable only when a type checker can't infer its type, such
   as an empty container or a variable that starts as `None`.
 - Use built-in generics, such as `list[int]`, write `float | None` instead of
   `Optional[float]`, and import abstract types, such as `Iterable`, from
   `collections.abc`.
-- Do not use `from __future__ import annotations`. Until the minimum Python
+- Don't use `from __future__ import annotations`. Until the minimum Python
   version is 3.14 or later, put a forward reference in quotes, such as
   `"Spectrum"`.
 
@@ -125,7 +125,7 @@ not change a project's minimum or pinned Python version without asking the user.
 - When a record holds NumPy arrays, also pass `eq=False`, because the generated
   equality and hash fail on arrays. Compare the arrays explicitly, such as with
   `np.array_equal`.
-- Do not change an array stored in a record. `frozen` stops fields from being
+- Don't change an array stored in a record. `frozen` stops fields from being
   reassigned, but not array contents from changing.
 - Use `typing.NamedTuple` when callers need to unpack or index the record like a
   tuple, and `typing.TypedDict` only to describe dictionary-shaped data from
@@ -142,14 +142,14 @@ addition:
 - Raise a built-in exception, such as `ValueError` or `TypeError`, when one
   fits. Define a custom exception only when callers need to catch that failure
   separately, and make it a subclass of the closest built-in exception.
-- Do not use `assert` to check inputs or data, because Python removes `assert`
+- Don't use `assert` to check inputs or data, because Python removes `assert`
   statements when it runs with `-O`. Raise an exception instead, and use
   `assert` only in tests.
 - Catch an exception only where the code can handle it. Never silence an
   exception with `pass` or replace it with a placeholder value.
-- Report a problem that does not stop the calculation, such as dropped samples,
+- Report a problem that doesn't stop the calculation, such as dropped samples,
   with `warnings.warn`, a specific warning category, and `stacklevel=2`, and
-  document it in the Warns section of the docstring. Do not report it with
+  document it in the Warns section of the docstring. Don't report it with
   `print`.
 - Keep NumPy floating-point warnings visible. Suppress them only with
   `np.errstate` around code that expects and handles `inf` or `nan` values.
@@ -159,7 +159,7 @@ addition:
 Write error, warning, and log messages in the same style:
 
 - Start with a lowercase letter, unless the message starts with an identifier,
-  which keeps its case. Do not end with a period.
+  which keeps its case. Don't end with a period.
 - Put identifiers in backticks: parameter, variable, attribute, function, class,
   and type names, and names from outside the code that the code uses by their
   exact spelling, such as a CSV column.
@@ -189,22 +189,22 @@ raise ValueError(
 
 Format and lint Python with Ruff, and check types with mypy. For projects
 without their own configuration, use `assets/ruff.toml` and `assets/mypy.ini`
-from this skill. `ruff.toml` does not set `target-version`, so Ruff reads the
-minimum Python version from `requires-python` in `pyproject.toml`.
+from this skill. The `ruff.toml` file doesn't set `target-version`, so Ruff
+reads the minimum Python version from `requires-python` in `pyproject.toml`.
 
 Use the Ruff version that the project pins, such as with `uv run ruff`, and
 otherwise the latest release, such as with `uvx ruff`. Run mypy in the
 environment that has the project's dependencies installed, such as with
 `uv run mypy`, because it needs them to check calls into libraries. For each
-file you change:
+file you change, follow these steps:
 
-1. Run `ruff check --fix <file-path>`, which applies only safe fixes. Do not
-   pass `--unsafe-fixes`.
+1. Run `ruff check --fix <file-path>`, which applies only safe fixes. Don't pass
+   `--unsafe-fixes`.
 2. Fix the remaining findings by hand.
 3. Run `ruff format <file-path>`, because fixes can leave code unformatted.
 4. Run `mypy <file-path>`, and fix each error it reports.
 
-When the configuration is not in the project, pass
+When the configuration isn't in the project, pass
 `--config <configuration-path>` to Ruff with the path to `assets/ruff.toml`, and
 `--config-file <configuration-path>` to mypy with the path to `assets/mypy.ini`.
 
@@ -212,9 +212,9 @@ Suppress a Ruff finding with `# noqa: <rule-code>`, such as `# noqa: N803` for a
 parameter named `X` that a scikit-learn interface requires, and a mypy error
 with `# type: ignore[<rule-code>]`.
 
-When mypy cannot find types for a library, add its stub package, such as
+When mypy can't find types for a library, add its stub package, such as
 `scipy-stubs` or `pandas-stubs`, as a development dependency, asking the user
-first in an existing project. Do not set `ignore_missing_imports`, because it
+first in an existing project. Don't set `ignore_missing_imports`, because it
 turns off checking for that library without saying so.
 
 Run the docstring examples of each module you change, such as with

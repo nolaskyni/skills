@@ -15,7 +15,7 @@ Use this skill when writing, editing, refactoring, or reviewing code so that it
 follows explicit conventions rather than unstated habits. When a codebase
 already has its own conventions, follow them over the ones in this skill.
 
-These rules do not apply to code that an agent writes only for agents to use,
+These rules don't apply to code that an agent writes only for agents to use,
 such as a throwaway script that checks an idea. They apply to all other code,
 including examples shown to the user, wherever the code is stored.
 
@@ -27,8 +27,10 @@ only the references for the languages you are touching.
 Before writing or reviewing code in a language for the first time in a session,
 read every style guide that its reference links to, such as PEP 8 or the
 numpydoc style guide. Read the current version instead of relying on memory,
-because the guides change. If a guide cannot be retrieved, tell the user, then
+because the guides change. If a guide can't be retrieved, tell the user, then
 follow the reference and your knowledge of the guide.
+
+The following table lists the reference for each language:
 
 | Language   | Files           | Reference                  |
 | ---------- | --------------- | -------------------------- |
@@ -38,10 +40,10 @@ follow the reference and your knowledge of the guide.
 
 ## Naming
 
-Choose names that read clearly where they are used, not just where they are
-defined. Clarity matters more than brevity: a reader should understand what a
-name refers to without looking up its definition. Follow these rules for every
-name:
+Choose names that read clearly where they are used, not only where they are
+defined. Clarity matters more than brevity: a reader must be able to understand
+what a name refers to without looking up its definition. Follow these rules for
+every name:
 
 - Spell words out. Write `number_of_choices`, not `n_choices` or `num_choices`,
   and `message`, not `msg`. Keep abbreviations that are more familiar than their
@@ -53,7 +55,7 @@ name:
 - Name variables, parameters, and types for their role, not their type. Write
   `greeting`, not `string`, and `contacts`, not `contact_list`.
 - When a value is a plain number or string, name its unit or format, because the
-  type does not tell the reader what it measures. Write `timeout_seconds`, not
+  type doesn't tell the reader what it measures. Write `timeout_seconds`, not
   `timeout`, and `created_at_utc`, not `created_at`. Spell out units as well,
   such as `sampling_rate_hertz`, not `sampling_rate_hz`, and
   `delay_milliseconds`, not `delay_ms`, unless the abbreviation is more familiar
@@ -65,14 +67,15 @@ name:
   `sort()` or `send_request()`. Name functions without side effects for what
   they return, using a noun phrase, such as `distance_to(point)`, or a past
   participle, such as `sorted()`.
-- Name Boolean values and functions that return as assertions about their
+- Name Boolean values, and functions that return them, as assertions about their
   subject, such as `is_empty`, `has_children`, or `has_permission(user)`.
 
 Use the case style that the language reference sets for each kind of name, such
 as `snake_case` for Python functions. Treat each acronym, initialism, or
 abbreviation as one unit with uniform case: all capitals where the word would
 start with a capital letter, and all lowercase where it would start with a
-lowercase letter or the style is lowercase throughout.
+lowercase letter or the style is lowercase throughout. The following table shows
+examples for each case style:
 
 | Style        | Use                        | Avoid                      |
 | ------------ | -------------------------- | -------------------------- |
@@ -86,39 +89,39 @@ word that says how they relate or choose a different name. Write
 `HTMLToXMLConverter`, not `HTMLXMLConverter` or `HTMLXmlConverter`.
 
 Keep the exact spelling of names that come from outside the code you are
-writing, such as standard library or third-party APIs, even when they do not
+writing, such as standard library or third-party APIs, even when they don't
 follow these rules.
 
 ## Comments
 
-Write a comment only when it tells the reader something the code cannot: why the
-code exists, or why it works the way it does. Do not restate what the code does
+Write a comment only when it tells the reader something the code can't: why the
+code exists, or why it works the way it does. Don't restate what the code does
 when names and structure already make that clear.
 
 Base every stated reason on supplied context, such as the user's instructions,
 linked issues, commit history, or existing documentation. The one exception is a
-design choice you make in the same change: you may state the reason you made it.
-Do not invent rationale, such as compatibility, performance, or workaround
-claims, for code whose reasons you do not know. If the context does not
-establish a reason, omit the comment, or, if the code's behavior is not obvious,
-briefly describe what it does.
+design choice you make in the same change: you can state the reason you made it.
+Don't invent rationale, such as compatibility, performance, or workaround
+claims, for code whose reasons you don't know. If the context doesn't establish
+a reason, omit the comment, or, if the code's behavior isn't obvious, briefly
+describe what it does.
 
 Also follow these rules for comments:
 
-- Do not describe the edit itself (for instance, "Updated to use the new API").
-  That belongs in the commit message.
-- Do not leave commented-out code.
+- Don't describe the edit itself, such as "Updated to use the new API." That
+  belongs in the commit message.
+- Don't leave commented-out code.
 - When changing code, update or remove any comments it invalidates.
 
 Write comments as complete sentences in present tense, starting with a capital
 letter and ending with a period. Keep an identifier's case when it starts a
-comment. Short inline comments may be fragments; start a fragment with a capital
+comment. Short inline comments can be fragments; start a fragment with a capital
 letter and omit the final period. Leave tool directives, such as `# noqa`,
 exactly as the tool requires.
 
 Write comments as plain text that reads cleanly without rendering. Put
 identifiers in backticks, and use `-` bullets or indented code examples where
-they help. Do not use markup that only works when rendered, such as bold or
+they help. Don't use markup that only works when rendered, such as bold or
 italic emphasis, `[<link-text>](<url>)` links, headings, or tables. State
 emphasis in words, and give links as bare URLs.
 
@@ -152,7 +155,7 @@ Each language reference names the formatter, the linter, and, where the language
 has one, the type checker for its files. Where one exists, a configuration file
 for each tool is in `assets/`. Use the tools and their configuration as follows:
 
-- When the project configures one of these tools, use that configuration. Do not
+- When the project configures one of these tools, use that configuration. Don't
   change it, or add rule suppressions to it, without asking the user.
 - When the project has no configuration:
   - In a new project that you create, copy the configuration from `assets/` into
@@ -162,19 +165,19 @@ for each tool is in `assets/`. Use the tools and their configuration as follows:
   - For a single file outside any project, such as a standalone script, pass the
     configuration on the command line instead of copying it.
 - Run these tools on every file you change before reporting the work as done. Do
-  not format or fix files you did not otherwise change, because unrelated
-  changes make the real change harder to review.
+  not format or fix files you didn't otherwise change, because unrelated changes
+  make the real change harder to review.
 - Fix each finding in the code. When code must break a rule, as when it follows
   a signature defined elsewhere, suppress only that rule on that line, name the
   rule, and tell the user. Never suppress every rule at once.
-- Report any finding you could not fix.
+- Report any finding you couldn't fix.
 
-For every project, also use `assets/.editorconfig` under the rules above. It
-sets the encoding, line endings, indentation, and line length of each language
-in the table, so that editors write files as the formatters do. EditorConfig has
-no command-line option, so until the user agrees to add the file, follow its
-settings yourself in files that no formatter covers, such as YAML files. Oxfmt
-reads indentation and line width from `.editorconfig`, and its own configuration
-overrides only the options it sets. Any section you add to a project's
-`.editorconfig` must therefore match the formatter configuration for the same
-files.
+For every project, also use the `assets/.editorconfig` file under the same
+rules. It sets the encoding, line endings, indentation, and line length of each
+language in the table, so that editors write files as the formatters do.
+EditorConfig has no command-line option, so until the user agrees to add the
+file, follow its settings yourself in files that no formatter covers, such as
+YAML files. Oxfmt reads indentation and line width from the `.editorconfig`
+file, and its own configuration overrides only the options it sets. Any section
+you add to a project's `.editorconfig` file must therefore match the formatter
+configuration for the same files.

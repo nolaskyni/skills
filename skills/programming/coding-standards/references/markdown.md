@@ -2,13 +2,13 @@
 
 ## Baseline
 
-Follow the [Google Markdown Style Guide][google-markdown]. The sections below
-extend it and take precedence where they differ.
+Follow the [Google Markdown Style Guide][google-markdown]. The following
+sections extend it and take precedence where they differ.
 
 [google-markdown]: https://google.github.io/styleguide/docguide/style.html
 
 The guide is written for Google's own documentation. Its `[TOC]` directive,
-which only Gitiles, Google's Git viewer, supports, does not apply.
+which only Gitiles, Google's Git viewer, supports, doesn't apply.
 
 ## Flavors
 
@@ -25,19 +25,19 @@ Treat a Markdown file as a Pandoc file when any of the following is true:
 
 Treat every other Markdown file, including a `SKILL.md` file, as a GitHub file.
 GitHub files use GitHub Flavored Markdown, which extends CommonMark. Pandoc
-files use Pandoc's Markdown, because Pandoc's CommonMark reader does not support
+files use Pandoc's Markdown, because Pandoc's CommonMark reader doesn't support
 citations.
 
 The two flavors parse some syntax differently, and each shows the other's
-extensions as literal text or renders them differently. Follow the rules in "All
-Files" so that both flavors read a file the same way, and use a flavor's own
-extensions only in files of that flavor.
+extensions as literal text or renders them differently. Follow the rules in the
+"All Files" section so that both flavors read a file the same way, and use a
+flavor's own extensions only in files of that flavor.
 
 ## Formatting
 
-Oxfmt wraps GitHub files at 80 characters, so do not wrap them by hand. It never
+Oxfmt wraps GitHub files at 80 characters, so don't wrap them by hand. It never
 splits link text, which GitHub requires on one line. Tables, headings, and code
-blocks may run past 80 characters, as the guide allows.
+blocks can run past 80 characters, as the guide allows.
 
 Write each sentence of a Pandoc file on its own line, so that editing a sentence
 changes only its own line. Oxfmt leaves these lines as they are.
@@ -49,6 +49,8 @@ comment before any other Markdown example whose line breaks must stay as
 written, such as a chat message or a pull request description.
 
 ## All Files
+
+The following sections apply to both GitHub and Pandoc files.
 
 ### Blocks
 
@@ -79,12 +81,12 @@ Structure" section of the `technical-writing-guidelines` skill.
   can break in clones.
 - Write a URL that is shown as itself in angle brackets, such as
   `<https://example.com>`, instead of the guide's bare URLs. GitHub and Pandoc
-  render it as a link without the brackets, but Pandoc does not link a bare URL
+  render it as a link without the brackets, but Pandoc doesn't link a bare URL
   by default.
 
 ### HTML
 
-Do not use HTML, which the guide strongly discourages. This includes `<details>`
+Don't use HTML, which the guide strongly discourages. This includes `<details>`
 and HTML used for layout, such as an image that HTML sizes or centers. Use only
 the following elements, which do what Markdown can't:
 
@@ -105,7 +107,7 @@ the following elements, which do what Markdown can't:
 
 GitHub and Pandoc read these extensions to CommonMark the same way:
 
-- Write inline math as `$...$` and display math as a `$$` block. Do not use
+- Write inline math as `$...$` and display math as a `$$` block. Don't use
   ` ```math ` blocks, which only some renderers support.
 - Write strikethrough with `~~`. A single `~` marks a subscript in Pandoc.
 
@@ -118,10 +120,12 @@ GitHub and Pandoc read these extensions to CommonMark the same way:
 - Use footnotes and task lists where they help, such as a task list for the
   milestones of a plan. Keep the layout that Oxfmt writes for a long footnote,
   with its text indented on the lines after `[^<label>]:`.
-- Do not wrap Markdown that you write into a pull request description or a
+- Don't wrap Markdown that you write into a pull request description or a
   comment on GitHub, because GitHub shows each line break there.
 
 ## Pandoc Files
+
+The following sections apply only to Pandoc files.
 
 ### Document Structure
 
@@ -177,9 +181,9 @@ instead of adding an entry or inventing a key.
 
 Type straight quotes and `...`, which Pandoc's `smart` extension turns into
 curly quotes and an ellipsis. `smart` also turns `--` into an en dash and `---`
-into an em dash, so do not type either in prose. Type Unicode only for
-characters that `smart` does not write, such as `°`, `×`, `±`, a minus sign
-outside math, and the primes in `5′10″`.
+into an em dash, so don't type either in prose. Type Unicode only for characters
+that `smart` doesn't write, such as `°`, `×`, `±`, a minus sign outside math,
+and the primes in `5′10″`.
 
 Put command-line flags in backticks, because outside code `smart` turns the `--`
 in `--fix` into an en dash.
@@ -194,14 +198,15 @@ without their own configuration, use `assets/.oxfmtrc.json` and
 Use the versions that the project pins, such as with `npx oxfmt`, and otherwise
 the latest releases, such as with `npx oxfmt@latest`. In a new project with a
 `package.json` file, add `oxfmt` and `markdownlint-cli2` as development
-dependencies at exact versions, because Oxfmt is before version 1.0 and its
-output can change between releases. For each file you change:
+dependencies at exact versions, because Oxfmt hasn't reached version 1.0 and its
+output can change between releases. For each file you change, follow these
+steps:
 
 1. Run `markdownlint-cli2 --fix <file-path>`.
 2. Fix the remaining findings by hand.
 3. Run `oxfmt <file-path>`.
 
-When the configuration is not in the project, pass `-c <configuration-path>` to
+When the configuration isn't in the project, pass `-c <configuration-path>` to
 Oxfmt with the path to `assets/.oxfmtrc.json`, and
 `--config <configuration-path>` to markdownlint-cli2 with the path to
 `assets/.markdownlint.jsonc`. For a Pandoc file, pass the files in
@@ -219,8 +224,8 @@ for the Pandoc files, asking the user first in an existing project:
   "overrides": [{"files": ["PANDOC-FILE-PATTERN"], "options": {"proseWrap": "preserve"}}]
   ```
 
-- A `.markdownlint.jsonc` in the folder that holds the Pandoc files, which turns
-  off the line limit and the rule that allows only one top-level heading.
+- A `.markdownlint.jsonc` file in the folder that holds the Pandoc files, which
+  turns off the line limit and the rule that allows only one top-level heading.
   Replace the placeholder with the path from that folder to the project's
   markdownlint configuration, such as `../.markdownlint.jsonc`:
 
@@ -228,11 +233,11 @@ for the Pandoc files, asking the user first in an existing project:
   {"extends": "PROJECT-CONFIGURATION-PATH", "MD013": false, "MD025": false}
   ```
 
-  A `.markdownlint.jsonc` in a folder replaces the configuration of the folders
-  above it, so without `"extends"`, every other rule is off.
+  A `.markdownlint.jsonc` file in a folder replaces the configuration of the
+  folders above it, so without `"extends"`, every other rule is off.
 
-When a project with Pandoc files has an `.editorconfig`, including a copy of
-`assets/.editorconfig`, add a section that turns off the line length for the
+When a project with Pandoc files has an `.editorconfig` file, including a copy
+of `assets/.editorconfig`, add a section that turns off the line length for the
 Pandoc files, asking the user first in an existing project. Otherwise, some
 editors, such as Neovim, wrap each line at that length while you type. Replace
 the placeholder with an EditorConfig pattern that matches the Pandoc files, such
@@ -244,9 +249,9 @@ max_line_length = off
 ```
 
 The first time Oxfmt formats an existing file, it rewraps every paragraph. When
-formatting a file you change would rewrap paragraphs you did not change, tell
-the user and offer to format the file in a separate commit first, so that the
-formatting does not hide your change.
+formatting a file you change would rewrap paragraphs you didn't change, tell the
+user and offer to format the file in a separate commit first, so that the
+formatting doesn't hide your change.
 
 Suppress a markdownlint finding with
 `<!-- markdownlint-disable-next-line <rule-code> -->`, such as with `MD024` for
