@@ -84,7 +84,22 @@ Structure" section of the `technical-writing-guidelines` skill.
 
 ### HTML
 
-Do not use HTML, as the guide asks. This includes `<details>`.
+Do not use HTML, which the guide strongly discourages. This includes `<details>`
+and HTML used for layout, such as an image that HTML sizes or centers. Use only
+the following elements, which do what Markdown can't:
+
+- `<kbd>`, which marks a keyboard key, as the `technical-writing-guidelines`
+  skill describes.
+- `<picture>`, which shows a different image in light and dark mode, in GitHub
+  files only. Pandoc drops it from output other than HTML, so the image
+  disappears. Write it as follows, with alt text that describes the image:
+
+  ```html
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="DARK-IMAGE-PATH" />
+    <img alt="ALT-TEXT" src="LIGHT-IMAGE-PATH" />
+  </picture>
+  ```
 
 ### Math and Strikethrough
 

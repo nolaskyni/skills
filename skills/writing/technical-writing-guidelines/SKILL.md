@@ -143,6 +143,20 @@ In prose, write words instead of symbols that stand for words:
   For a long path, give each menu its own numbered step. Never put `>` between
   menu names.
 
+Keyboard shortcuts are the exception. Put each key in its own `<kbd>` element,
+and join keys that the reader holds down together with `+` and no spaces, as in
+`<kbd>Control</kbd>+<kbd>C</kbd>`. For keys that the reader presses one after
+another, write "then," as in `press <kbd>G</kbd>, then <kbd>I</kbd>`. Follow
+these rules for key names and operating systems:
+
+- Capitalize letter keys, as in `<kbd>S</kbd>`.
+- Spell out modifier keys, such as Control, Command, and Option, and keys that
+  look like punctuation, such as Plus, Minus, and Comma.
+- Write arrow keys as words, as in `<kbd>Up Arrow</kbd>`.
+- When a shortcut differs by operating system, give the Windows and Linux
+  shortcut first and the macOS one in parentheses, as in
+  `<kbd>Control</kbd>+<kbd>C</kbd> (or <kbd>Command</kbd>+<kbd>C</kbd> on macOS)`.
+
 In code, math, and tables, symbols are fine. Use the correct character, such as
 `≥`, `×`, or `°`, not an ASCII stand-in, such as `>=`, `x`, or `deg`. Other
 non-ASCII characters are fine anywhere, but take care with characters that look
@@ -247,6 +261,7 @@ names, and link to a URL that the reader opens in a browser instead.
   "`ADDRESS`'s value."
 - Add "file" after a filename, as in "the `.gitignore` file."
 - Don't put quotation marks around code unless they're part of the code.
+- Use code font, not `<kbd>`, for text that the reader types, such as a command.
 
 Fence every code block and name its language, as in ` ```sh `, or ` ```text `
 for output. Never mark a code block by indenting it. For line length and
@@ -323,6 +338,7 @@ Before you finish, search the text outside code for the following:
 
 - Em dashes, en dashes, and arrows (`—`, `–`, `→`, and `->`)
 - `~` used for "about," and `>` between menu names
+- A `+` in prose that isn't between two `<kbd>` elements
 - Exclamation marks and emoji
 - "Please," "simply," "just," "easy," "let's," "e.g.," "i.e.," and "via"
 - "Currently," "soon," and "latest," and "now" or "new" where they describe the
