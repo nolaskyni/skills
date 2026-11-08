@@ -12,7 +12,7 @@ description: >-
 
 Follow
 [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/) as
-the baseline. The rules below add personal restrictions and conventions.
+the baseline. The following sections add personal restrictions and conventions.
 
 Write the prose in the body and footers by following the
 `technical-writing-guidelines` skill. Where the two differ, the rules in this
@@ -22,9 +22,9 @@ Base the message on the changes intended for the commit. When working in a
 repository, inspect those changes; for a normal staged commit, inspect the
 staged changes. Exclude unrelated changes to the working tree.
 
-Use supplied context to explain motivation. Do not invent rationale, testing
+Use supplied context to explain motivation. Don't invent rationale, testing
 results, issue resolution, or compatibility claims. If the available context
-does not establish why a change was made, describe the supported behavior change
+doesn't establish why a change was made, describe the supported behavior change
 without guessing.
 
 Enclose commands, identifiers, and file paths in single backticks throughout the
@@ -33,10 +33,10 @@ commit message. See the "Backticks" section for details and exceptions.
 Compose body and footer prose in short lines. Before returning the message,
 ensure each prose line is at most 72 characters, including spaces, punctuation,
 and backticks. Keep indivisible code references or URLs intact on their own line
-when they exceed 72 characters. Keep Git metadata trailers (for instance,
-`Signed-off-by`) on one line, even when they exceed 72 characters.
+when they exceed 72 characters. Keep Git metadata trailers, such as
+`Signed-off-by`, on one line, even when they exceed 72 characters.
 
-In the templates below, `<placeholder>` marks a value to replace and square
+In this skill's templates, `<placeholder>` marks a value to replace and square
 brackets mark an optional part. Everything else is literal.
 
 ## Commit Message Header
@@ -45,7 +45,7 @@ brackets mark an optional part. Everything else is literal.
 <type>[(<scope>)][!]: <short-summary>
 ```
 
-Aim for a header of about 50 characters or fewer; do not exceed 72 characters.
+Aim for a header of about 50 characters or fewer; don't exceed 72 characters.
 
 ### Type
 
@@ -66,7 +66,7 @@ The type must be one of the following:
 | `test`     | Add or update tests                                |
 
 Choose the type that describes the primary purpose of the change. Supporting
-tests or documentation do not change that type: a bug fix with regression tests
+tests or documentation don't change that type: a bug fix with regression tests
 is `fix`, and a feature with documentation is `feat`. Use `chore` only when no
 more specific type applies.
 
@@ -75,14 +75,14 @@ it is being reverted.
 
 ### Scope
 
-The scope should identify the feature or package affected.
+Use the scope to name the feature or package that the change affects.
 
 Reuse an established scope when one fits. Otherwise, omit the scope. Ask about
 introducing a new scope only when it would materially improve clarity.
 
 ### Summary
 
-The summary must:
+The summary must follow these rules:
 
 - Use imperative, present tense.
 - Start lowercase unless the first word is a case-sensitive identifier or proper
@@ -109,7 +109,7 @@ one blank line.
 
 Omit the trailing period from the summary on `BREAKING CHANGE` and `DEPRECATED`
 lines. Use normal sentence punctuation in the migration instructions or
-recommended update path below them.
+recommended update path that follows them.
 
 Use the following template for breaking-change footers:
 
@@ -136,7 +136,7 @@ one blank line.
 ### Issue References
 
 Use `Closes` for completed feature or task issues and `Fixes` for resolved bug
-reports. Use `References` when an issue or pull request is related but is not
+reports. Use `References` when an issue or pull request is related but isn't
 resolved by the commit. Choose one label per issue. Use one issue reference per
 line. When multiple label groups are present, list them alphabetically:
 `Closes`, then `Fixes`, then `References`.
@@ -168,8 +168,8 @@ Reviewed-by: Jane Doe <jane@example.com>
 
 For each attribution trailer, verify three facts from the supplied context: the
 contributor's name, email address, and role. Omit the trailer if any fact is
-missing. A user's statement indicating they tested it does not identify an agent
-as the tester. Authorship alone does not establish review or testing credit. Use
+missing. A user's statement indicating they tested it doesn't identify an agent
+as the tester. Authorship alone doesn't establish review or testing credit. Use
 `Signed-off-by` according to the repository's contribution policy.
 
 When recording changes created by one or more agents, include a `Co-authored-by`
@@ -181,17 +181,17 @@ agents.
 Credit an agent as a co-author only when it made a substantive contribution to
 the changes in the commit: it designed, wrote, or materially reworked code or
 prose that remains in the result. Apply the standard used for a human
-collaborator; if a person who did the same work would not expect co-author
+collaborator; if a person who did the same work wouldn't expect co-author
 credit, omit the trailer.
 
-The following do not qualify on their own:
+The following don't qualify on their own:
 
-- Drafting or formatting the commit message.
+- Drafting or formatting the commit message
 - Mechanical edits, such as fixing a typo, renaming, reformatting, bumping a
-  version, or adding an entry to an ignore file.
-- Applying a change the user dictated exactly.
-- Running tools, such as formatters, linters, or code generators.
-- Reviewing or testing the changes.
+  version, or adding an entry to an ignore file
+- Applying a change the user dictated exactly
+- Running tools, such as formatters, linters, or code generators
+- Reviewing or testing the changes
 
 When the case is unclear, omit the trailer and say so when presenting the
 message, so the user can add it.
@@ -204,10 +204,10 @@ pair, even when multiple contributing agents share it.
 
 When amending or squashing commits, preserve an existing co-author trailer only
 when the contribution it credits remains in the resulting changes and still
-qualifies under the rules above. Drop the trailer when that contribution is gone
-or falls below the bar, such as a typo fix squashed into a larger change.
-Existing trailers establish recorded attribution; do not infer additional roles
-from them.
+qualifies under the rules in this section. Drop the trailer when that
+contribution is gone or falls below the bar, such as a typo fix squashed into a
+larger change. Existing trailers establish recorded attribution; don't infer
+additional roles from them.
 
 Keep issue references and attribution trailers together in one consecutive block
 at the end of the message, with no blank lines between them.
@@ -219,8 +219,9 @@ when describing the general concept, such as insertion. Keep backticks around
 standalone code references, including overlong paths. Write type, scope, and
 trailer labels without backticks.
 
-When referring to these files generally, use the names below without backticks.
-Use the exact filename or path in backticks when that detail matters.
+Use the exact filename or path in backticks when that detail matters. When
+referring to the following files in general, write their names without
+backticks:
 
 | Use       | Avoid                               |
 | --------- | ----------------------------------- |
@@ -239,7 +240,7 @@ issue labels, and confirmed attribution against these rules.
 
 Always print the complete commit message in the reply, in a fenced `text` code
 block, so the user can review it. Running `git commit` or showing tool output
-does not count as printing the message. When amending, rewording, or squashing,
+doesn't count as printing the message. When amending, rewording, or squashing,
 print the resulting message.
 
 When creating a commit, print the message first and wait for the user's approval

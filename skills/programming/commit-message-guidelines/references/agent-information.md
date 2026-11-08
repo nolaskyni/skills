@@ -3,9 +3,9 @@
 ## Overview
 
 Use the listed co-author name and email address by default. If the exact name of
-the model that made the changes is known, it may replace the listed name; keep
-the listed email address. Omit trailers for unlisted agent products; do not
-invent an identity.
+the model that made the changes is known, you can use it in place of the listed
+name; keep the listed email address. Omit trailers for unlisted agent products;
+don't invent an identity.
 
 ## Agent Identities
 
