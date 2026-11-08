@@ -255,6 +255,8 @@ commands, flags, filenames, paths, names from code, environment variables, and
 literal values like `true`. Don't use code font for product names or domain
 names, and link to a URL that the reader opens in a browser instead.
 
+Also follow these rules for code in text:
+
 - Don't use code as an English word. Write "send a `POST` request," not "`POST`
   the data."
 - Never make code plural or possessive. Write "the value of `ADDRESS`," not
