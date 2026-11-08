@@ -58,26 +58,8 @@ block quote that directly follows a line of text as part of that paragraph.
 
 ### Headings
 
-Write headings in title case, following the title-style rules in the
-[capitalization][apple-capitalization] entry of the Apple Style Guide, instead
-of the sentence case that the guide uses:
-
-- Lowercase articles (`a`, `an`, `the`), coordinating conjunctions (`and`,
-  `but`, `or`, `nor`, `for`, `yet`, `so`), `to` in infinitives, `as`, and
-  prepositions of four letters or fewer, such as `at`, `by`, `from`, `in`,
-  `into`, `of`, `off`, `on`, `out`, `over`, `up`, and `with`.
-- Capitalize every other word, including other conjunctions, such as `If`, and
-  prepositions of five letters or more, such as `About`, `Before`, and
-  `Between`.
-- Capitalize the first and last words, the first word after a colon, and a
-  preposition that is part of a phrasal verb, as in `Check In` and
-  `Log In to the Server`.
-- Capitalize the word after a hyphen, as in `High-Level`, except in `Built-in`
-  and `Plug-in`.
-- Keep the spelling of names and code, such as `macOS` or `kebab-case`.
-
-[apple-capitalization]:
-  https://support.apple.com/guide/applestyleguide/c-apsgb744e4a3/web#apdca93e113f1d64
+Write headings in title case, following the rules in the "Headings and Page
+Structure" section of the `technical-writing-guidelines` skill.
 
 ### Lists
 
@@ -178,12 +160,11 @@ instead of adding an entry or inventing a key.
 
 ### Punctuation
 
-Type `--`, `---`, straight quotes, and `...`, which Pandoc's `smart` extension
-turns into an en dash, an em dash, curly quotes, and an ellipsis. Type Unicode
-only for characters that `smart` does not write, such as `°`, `×`, `±`, a minus
-sign outside math, and the primes in `5′10″`. If the project reads its files
-with `-f gfm` or turns `smart` off, type the Unicode characters for these as
-well.
+Type straight quotes and `...`, which Pandoc's `smart` extension turns into
+curly quotes and an ellipsis. `smart` also turns `--` into an en dash and `---`
+into an em dash, so do not type either in prose. Type Unicode only for
+characters that `smart` does not write, such as `°`, `×`, `±`, a minus sign
+outside math, and the primes in `5′10″`.
 
 Put command-line flags in backticks, because outside code `smart` turns the `--`
 in `--fix` into an en dash.

@@ -14,6 +14,10 @@ Follow
 [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/) as
 the baseline. The rules below add personal restrictions and conventions.
 
+Write the prose in the body and footers by following the
+`technical-writing-guidelines` skill. Where the two differ, the rules in this
+skill take precedence.
+
 Base the message on the changes intended for the commit. When working in a
 repository, inspect those changes; for a normal staged commit, inspect the
 staged changes. Exclude unrelated changes to the working tree.

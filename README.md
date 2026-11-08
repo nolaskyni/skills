@@ -24,6 +24,14 @@ works.
 Guidelines for writing commit messages that follow the Conventional Commits
 specification, with a few extensions.
 
+### Writing
+
+#### `technical-writing-guidelines`
+
+Guidelines for writing documentation based on the Google developer
+documentation style guide, with rules for tone, word choice, symbols, headings,
+lists, code in text, and cross-references.
+
 ## Installation
 
 ```shell
