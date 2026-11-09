@@ -189,14 +189,17 @@ raise ValueError(
 
 Format and lint Python with Ruff, and check types with mypy. For projects
 without their own configuration, use `assets/ruff.toml` and `assets/mypy.ini`
-from this skill. The `ruff.toml` file doesn't set `target-version`, so Ruff
-reads the minimum Python version from `requires-python` in `pyproject.toml`.
+from this skill. The `ruff.toml` file leaves `target-version` unset. When Ruff
+discovers it in the project, Ruff can infer the minimum Python version from
+`requires-python` in a `pyproject.toml` file in the same directory. Passing a
+configuration file explicitly disables this inference.
 
 Use the Ruff version that the project pins, such as with `uv run ruff`, and
 otherwise the latest release, such as with `uvx ruff`. Run mypy in the
 environment that has the project's dependencies installed, such as with
 `uv run mypy`, because it needs them to check calls into libraries. For each
-file you change, follow these steps:
+file you change, follow these steps within the cleanup scope defined in the
+"Tooling" section of [Coding Standards](../SKILL.md):
 
 1. Apply safe lint fixes. Don't pass `--unsafe-fixes`:
 
@@ -206,7 +209,7 @@ file you change, follow these steps:
 
    Replace `FILE-PATH` with the path to the Python file.
 
-2. Fix the remaining findings by hand.
+2. Fix the remaining findings within that scope by hand.
 3. Format the file, because fixes can leave code unformatted:
 
    ```sh
@@ -223,20 +226,29 @@ file you change, follow these steps:
 
    Replace `FILE-PATH` with the path to the Python file.
 
-5. Fix each type error.
+5. Fix type errors within that scope, and report unrelated existing errors.
 
 When the configuration isn't in the project, pass
 `--config <configuration-path>` to Ruff with the path to `assets/ruff.toml`, and
 `--config-file <configuration-path>` to mypy with the path to `assets/mypy.ini`.
+When passing a Ruff configuration file explicitly, also pass
+`--target-version <python-version>` to both `ruff check` and `ruff format`. Use
+the project's declared minimum Python version, such as `py314` for Python 3.14,
+or the declared runtime requirement for a standalone script. If no version is
+declared, use the intended runtime established by the task or environment, and
+state that assumption. Keep the project's Python requirement unchanged.
 
 Suppress a Ruff finding with `# noqa: <rule-code>`, such as `# noqa: N803` for a
 parameter named `X` that a scikit-learn interface requires, and a mypy error
 with `# type: ignore[<rule-code>]`.
 
 When mypy can't find types for a library, add its stub package, such as
-`scipy-stubs` or `pandas-stubs`, as a development dependency, asking the user
-first in an existing project. Don't set `ignore_missing_imports`, because it
-turns off checking for that library without saying so.
+`scipy-stubs` or `pandas-stubs`, as a development dependency using the project's
+dependency workflow. A routine stub dependency needed to check the requested
+change requires no new approval within the authorized task. Follow the project's
+dependency policy, and ask before an unresolved compatibility or scope change.
+Don't set `ignore_missing_imports`, because it turns off checking for that
+library without saying so.
 
 Run the docstring examples of each module you change:
 

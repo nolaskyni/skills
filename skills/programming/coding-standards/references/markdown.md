@@ -61,7 +61,10 @@ block quote that directly follows a line of text as part of that paragraph.
 ### Headings
 
 Write headings in title case, following the rules in the "Headings and Page
-Structure" section of the `technical-writing-guidelines` skill.
+Structure" section of the `technical-writing-guidelines` skill when it is
+available. Otherwise, capitalize the first and last words and other major words;
+lowercase articles, coordinating conjunctions, and short prepositions. Preserve
+the spelling of names and code.
 
 ### Lists
 
@@ -90,8 +93,10 @@ Don't use HTML, which the guide strongly discourages. This includes `<details>`
 and HTML used for layout, such as an image that HTML sizes or centers. Use only
 the following elements, which do what Markdown can't:
 
-- `<kbd>`, which marks a keyboard key, as the `technical-writing-guidelines`
-  skill describes.
+- `<kbd>`, which marks a keyboard key. Follow `technical-writing-guidelines`
+  when available. Otherwise, put each key in its own element, spell out key
+  names such as `Control`, and join simultaneous keys with `+`, as in
+  `<kbd>Control</kbd>+<kbd>C</kbd>`. Write "then" between successive keys.
 - `<picture>`, which shows a different image in light and dark mode, in GitHub
   files only. Pandoc drops it from output other than HTML, so the image
   disappears. Write it as follows, with alt text that describes the image:
@@ -199,8 +204,9 @@ Use the versions that the project pins, such as with `npx oxfmt`, and otherwise
 the latest releases, such as with `npx oxfmt@latest`. In a new project with a
 `package.json` file, add `oxfmt` and `markdownlint-cli2` as development
 dependencies at exact versions, because Oxfmt hasn't reached version 1.0 and its
-output can change between releases. For each file you change, follow these
-steps:
+output can change between releases. For each file you change, follow these steps
+within the cleanup scope defined in the "Tooling" section of
+[Coding Standards](../SKILL.md):
 
 1. Apply automatic lint fixes:
 
@@ -210,7 +216,7 @@ steps:
 
    Replace `FILE-PATH` with the path to the Markdown file.
 
-2. Fix the remaining findings by hand.
+2. Fix the remaining findings within that scope by hand.
 3. Format the file:
 
    ```sh
@@ -247,7 +253,8 @@ for the Pandoc files, asking the user first in an existing project:
   ```
 
   A `.markdownlint.jsonc` file in a folder replaces the configuration of the
-  folders above it, so without `"extends"`, every other rule is off.
+  folders above it. Use `"extends"` to preserve the parent's customizations;
+  without it, unspecified rules use their defaults and remain enabled.
 
 When a project with Pandoc files has an `.editorconfig` file, including a copy
 of `assets/.editorconfig`, add a section that turns off the line length for the

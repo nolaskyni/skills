@@ -24,11 +24,10 @@ including examples shown to the user, wherever the code is stored.
 Before writing or reviewing a file, read the reference for its language. Read
 only the references for the languages you are touching.
 
-Before writing or reviewing code in a language for the first time in a session,
-read every style guide that its reference links to, such as PEP 8 or the
-numpydoc style guide. Read the current version instead of relying on memory,
-because the guides change. If a guide can't be retrieved, tell the user, then
-follow the reference and your knowledge of the guide.
+When the language reference leaves a relevant style question unanswered, read
+the section of its linked guide that answers it. Use the current guide rather
+than relying on memory. If it can't be retrieved, tell the user, then follow the
+reference and your knowledge of the guide.
 
 The following table lists the reference for each language:
 
@@ -153,7 +152,9 @@ comment in the same change:
 
 Each language reference names the formatter, the linter, and, where the language
 has one, the type checker for its files. Where one exists, a configuration file
-for each tool is in `assets/`. Use the tools and their configuration as follows:
+for each tool is in `assets/`. Existing user authorization applies to the
+configuration changes described here; don't ask the user to approve them again.
+Use the tools and their configuration as follows:
 
 - When the project configures one of these tools, use that configuration. Don't
   change it, or add rule suppressions to it, without asking the user.
@@ -168,9 +169,19 @@ for each tool is in `assets/`. Use the tools and their configuration as follows:
 - Run these tools on every file you change before reporting the work as done. Do
   not format or fix files you didn't otherwise change, because unrelated changes
   make the real change harder to review.
-- Fix each finding in the code. When code must break a rule, as when it follows
-  a signature defined elsewhere, suppress only that rule on that line, name the
-  rule, and tell the user. Never suppress every rule at once.
+- Fix findings introduced by your changes and existing findings that must be
+  resolved to complete the requested change correctly. Report unrelated existing
+  findings separately; changing a file doesn't authorize cleaning up the rest of
+  it.
+- When automatic fixes or formatting could change content outside the requested
+  scope, inspect the proposed edits before applying them. Use the tool's change
+  preview, or apply it to a temporary copy and compare the result with the
+  original. A check that only lists affected files is insufficient. Make scoped
+  corrections manually when applying the full result would change unrelated
+  content or overwrite user edits.
+- When code must break a rule, as when it follows a signature defined elsewhere,
+  suppress only that rule on that line, name the rule, and tell the user. Never
+  suppress every rule at once.
 - Report any finding you couldn't fix.
 
 For every project, also use the `assets/.editorconfig` file under the same

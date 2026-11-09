@@ -162,7 +162,8 @@ a project, add the options for the kind of project:
 In a new project, add `typescript`, `oxfmt`, `oxlint`, `oxlint-tsgolint`, and
 `vitest` as development dependencies at exact versions, because Oxfmt hasn't
 reached version 1.0 and its output can change between releases. For each file
-you change, follow these steps:
+you change, follow these steps within the cleanup scope defined in the "Tooling"
+section of [Coding Standards](../SKILL.md):
 
 1. Apply automatic lint fixes:
 
@@ -172,7 +173,7 @@ you change, follow these steps:
 
    Replace `FILE-PATH` with the path to the TypeScript file.
 
-2. Fix the remaining findings by hand.
+2. Fix the remaining findings within that scope by hand.
 3. Format the file:
 
    ```sh
@@ -188,7 +189,8 @@ with the project's `tsconfig.json` file:
 tsc
 ```
 
-Run each test file that covers the code you changed:
+Run each test file that covers the code you changed with the project's test
+runner. For a project that uses Vitest, run:
 
 ```sh
 vitest run FILE-PATH
@@ -202,10 +204,14 @@ Oxlint and Oxfmt with the path to `assets/.oxlintrc.json` or
 options to `tsc` as flags instead:
 
 ```sh
-tsc --noEmit --noUncheckedIndexedAccess --exactOptionalPropertyTypes FILE-PATH
+tsc --strict --noEmit --noUncheckedIndexedAccess --exactOptionalPropertyTypes FILE-PATH
 ```
 
 Replace `FILE-PATH` with the path to the TypeScript file.
+
+This command enables strict checking, checked indexed access, and exact optional
+property types. Add the other checking options from `assets/tsconfig.json` and
+the module, target, and library options that apply to the script's runtime.
 
 Suppress an Oxlint finding with a comment that names the rule and gives the
 reason, such as:
