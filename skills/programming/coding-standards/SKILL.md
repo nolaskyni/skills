@@ -3,8 +3,8 @@ name: coding-standards
 description: >-
   Apply the user's coding conventions for file structure, formatting, naming,
   language features, types, comments, documentation, and tooling across
-  Markdown, Python, and TypeScript. Use whenever writing, editing, refactoring,
-  or reviewing files in these languages.
+  Markdown, Python, shell, and TypeScript. Use whenever writing, editing,
+  refactoring, or reviewing files in these languages.
 ---
 
 # Coding Standards
@@ -31,11 +31,12 @@ reference and your knowledge of the guide.
 
 The following table lists the reference for each language:
 
-| Language   | Files           | Reference                  |
-| ---------- | --------------- | -------------------------- |
-| Markdown   | `*.md`          | `references/markdown.md`   |
-| Python     | `*.py`, `*.pyi` | `references/python.md`     |
-| TypeScript | `*.ts`, `*.tsx` | `references/typescript.md` |
+| Language   | Files                                                                  | Reference                  |
+| ---------- | ---------------------------------------------------------------------- | -------------------------- |
+| Markdown   | `*.md`                                                                 | `references/markdown.md`   |
+| Python     | `*.py`, `*.pyi`                                                        | `references/python.md`     |
+| Shell      | `*.sh`, `*.zsh`, `*.fish`, scripts without an extension, startup files | `references/shell.md`      |
+| TypeScript | `*.ts`, `*.tsx`                                                        | `references/typescript.md` |
 
 ## Naming
 
