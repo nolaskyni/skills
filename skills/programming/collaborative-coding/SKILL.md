@@ -203,8 +203,9 @@ When the implementation departs from the plan, update the plan in the same
 change and tell the user. A plan that no longer describes the code is itself a
 form of drift.
 
-When the work in a plan is finished, ask the user what to do with the plan, such
-as keeping or deleting it.
+When the work in a plan is finished, update its final state and retain it.
+Follow any retention instructions the user has already given; delete it only
+when authorized.
 
 The plan carries context across sessions. When failed attempts have filled a
 session with conflicting context, suggest starting a new session from the plan.
@@ -217,12 +218,21 @@ implemented, what was verified, what remains unverified or blocked, and the next
 authorized step. Record the commands or procedures used for important checks and
 their outcomes. Distinguish completed implementation from verified behavior.
 
-When resuming, read the plan for the work being resumed. If more than one plan
-might apply, or none clearly does, ask the user which one to use instead of
-starting a new plan. Inspect the current code and working-tree changes before
-editing, and reconcile any differences with the plan, preserving the user's
-changes. Treat recorded verification as evidence about the state that was
-checked; rerun relevant checks when later changes might invalidate it.
+When resuming, read the plan for the work being resumed. If several plans could
+apply and the request or available context doesn't identify one, ask which one
+to use. If no applicable plan exists, reconstruct the goal, decisions, and next
+steps from the available conversation and project records. Inspect the current
+code and working-tree changes before editing, and preserve the user's changes.
+Code establishes what is implemented, not what the user authorized.
+
+Record the recovered state in a plan if the work meets the criteria in the "Plan
+Larger Work" section. Mark unresolved decisions separately, and ask only for
+missing information that affects the next step. Continue work supported by
+existing authorization while those questions remain open.
+
+Reconcile differences between the plan and the implementation. Treat recorded
+verification as evidence about the state that was checked; rerun relevant checks
+when later changes might invalidate it.
 
 Briefly state where the work stands and what you will do next. Continue within
 existing authorization, and ask only about unresolved choices that require the
