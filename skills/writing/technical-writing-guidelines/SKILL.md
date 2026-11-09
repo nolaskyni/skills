@@ -64,11 +64,12 @@ as "currently," "now," "new," "soon," "latest," and "eventually." This doesn't
 apply to release notes, commit messages, and other dated content. For versions,
 write "later," not "newer."
 
-Choose the verb that matches how certain something is: "can" for ability or
-permission, "might" for possibility, and "must" for a requirement. Avoid
-"should," "could," and "may." Hedge only when the outcome really is uncertain,
-and praise the reader only where it helps, such as at the end of a long
-tutorial.
+In instructions, use "must" for a requirement, "can" for ability or permission,
+and "might" for possibility. Avoid "should," "could," and "may" where they leave
+the reader unsure whether an action is required, permitted, or possible. Use
+"could" for past ability or hypothetical situations. Hedge only when the outcome
+really is uncertain, and praise the reader only where it helps, such as at the
+end of a long tutorial.
 
 ## Word Choice
 
@@ -104,7 +105,9 @@ Also follow these rules:
 - Use "that" for restrictive clauses.
 - Write "the following" to point to what comes next. In procedures, avoid
   "above" and "below," because they become wrong when content moves.
-- Spell out an abbreviation the first time it appears. Never use internet
+- Spell out an unfamiliar or domain-specific abbreviation the first time it
+  appears. Keep abbreviations that are familiar to the intended audience, such
+  as AI, API, CLI, CSV, and URL in developer documentation. Never use internet
   shorthand such as "TL;DR" or "YMMV," or symbols such as "=" in place of words.
 - For changes to files, write "the changes" or "changed lines." Use "diff" only
   to name something a tool calls a diff, such as GitHub's "rich diff" or the
@@ -206,11 +209,12 @@ Give every heading a unique name within its file, so that a reference such as
 the "Examples" section points to one place. When a repeated name feels natural,
 qualify it, as in "Python Examples."
 
-Put text between a heading and its first subheading that tells the reader what
-the subsections have in common or how to choose among them. Refer to them as
-"the following sections," not "this section" or "these sections," which are
-ambiguous. This doesn't apply to a page's title, which can go straight to its
-first section, such as an "Overview" section.
+Put text between a heading and its first subheading when readers need help
+understanding what the subsections have in common or choosing among them. Refer
+to them as "the following sections," not "this section" or "these sections,"
+which are ambiguous. A page title, catalog, or reference outline can lead
+directly into subheadings when their relationship is clear from the headings
+alone.
 
 Use these sections where they help the reader: an introduction that says what
 the reader will do, a "Before You Begin" section for prerequisites, expected
@@ -242,8 +246,10 @@ For procedures, follow these rules:
 - Give each action its own step.
 - Say where before saying what: "In the Tidepool dashboard, click **Settings**."
 - Start an optional step with "Optional:".
-- Put a command in its own code block. If it has placeholders, follow it with
-  "Replace the following:" and a list that explains each one.
+- Put each command the reader runs in its own code block. After a command with
+  one placeholder, explain it in a sentence, such as "Replace `FILE-PATH` with
+  the path to the file." For several placeholders, write "Replace the
+  following:" and explain them in a list.
 - Show output in a separate code block, introduced with "The output is similar
   to the following:". Show left-out lines of output as `...`.
 - Include a step as obvious as "Open a terminal" only for beginners.
@@ -296,14 +302,14 @@ and doesn't clash with angle brackets in code, such as generics or HTML.
 Always put a placeholder in code font. If a placeholder would need literal angle
 brackets around it, as an email address does, show a filled-in example instead.
 In a Markdown template, describe optional sections in prose rather than marking
-them with `[...]`. After a command that has placeholders, explain each one in a
-"Replace the following:" list, as the "Lists, Tables, and Procedures" section
-describes.
+them with `[...]`. After a command with placeholders, explain them as the
+"Lists, Tables, and Procedures" section describes.
 
 ## Cross-References
 
-Link to another file with a path relative to the current file, and introduce the
-link with "For more information, see":
+Link to another file with a path relative to the current file. Integrate the
+link into the sentence when it supports the instruction. For a standalone
+reference, introduce the link with "For more information, see":
 
 ```markdown
 For more information, see [Push Data](push-data.md).

@@ -164,13 +164,37 @@ In a new project, add `typescript`, `oxfmt`, `oxlint`, `oxlint-tsgolint`, and
 reached version 1.0 and its output can change between releases. For each file
 you change, follow these steps:
 
-1. Run `oxlint --type-aware --fix <file-path>`.
-2. Fix the remaining findings by hand.
-3. Run `oxfmt <file-path>`.
+1. Apply automatic lint fixes:
 
-Then run `tsc` for the whole project, because it can't check one file with the
-project's `tsconfig.json`, and run `vitest run <file-path>` for each test file
-that covers the code you changed.
+   ```sh
+   oxlint --type-aware --fix FILE-PATH
+   ```
+
+   Replace `FILE-PATH` with the path to the TypeScript file.
+
+2. Fix the remaining findings by hand.
+3. Format the file:
+
+   ```sh
+   oxfmt FILE-PATH
+   ```
+
+   Replace `FILE-PATH` with the path to the TypeScript file.
+
+Then check types for the whole project, because TypeScript can't check one file
+with the project's `tsconfig.json` file:
+
+```sh
+tsc
+```
+
+Run each test file that covers the code you changed:
+
+```sh
+vitest run FILE-PATH
+```
+
+Replace `FILE-PATH` with the path to the test file.
 
 When the configuration isn't in the project, pass `-c <configuration-path>` to
 Oxlint and Oxfmt with the path to `assets/.oxlintrc.json` or

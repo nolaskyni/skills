@@ -198,11 +198,32 @@ environment that has the project's dependencies installed, such as with
 `uv run mypy`, because it needs them to check calls into libraries. For each
 file you change, follow these steps:
 
-1. Run `ruff check --fix <file-path>`, which applies only safe fixes. Don't pass
-   `--unsafe-fixes`.
+1. Apply safe lint fixes. Don't pass `--unsafe-fixes`:
+
+   ```sh
+   ruff check --fix FILE-PATH
+   ```
+
+   Replace `FILE-PATH` with the path to the Python file.
+
 2. Fix the remaining findings by hand.
-3. Run `ruff format <file-path>`, because fixes can leave code unformatted.
-4. Run `mypy <file-path>`, and fix each error it reports.
+3. Format the file, because fixes can leave code unformatted:
+
+   ```sh
+   ruff format FILE-PATH
+   ```
+
+   Replace `FILE-PATH` with the path to the Python file.
+
+4. Check types:
+
+   ```sh
+   mypy FILE-PATH
+   ```
+
+   Replace `FILE-PATH` with the path to the Python file.
+
+5. Fix each type error.
 
 When the configuration isn't in the project, pass
 `--config <configuration-path>` to Ruff with the path to `assets/ruff.toml`, and
@@ -217,5 +238,10 @@ When mypy can't find types for a library, add its stub package, such as
 first in an existing project. Don't set `ignore_missing_imports`, because it
 turns off checking for that library without saying so.
 
-Run the docstring examples of each module you change, such as with
-`pytest --doctest-modules <file-path>`.
+Run the docstring examples of each module you change:
+
+```sh
+pytest --doctest-modules FILE-PATH
+```
+
+Replace `FILE-PATH` with the path to the Python module.

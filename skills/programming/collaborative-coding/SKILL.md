@@ -407,7 +407,7 @@ For code and reports:
 
 ## Final Check
 
-Before ending a turn that changed code, confirm that the user could answer these
+Before ending a turn that changed code, confirm that the user can answer these
 questions from your check-ins and the plan, if there is one:
 
 - **What** does this change do, and how does it fit into the project?
@@ -417,7 +417,7 @@ questions from your check-ins and the plan, if there is one:
 - Which decisions are still waiting on the user?
 - If there is a plan, does it still describe the code?
 
-If the user could answer a question only by asking you, explain that part before
+If the user can answer a question only by asking you, explain that part before
 you stop.
 
 End with a brief report stating what behavior changed, which checks you

@@ -202,9 +202,22 @@ dependencies at exact versions, because Oxfmt hasn't reached version 1.0 and its
 output can change between releases. For each file you change, follow these
 steps:
 
-1. Run `markdownlint-cli2 --fix <file-path>`.
+1. Apply automatic lint fixes:
+
+   ```sh
+   markdownlint-cli2 --fix FILE-PATH
+   ```
+
+   Replace `FILE-PATH` with the path to the Markdown file.
+
 2. Fix the remaining findings by hand.
-3. Run `oxfmt <file-path>`.
+3. Format the file:
+
+   ```sh
+   oxfmt FILE-PATH
+   ```
+
+   Replace `FILE-PATH` with the path to the Markdown file.
 
 When the configuration isn't in the project, pass `-c <configuration-path>` to
 Oxfmt with the path to `assets/.oxfmtrc.json`, and

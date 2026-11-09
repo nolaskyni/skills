@@ -40,5 +40,5 @@ npx skills add nolaskyni/skills
 
 ## AI Usage
 
-AI assists with drafting, reviewing, refining, and testing Agent Skills, with a
-human in the loop.
+AI assists with drafting, reviewing, refining, and testing Agent Skills, with
+human review.

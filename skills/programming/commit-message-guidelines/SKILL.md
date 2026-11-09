@@ -205,9 +205,9 @@ pair, even when multiple contributing agents share it.
 When amending or squashing commits, preserve an existing co-author trailer only
 when the contribution it credits remains in the resulting changes and still
 qualifies under the rules in this section. Drop the trailer when that
-contribution is gone or falls below the bar, such as a typo fix squashed into a
-larger change. Existing trailers establish recorded attribution; don't infer
-additional roles from them.
+contribution is gone or no longer meets the contribution criteria, such as a
+typo fix squashed into a larger change. Existing trailers establish recorded
+attribution; don't infer additional roles from them.
 
 Keep issue references and attribution trailers together in one consecutive block
 at the end of the message, with no blank lines between them.
