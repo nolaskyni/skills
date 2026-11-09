@@ -27,6 +27,10 @@ When sources disagree, follow them in this order:
 3. This skill
 4. The Google developer documentation style guide
 
+When the text is in a Markdown file, also use the `coding-standards` skill and
+follow its Markdown reference. The reference covers Markdown syntax, such as
+alerts and lists, and the formatter and linter to run on the file.
+
 ## Baseline
 
 Follow the
