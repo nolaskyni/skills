@@ -28,9 +28,9 @@ specification, with a few extensions.
 
 #### `technical-writing-guidelines`
 
-Guidelines for writing documentation based on the Google developer
-documentation style guide, with rules for tone, word choice, symbols, headings,
-lists, code in text, and cross-references.
+Guidelines for writing documentation based on the Google developer documentation
+style guide, with rules for tone, word choice, symbols, headings, lists, code in
+text, and cross-references.
 
 ## Installation
 
