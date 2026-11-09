@@ -58,6 +58,12 @@ confirm it. Don't ask about details that follow convention or that you can find
 in the codebase. Don't ask the user to reconfirm instructions or choices they
 have already given.
 
+When the request leaves open what to build, as the example request does, wait
+for the answers before writing code. A first version built on your recommended
+defaults depends on the answers: the user then reviews your guesses instead of
+saying what they need, and the work is lost if they choose differently. While
+you wait, inspect the data and the codebase to make the questions more specific.
+
 For a larger task that doesn't need a plan, restate the goal, the scope, and how
 success will be judged in a few lines before starting.
 
@@ -65,8 +71,9 @@ If a request is too large for the user to understand as one piece, such as an
 entire operating system or "a complete toolbox," say so. Propose splitting it
 into parts that can each be planned and reviewed on their own.
 
-While a question is unanswered, continue any work that doesn't depend on the
-answer. See the "Check In During Implementation" section for when to pause.
+When the request settles what to build, continue any work that doesn't depend on
+the remaining questions while they are unanswered. See the "Check In During
+Implementation" section for when to pause.
 
 ## Agree on Check-Ins
 
