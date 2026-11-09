@@ -159,7 +159,8 @@ for each tool is in `assets/`. Use the tools and their configuration as follows:
   change it, or add rule suppressions to it, without asking the user.
 - When the project has no configuration:
   - In a new project that you create, copy the configuration from `assets/` into
-    the project root.
+    the project root. If the folder or repository already has files, such as
+    data or a README file, ask the user first, as for an existing project.
   - In an existing project, ask the user before adding the configuration. Until
     they agree, pass it on the command line for the files you change.
   - For a single file outside any project, such as a standalone script, pass the
