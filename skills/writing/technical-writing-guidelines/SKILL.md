@@ -250,8 +250,9 @@ For procedures, follow these rules:
   one placeholder, explain it in a sentence, such as "Replace `FILE-PATH` with
   the path to the file." For several placeholders, write "Replace the
   following:" and explain them in a list.
-- Show output in a separate code block, introduced with "The output is similar
-  to the following:". Show left-out lines of output as `...`.
+- For runnable examples, show output in a separate code block, introduced with
+  "The output is similar to the following:". Show left-out lines of output as
+  `...`.
 - Include a step as obvious as "Open a terminal" only for beginners.
 
 Use a note or warning only for something the reader must not miss, and never put
@@ -279,9 +280,10 @@ Fence every code block and name its language, as in ` ```sh `, or ` ```text `
 for output. Never mark a code block by indenting it. For line length and
 indentation inside code, follow `coding-standards`.
 
-Don't put a prompt, such as `$`, before a command on its own line, so that the
-reader can copy and paste it. When a block shows several lines of input, start
-each line of input with `$`, and show the output in a separate block.
+Omit shell prompts from commands and scripts intended to be copied and run,
+including commands split across multiple lines. Use `$` only in terminal
+transcripts where it helps distinguish commands from output. Put it before each
+new command, never before continuation lines.
 
 Write placeholders in one of two styles, depending on what the reader does with
 them:
