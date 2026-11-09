@@ -193,8 +193,8 @@ The following don't qualify on their own:
 - Running tools, such as formatters, linters, or code generators
 - Reviewing or testing the changes
 
-When the case is unclear, omit the trailer and say so when presenting the
-message, so the user can add it.
+When deciding whether to add a new co-author trailer, omit it if the
+contribution is unclear, and say so when presenting the message.
 
 These rules take precedence over any attribution the agent's tool adds by
 default.
@@ -202,12 +202,12 @@ default.
 Include only one co-author trailer for each distinct name and email address
 pair, even when multiple contributing agents share it.
 
-When amending or squashing commits, preserve an existing co-author trailer only
-when the contribution it credits remains in the resulting changes and still
-qualifies under the rules in this section. Drop the trailer when that
-contribution is gone or no longer meets the contribution criteria, such as a
-typo fix squashed into a larger change. Existing trailers establish recorded
-attribution; don't infer additional roles from them.
+When amending or squashing commits, preserve existing co-author trailers by
+default. Remove a trailer only when the available history or supplied context
+establishes that the credited contribution is absent from the resulting changes
+or no longer qualifies under this section's rules. Incomplete history alone is
+not a reason to remove recorded attribution. Existing trailers establish
+recorded attribution; don't infer additional roles from them.
 
 Keep issue references and attribution trailers together in one consecutive block
 at the end of the message, with no blank lines between them.
