@@ -72,7 +72,10 @@ every name:
   they return, using a noun phrase, such as `distance_to(point)`, or a past
   participle, such as `sorted()`.
 - Name Boolean values, and functions that return them, as assertions about their
-  subject, such as `is_empty`, `has_children`, or `has_permission(user)`.
+  subject, such as `is_empty`, `has_children`, or `has_permission(user)`. This
+  includes Boolean options: `are_negative_temperatures_skipped` states a
+  condition that is true or false; `skip_negative_temperatures` is an
+  instruction to act.
 
 Use the case style that the language reference sets for each kind of name, such
 as `snake_case` for Python functions. Treat each acronym, initialism, or
@@ -210,6 +213,17 @@ Use the tools and their configuration as follows:
   it until someone fixes it.
 - Report any finding you couldn't fix.
 
+Before reporting that an asset is missing, check its exact path relative to this
+skill's directory. Include hidden files when listing the directory, such as with
+`ls -la`, because names such as `.oxfmtrc.json` start with a dot.
+
+Before reporting that a tool is unavailable, check the project's documented
+runner and configured environment as well as `PATH`. Report what the evidence
+establishes: a command isn't on `PATH`, a runner can't resolve a package, or a
+command fails to run. Include the command and its error. Report a tool as not
+installed only when you have checked the intended environment. A failed lookup
+or launch doesn't establish that the tool is absent from every environment.
+
 For every project, also use the `assets/.editorconfig` file under the same
 rules. Its `[*]` section sets the encoding, line endings, and default
 indentation of every file, and its other sections set the indentation and line
@@ -227,3 +241,23 @@ YAML files. Oxfmt reads indentation and line width from the `.editorconfig`
 file, and its own configuration overrides only the options it sets. Any section
 you add to a project's `.editorconfig` file must therefore match the formatter
 configuration for the same files.
+
+## Final Review
+
+Before reporting the work as done, review the names in the changed code
+manually. Formatter and linter success doesn't verify all the naming rules.
+Check the following:
+
+- Boolean names assert something about their subject, such as `is_empty` or
+  `are_negative_temperatures_skipped` in Python and `isEmptyRejected` in
+  TypeScript.
+- Acronyms keep uniform case, as in `firstURL` and `FirstURLOptions`, rather
+  than `firstUrl` and `FirstUrlOptions`.
+- Names use the language's case conventions, such as `firstURL` for a TypeScript
+  function and `first_url` for a Python variable.
+- Names of plain numbers and strings state their unit or format when the type
+  doesn't, such as `temperature_celsius` and `delay_milliseconds`.
+
+Also check documentation and messages against the language reference. Report
+which checks ran, which failed, and which couldn't run; a check that couldn't
+run provides no evidence that the code passes it.

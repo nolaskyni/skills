@@ -51,6 +51,15 @@ describes, including its advice to keep LaTeX to a minimum and to show simple
 equations as code. Treat that guide as the authority on docstrings, because it
 might change after this reference was written.
 
+Start a function or method's docstring summary with an imperative verb, such as
+"Return" or "Calculate," including when the function has no side effects. The
+noun-phrase rule in the "Naming" section of [Coding Standards](../SKILL.md)
+applies to the function's name, not its docstring. For example, name a pure
+function `mean_temperature_celsius` and start its docstring with
+`Return the mean temperature in degrees Celsius.` A summary that starts with
+"The mean temperature" doesn't follow the docstring rule. This is the summary
+only; include the applicable docstring sections below it.
+
 The guide doesn't say which objects need a docstring, so follow these rules:
 
 - Give every module a docstring with at least a summary line.
@@ -178,6 +187,8 @@ Write error, warning, and log messages in the same style:
 For example:
 
 ```python
+raise ValueError("`readings` must contain at least one retained reading, got 0")
+
 raise ValueError(f"`method` must be 'lm' or 'trf', got {method!r}")
 
 raise ValueError(
