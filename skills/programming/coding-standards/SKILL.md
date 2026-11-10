@@ -2,9 +2,9 @@
 name: coding-standards
 description: >-
   Apply the user's coding conventions for file structure, formatting, naming,
-  language features, types, comments, documentation, and tooling across JSON,
-  Markdown, Python, shell, TOML, and TypeScript. Use whenever writing, editing,
-  refactoring, or reviewing files in these languages.
+  language features, types, comments, documentation, and tooling across CSS,
+  HTML, JSON, Markdown, Python, shell, TOML, and TypeScript. Use whenever
+  writing, editing, refactoring, or reviewing files in these languages.
 ---
 
 # Coding Standards
@@ -33,6 +33,8 @@ The following table lists the reference for each language:
 
 | Language   | Files                                                                  | Reference                  |
 | ---------- | ---------------------------------------------------------------------- | -------------------------- |
+| CSS        | `*.css`                                                                | `references/css.md`        |
+| HTML       | `*.html`                                                               | `references/html.md`       |
 | JSON       | `*.json`, `*.jsonc`, `*.geojson`, `*.code-workspace`                   | `references/json.md`       |
 | Markdown   | `*.md`                                                                 | `references/markdown.md`   |
 | Python     | `*.py`, `*.pyi`                                                        | `references/python.md`     |
@@ -197,9 +199,9 @@ length of each language in the table, so that editors write files as the
 formatters do. When you copy the file, keep the `[*]` section and only the
 sections for languages the project will use, and remove the patterns for other
 languages from shared sections. For example, in a project without TypeScript,
-change `[*.{geojson,json,jsonc,md,toml,ts,tsx}]` to
-`[*.{geojson,json,jsonc,md,toml}]`. When a project starts using a language that
-its `.editorconfig` file has no section for, add that section from
+change `[*.{css,geojson,html,json,jsonc,md,toml,ts,tsx}]` to
+`[*.{css,geojson,html,json,jsonc,md,toml}]`. When a project starts using a
+language that its `.editorconfig` file has no section for, add that section from
 `assets/.editorconfig`. In an existing project, ask the user before adding it.
 EditorConfig has no command-line option, so until the user agrees to add the
 file, follow its settings yourself in files that no formatter covers, such as

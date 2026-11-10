@@ -1,0 +1,10 @@
+{
+  "extends": ["html-validate:recommended", "html-validate:document"],
+  "rules": {
+    "class-pattern": ["error", {"pattern": "kebabcase"}],
+    "doctype-style": ["error", {"style": "lowercase"}],
+    "id-pattern": ["error", {"pattern": "/^[a-z][a-z0-9]*(-[a-z0-9]+)+$/"}],
+    "require-sri": ["error", {"target": "crossorigin"}],
+    "void-style": ["error", {"style": "selfclose"}]
+  }
+}

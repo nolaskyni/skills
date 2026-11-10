@@ -1,0 +1,11 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "plugins": ["stylelint-order"],
+  "overrides": [{"files": ["**/*.html"], "customSyntax": "postcss-html"}],
+  "rules": {
+    "declaration-no-important": true,
+    "order/properties-alphabetical-order": true,
+    "selector-max-id": 0,
+    "selector-no-qualifying-type": [true, {"ignore": ["attribute"]}]
+  }
+}
