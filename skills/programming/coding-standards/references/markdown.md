@@ -48,6 +48,11 @@ as Markdown and Oxfmt leaves as written. Put a `<!-- prettier-ignore -->`
 comment before any other Markdown example whose line breaks must stay as
 written, such as a chat message or a pull request description.
 
+Oxfmt formats JSON and JSONC code blocks too. Put a `<!-- prettier-ignore -->`
+comment before a ` ```jsonc ` block that spans several lines, because Oxfmt adds
+trailing commas to it, and before an example of a VS Code file, which keeps VS
+Code's layout, as the "VS Code Files" section of [JSON](json.md) describes.
+
 ## All Files
 
 The following sections apply to both GitHub and Pandoc files.

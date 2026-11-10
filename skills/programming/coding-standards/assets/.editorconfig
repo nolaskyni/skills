@@ -12,7 +12,7 @@ trim_trailing_whitespace = true
 indent_size = 4
 max_line_length = 88
 
-[*.{md,ts,tsx}]
+[*.{geojson,json,jsonc,md,ts,tsx}]
 max_line_length = 80
 
 [[shell]]
@@ -23,3 +23,9 @@ max_line_length = 80
 [*.fish]
 indent_size = 4
 max_line_length = 80
+
+# VS Code writes its own settings files with 4-space indentation. Many
+# EditorConfig tools match `**/.vscode/*.json` only in subfolders, so the
+# section also lists `.vscode/*.json` for the folder at the project root.
+[{.vscode/*.json,**/.vscode/*.json,**.code-workspace,**/Code/User/**.json}]
+indent_size = 4

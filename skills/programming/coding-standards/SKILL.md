@@ -2,7 +2,7 @@
 name: coding-standards
 description: >-
   Apply the user's coding conventions for file structure, formatting, naming,
-  language features, types, comments, documentation, and tooling across
+  language features, types, comments, documentation, and tooling across JSON,
   Markdown, Python, shell, and TypeScript. Use whenever writing, editing,
   refactoring, or reviewing files in these languages.
 ---
@@ -33,6 +33,7 @@ The following table lists the reference for each language:
 
 | Language   | Files                                                                  | Reference                  |
 | ---------- | ---------------------------------------------------------------------- | -------------------------- |
+| JSON       | `*.json`, `*.jsonc`, `*.geojson`, `*.code-workspace`                   | `references/json.md`       |
 | Markdown   | `*.md`                                                                 | `references/markdown.md`   |
 | Python     | `*.py`, `*.pyi`                                                        | `references/python.md`     |
 | Shell      | `*.sh`, `*.zsh`, `*.fish`, scripts without an extension, startup files | `references/shell.md`      |
@@ -195,12 +196,12 @@ length of each language in the table, so that editors write files as the
 formatters do. When you copy the file, keep the `[*]` section and only the
 sections for languages the project will use, and remove the patterns for other
 languages from shared sections. For example, in a project without TypeScript,
-change `[*.{md,ts,tsx}]` to `[*.md]`. When a project starts using a language
-that its `.editorconfig` file has no section for, add that section from
-`assets/.editorconfig`. In an existing project, ask the user before adding it.
-EditorConfig has no command-line option, so until the user agrees to add the
-file, follow its settings yourself in files that no formatter covers, such as
-YAML files. Oxfmt reads indentation and line width from the `.editorconfig`
-file, and its own configuration overrides only the options it sets. Any section
-you add to a project's `.editorconfig` file must therefore match the formatter
-configuration for the same files.
+change `[*.{geojson,json,jsonc,md,ts,tsx}]` to `[*.{geojson,json,jsonc,md}]`.
+When a project starts using a language that its `.editorconfig` file has no
+section for, add that section from `assets/.editorconfig`. In an existing
+project, ask the user before adding it. EditorConfig has no command-line option,
+so until the user agrees to add the file, follow its settings yourself in files
+that no formatter covers, such as YAML files. Oxfmt reads indentation and line
+width from the `.editorconfig` file, and its own configuration overrides only
+the options it sets. Any section you add to a project's `.editorconfig` file
+must therefore match the formatter configuration for the same files.

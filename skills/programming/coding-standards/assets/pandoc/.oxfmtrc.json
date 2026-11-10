@@ -5,5 +5,6 @@
   "proseWrap": "preserve",
   "jsdoc": {
     "addDefaultToDescription": false
-  }
+  },
+  "overrides": [{"files": ["*.jsonc"], "options": {"trailingComma": "none"}}]
 }

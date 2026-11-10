@@ -5,5 +5,7 @@
   "proseWrap": "always",
   "jsdoc": {
     "addDefaultToDescription": false
-  }
+  },
+  "ignorePatterns": ["**/.vscode/**", "**/*.code-workspace", "**/Code/User/**"],
+  "overrides": [{"files": ["*.jsonc"], "options": {"trailingComma": "none"}}]
 }
