@@ -130,6 +130,11 @@ not change a project's minimum or pinned Python version without asking the user.
 - Use `typing.NamedTuple` when callers need to unpack or index the record like a
   tuple, and `typing.TypedDict` only to describe dictionary-shaped data from
   outside the program, such as parsed JSON.
+- When the keys of outside data aren't Python names, such as the `kebab-case`
+  keys of a TOML file, use the functional `TypedDict` syntax, as in
+  `TypedDict("StationFile", {"station-id": str})`. `tomllib.load` returns
+  `dict[str, Any]`, which mypy doesn't accept as a `TypedDict`, so pass the
+  result through `typing.cast`, as in `cast("StationFile", tomllib.load(file))`.
 - Use a plain class when an object maintains changing state through its methods.
 - Use `attrs` or `pydantic` only when the project already depends on them or
   needs to validate external input.
