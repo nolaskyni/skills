@@ -160,9 +160,12 @@ Use the tools and their configuration as follows:
 - When the project configures one of these tools, use that configuration. Don't
   change it, or add rule suppressions to it, without asking the user.
 - When the project has no configuration:
-  - In a new project that you create, copy the configuration from `assets/` into
-    the project root. If the folder or repository already has files, such as
-    data or a README file, ask the user first, as for an existing project.
+  - In a new project that you create, copy into the project root only the
+    configuration files that the language references name for the languages the
+    project will use. For example, copy `assets/ruff.toml` and `assets/mypy.ini`
+    for a Python project, but not `assets/tsconfig.json`. If the folder or
+    repository already has files, such as data or a README file, ask the user
+    first, as for an existing project.
   - In an existing project, ask the user before adding the configuration. Until
     they agree, pass it on the command line for the files you change.
   - For a single file outside any project, such as a standalone script, pass the
@@ -186,8 +189,15 @@ Use the tools and their configuration as follows:
 - Report any finding you couldn't fix.
 
 For every project, also use the `assets/.editorconfig` file under the same
-rules. It sets the encoding, line endings, indentation, and line length of each
-language in the table, so that editors write files as the formatters do.
+rules. Its `[*]` section sets the encoding, line endings, and default
+indentation of every file, and its other sections set the indentation and line
+length of each language in the table, so that editors write files as the
+formatters do. When you copy the file, keep the `[*]` section and only the
+sections for languages the project will use, and remove the patterns for other
+languages from shared sections. For example, in a project without TypeScript,
+change `[*.{md,ts,tsx}]` to `[*.md]`. When a project starts using a language
+that its `.editorconfig` file has no section for, add that section from
+`assets/.editorconfig`. In an existing project, ask the user before adding it.
 EditorConfig has no command-line option, so until the user agrees to add the
 file, follow its settings yourself in files that no formatter covers, such as
 YAML files. Oxfmt reads indentation and line width from the `.editorconfig`
