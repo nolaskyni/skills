@@ -7,12 +7,12 @@
     "line_length": 80,
     "tables": false,
     "headings": false,
-    "code_blocks": false,
+    "code_blocks": false
   },
   "MD033": {"allowed_elements": ["kbd", "picture", "source", "img"]},
   "MD035": {"style": "---"},
   "MD046": {"style": "fenced"},
   "MD048": {"style": "backtick"},
   "MD049": {"style": "underscore"},
-  "MD050": {"style": "asterisk"},
+  "MD050": {"style": "asterisk"}
 }
