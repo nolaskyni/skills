@@ -9,9 +9,10 @@ programming, writing, and more.
 
 #### `coding-standards`
 
-Guidelines for file structure, formatting, naming, comments, documentation, and
-tooling in Markdown, Python, and TypeScript, with configuration files for their
-formatters, linters, and type checkers.
+Guidelines for file structure, formatting, naming, language features, types,
+comments, documentation, and tooling across
+[several languages](skills/programming/coding-standards/references/), with
+configuration files for their formatters, linters, and type checkers.
 
 #### `collaborative-coding`
 
