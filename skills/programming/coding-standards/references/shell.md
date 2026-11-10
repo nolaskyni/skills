@@ -188,7 +188,7 @@ Zsh follows the Bash rules, with these differences:
 
 ## fish
 
-- Let `fish_indent` format the file. It indents with four spaces.
+- Let `fish_indent` format the file. It indents with 4 spaces.
 - Put each function's summary in `--description`, in the imperative and without
   a final period, as fish's own functions do. fish shows it next to the
   function's name when completing commands. Add the `Arguments:`, `Globals:`,
