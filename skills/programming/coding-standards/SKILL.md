@@ -200,9 +200,14 @@ Use the tools and their configuration as follows:
   original. A check that only lists affected files is insufficient. Make scoped
   corrections manually when applying the full result would change unrelated
   content or overwrite user edits.
-- When code must break a rule, as when it follows a signature defined elsewhere,
-  suppress only that rule on that line, name the rule, and tell the user. Never
-  suppress every rule at once.
+- When code must break a rule because something outside the code you can change
+  requires it, such as a signature that a library defines, suppress only that
+  rule on that line, name the rule, and tell the user. Never suppress every rule
+  at once.
+- Don't suppress a finding that you left because fixing it needs changes outside
+  the requested scope or information you don't have, such as a class name that
+  HTML elsewhere also uses. Report it instead, so that the linter keeps flagging
+  it until someone fixes it.
 - Report any finding you couldn't fix.
 
 For every project, also use the `assets/.editorconfig` file under the same
