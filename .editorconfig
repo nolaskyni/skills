@@ -8,18 +8,5 @@ indent_size = 2
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.{py,pyi}]
-indent_size = 4
-max_line_length = 88
-
-[*.{md,ts,tsx}]
-max_line_length = 80
-
-[[shell]]
-binary_next_line = true
-switch_case_indent = true
-max_line_length = 80
-
-[*.fish]
-indent_size = 4
+[*.md]
 max_line_length = 80
