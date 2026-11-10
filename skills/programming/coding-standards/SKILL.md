@@ -117,6 +117,19 @@ Also follow these rules for comments:
 - Don't leave commented-out code.
 - When changing code, update or remove any comments it invalidates.
 
+Don't leave a `TODO` comment for work that the requested change needs. Finish
+the work, or tell the user what's left. Write a `TODO` comment only when the
+user asks for one or agrees to put the work off. Write it as
+`TODO(<link>): <explanation>`, with a link to the issue that tracks the work, as
+in:
+
+```python
+# TODO(https://github.com/example/weather/issues/42): Handle missing time zones.
+```
+
+When no issue tracks the work, write `TODO: <explanation>`. This replaces the
+`TODO` formats in the language guides.
+
 Write comments as complete sentences in present tense, starting with a capital
 letter and ending with a period. Keep an identifier's case when it starts a
 comment. Short inline comments can be fragments; start a fragment with a capital
