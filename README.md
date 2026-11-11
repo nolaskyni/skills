@@ -24,6 +24,12 @@ how it works while an agent writes most of it.
 Writes and reviews commit messages that follow the Conventional Commits
 specification, with a few extensions.
 
+#### `craft-coding`
+
+Reviews and guides while you write all of the code yourself, so you understand
+every line. The agent reviews, explains, and points the way, but doesn't write
+code, edit files, or run code.
+
 ### Writing
 
 #### `collaborative-skill-writing`
@@ -47,3 +53,9 @@ npx skills add nolaskyni/skills
 
 AI assists with drafting, reviewing, refining, and testing Agent Skills, with
 human review.
+
+## Acknowledgements
+
+The `craft-coding` skill is based on
+[AI coding without the vibes](https://peterbloem.nl/blog/craft-coding), an
+article by Peter Bloem.
