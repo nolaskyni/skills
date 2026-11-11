@@ -132,10 +132,11 @@ the user requests it. Put anything that needs a decision directly after the
 displayed plan or sections.
 
 If explain-back checks are on, end with explain-back questions about the plan.
-Because the relevant plan text is on screen, a question such as "Why was X
-chosen?" can be answered by copying the "Decisions" section. Ask instead what
-would break under a rejected alternative, or which step is most likely to
-produce silently wrong results. See the "Explain-Back Checks" section.
+Because the relevant plan text is on screen, a question such as "Why does the
+dashboard exclude readings without timestamps?" can be answered by copying the
+"Decisions" section. Ask instead what the daily averages would show if those
+readings were assigned to the day they were loaded, or which step is most likely
+to produce silently wrong results. See the "Explain-Back Checks" section.
 
 ### Plan Template
 
@@ -202,6 +203,12 @@ HOW-CORRECTNESS-IS-CHECKED
 When the implementation departs from the plan, update the plan in the same
 change and tell the user. A plan that no longer describes the code is itself a
 form of drift.
+
+Keep the "Current State" section a snapshot of where the work stands, in a few
+lines for each item. Rewrite it at each update instead of adding to it. Record
+choices in the "Decisions" section and the procedures for important checks in
+the "Verification" section, and keep only their latest outcomes in "Current
+State"; the repository's history records the rest.
 
 When the work in a plan is finished, update its final state and retain it.
 Follow any retention instructions the user has already given; delete it only
@@ -274,8 +281,8 @@ it.
 ### Write the Check-In
 
 Keep each check-in short. If it needs a decision, state the decision in one line
-at the top, then use this structure, leaving out any item with nothing to
-report:
+at the top under the label "Decision needed," then use this structure, leaving
+out any item with nothing to report:
 
 1. **Done**: what changed, in a few bullets, and where
 2. **Why**: design choices and assumptions the user didn't specify, including
