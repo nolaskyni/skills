@@ -508,6 +508,9 @@ follow these rules:
 
 - Run at least three trials of each variant, each in a fresh context with no
   access to this conversation.
+- Run trials on the model and settings that the user works with, so the results
+  show how the skill behaves for them. If the user chooses a cheaper model,
+  report the results as results for that model.
 - Check that each trial loads the version of the skill under test, not an
   installed copy with the same name.
 - Grade the final files and replies, not what the agent says it did.
