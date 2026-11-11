@@ -243,9 +243,18 @@ block, so the user can review it. Running `git commit` or showing tool output
 doesn't count as printing the message. When amending, rewording, or squashing,
 print the resulting message.
 
-When creating a commit, print the message first and wait for the user's approval
-before committing. If the user asked for the commit to be created without
-review, commit without waiting, but still print the message.
+Before creating, amending, rewording, or squashing a commit, print the complete
+proposed message, explicitly ask the user to approve it, and end the turn. Wait
+for the user's reply approving that message before running the commit command.
+Showing the message in a progress update and then committing in the same turn
+doesn't satisfy this requirement. A general request to commit the changes
+doesn't approve a message the user hasn't seen.
+
+If the user requests a revision, print the complete revised message and ask for
+approval again before committing.
+
+If the user explicitly asks to commit without message review, commit without
+waiting for message approval, but still print the complete message.
 
 ## Examples
 
