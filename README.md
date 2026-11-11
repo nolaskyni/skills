@@ -9,29 +9,33 @@ programming, writing, and more.
 
 #### `coding-standards`
 
-Guidelines for file structure, formatting, naming, language features, types,
-comments, documentation, and tooling across
-[several languages](skills/programming/coding-standards/references/), with
-configuration files for their formatters, linters, and type checkers.
+Applies conventions for file structure, formatting, naming, language features,
+types, comments, documentation, and tooling across
+[several languages](skills/programming/coding-standards/references/), and
+provides configuration files for their formatters, linters, and type checkers.
 
 #### `collaborative-coding`
 
-Guidelines for working with an agent that writes most of the code, so that the
-user can still explain what it does, why it is designed that way, and how it
-works.
+Keeps you able to explain what the code does, why it's designed that way, and
+how it works while an agent writes most of it.
 
 #### `commit-message-guidelines`
 
-Guidelines for writing commit messages that follow the Conventional Commits
+Writes and reviews commit messages that follow the Conventional Commits
 specification, with a few extensions.
 
 ### Writing
 
+#### `collaborative-skill-writing`
+
+Keeps you able to explain what an Agent Skill makes agents do, why each rule is
+there, and how agents read it while an agent drafts most of the text.
+
 #### `technical-writing-guidelines`
 
-Guidelines for writing documentation based on the Google developer documentation
-style guide, with rules for tone, word choice, symbols, headings, lists, code in
-text, and cross-references.
+Writes and reviews documentation that follows the Google developer documentation
+style guide, with added rules for tone, word choice, symbols, headings, lists,
+code in text, and cross-references.
 
 ## Installation
 
