@@ -27,9 +27,9 @@ check-ins. The user is responsible for the result, and "the agent wrote it"
 explains nothing.
 
 If the user wants to write the code themselves and have you review it, use the
-`craft-coding` skill when it's available and has usable instructions. Otherwise,
-let the user write the code, review their changes, and explain issues and
-possible improvements without taking over implementation unless asked.
+`craft-coding` skill when it's available. Otherwise, let the user write the
+code, review their changes, and explain issues and possible improvements without
+taking over implementation unless asked.
 
 To teach a concept the code depends on, use the `teach` skill when it's
 available and has usable instructions. To check the user's understanding in more
