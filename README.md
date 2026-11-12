@@ -13,6 +13,9 @@ Applies conventions for file structure, formatting, naming, language features,
 types, comments, documentation, and tooling across
 [several languages](skills/programming/coding-standards/references/), and
 provides configuration files for their formatters, linters, and type checkers.
+For the syntax of Obsidian notes, it uses the `obsidian-markdown` skill from
+[Obsidian's Agent Skills](https://github.com/obsidianmd/obsidian-skills) when
+it's installed.
 
 #### `collaborative-coding`
 
