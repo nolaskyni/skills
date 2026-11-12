@@ -99,6 +99,16 @@ Keep the exact spelling of names that come from outside the code you are
 writing, such as standard library or third-party APIs, even when they don't
 follow these rules.
 
+### Filenames
+
+Apply the general naming rules to filenames: use clear, descriptive words and
+keep familiar abbreviations. Use lowercase `kebab-case` by default, such as
+`installation-guide.md`, `sensor-readings.json`, and `dashboard-layout.css`.
+Follow the language reference or its linked guide when it sets a different
+filename convention, such as `snake_case` for Python modules. Preserve names
+that tools require, such as `pyproject.toml`, `package.json`, `.editorconfig`,
+and `SKILL.md`. Existing project conventions take precedence.
+
 ## Comments
 
 Write a comment only when it tells the reader something the code can't: why the
