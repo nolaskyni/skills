@@ -219,6 +219,9 @@ when describing the general concept, such as insertion. Keep backticks around
 standalone code references, including overlong paths. Write type, scope, and
 trailer labels without backticks.
 
+Also use backticks for the names of case styles, such as `kebab-case` and
+`snake_case`, because each name is written in the style it names.
+
 Use the exact filename or path in backticks when that detail matters. When
 referring to the following files in general, write their names without
 backticks:
