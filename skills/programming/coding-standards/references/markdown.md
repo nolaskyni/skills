@@ -18,19 +18,34 @@ Treat a Markdown file as a Pandoc file when any of the following is true:
   that calls `pandoc`.
 - The user says so.
 - It uses syntax that only Pandoc supports: `[@<key>]` citations, `{#<id>}`,
-  `{.<class>}`, or `{-}` attributes, `:::` fenced divs, `^[<note>]` inline
-  notes, `(@)` example lists, ` ```{=<format>} ` raw blocks, or `: <caption>`
-  table captions. Tell the user when you treat a file as a Pandoc file because
-  of its syntax.
+  `{.<class>}`, or `{-}` attributes, `:::` fenced divs, `(@)` example lists,
+  ` ```{=<format>} ` raw blocks, or `: <caption>` table captions.
+
+Treat a Markdown file as an Obsidian file when any of the following is true:
+
+- It's in an Obsidian vault: its folder, or a folder above it, contains a
+  `.obsidian` folder.
+- The user says so.
+- It uses syntax that only Obsidian supports, outside code: `[[<note>]]` links,
+  `![[<file>]]` embeds, or `%%` comments.
+
+When you treat a file as a Pandoc or Obsidian file only because of its syntax,
+say so in your reply and name the syntax, such as "I treated `notes/meeting.md`
+as an Obsidian file because it uses `[[...]]` links." The user can then correct
+you if the file is meant for another flavor.
+
+When a file in a vault is also a Pandoc file, ask the user which flavor to
+follow.
 
 Treat every other Markdown file, including a `SKILL.md` file, as a GitHub file.
 GitHub files use GitHub Flavored Markdown, which extends CommonMark. Pandoc
 files use Pandoc's Markdown, because Pandoc's CommonMark reader doesn't support
-citations.
+citations. Obsidian files use Obsidian Flavored Markdown, which adds its own
+syntax, such as links to other notes, to GitHub Flavored Markdown.
 
-The two flavors parse some syntax differently, and each shows the other's
+The three flavors parse some syntax differently, and each shows the others'
 extensions as literal text or renders them differently. Follow the rules in the
-"All Files" section so that both flavors read a file the same way, and use a
+"All Files" section so that every flavor reads a file the same way, and use a
 flavor's own extensions only in files of that flavor.
 
 ## Formatting
@@ -41,6 +56,11 @@ blocks can run past 80 characters, as the guide allows.
 
 Write each sentence of a Pandoc file on its own line, so that editing a sentence
 changes only its own line. Oxfmt leaves these lines as they are.
+
+Write each paragraph of an Obsidian file on one line, and let Obsidian wrap it
+to the window. Live Preview shows each line break as written, so a paragraph
+wrapped at 80 characters looks ragged there. Oxfmt joins the lines of each
+paragraph.
 
 Oxfmt also formats the Markdown in a ` ```markdown ` code block as a GitHub
 file. Tag an example of a Pandoc file as ` ```pandoc `, which GitHub highlights
@@ -55,7 +75,7 @@ Code's layout, as the "VS Code Files" section of [JSON](json.md) describes.
 
 ## All Files
 
-The following sections apply to both GitHub and Pandoc files.
+The following sections apply to GitHub, Pandoc, and Obsidian files.
 
 ### Blocks
 
@@ -86,7 +106,8 @@ the spelling of names and code.
   contains the link, such as `[Python](python.md)` or
   `[ruff.toml](../assets/ruff.toml)`, instead of the guide's paths from the
   repository root. GitHub resolves such paths from the file, and absolute links
-  can break in clones.
+  can break in clones. In an Obsidian file, link to a note in the vault as the
+  "Links and Embeds" section describes instead.
 - Write a URL that is shown as itself in angle brackets, such as
   `<https://example.com>`, instead of the guide's bare URLs. GitHub and Pandoc
   render it as a link without the brackets, but Pandoc doesn't link a bare URL
@@ -198,12 +219,72 @@ and the primes in `5′10″`.
 Put command-line flags in backticks, because outside code `smart` turns the `--`
 in `--fix` into an en dash.
 
+## Obsidian Files
+
+The following sections apply only to Obsidian files. For syntax that they don't
+describe, use the `obsidian-markdown` skill when it's available, or otherwise
+the [Obsidian Flavored Markdown][obsidian-markdown] help page and the pages it
+links to. Where the two differ, follow these sections.
+
+[obsidian-markdown]: https://obsidian.md/help/obsidian-flavored-markdown
+
+### Note Structure
+
+Obsidian shows a note's file name as its title, so don't start a note with a
+title heading or add a `title` property. Start sections at `#`.
+
+Put tags in the `tags` property, as a YAML list, instead of in the text. Write
+each tag without `#`, in lowercase `kebab-case`, such as `field-work`.
+
+Name a note by its title, with spaces and in title case, such as
+`Drift Correction.md`, instead of in `kebab-case`, because Obsidian shows the
+file name as the note's title and uses it in wikilinks. Follow the vault's
+existing names when they differ.
+
+### Links and Embeds
+
+- Link to a note in the vault with a wikilink, such as `[[Field Log]]` or
+  `[[Field Log#Day 2|the second day]]`, because Obsidian updates wikilinks when
+  a note is renamed. When the vault's `.obsidian/app.json` file sets
+  `"useMarkdownLinks": true`, use Markdown links instead.
+- Embed an image as `![[<file>|<alt-text>|<width>]]`, such as
+  `![[drift-plot.png|Clock drift over 30 days|400]]`, with alt text that
+  describes the image. Obsidian's help documents only the width, but Obsidian
+  reads the text before it as alt text.
+- Add a block ID only when something links to the block. Write it in
+  `kebab-case`, such as `^corrected-time`.
+
+### Callouts
+
+Use a callout, such as `> [!warning]`, only for something the reader must not
+miss, and never put two callouts in a row. Use any of Obsidian's callout types,
+written in lowercase, as Obsidian's help writes them. Write a callout's title in
+title case, as in a heading. Fold a callout that holds extra detail so that it
+starts collapsed, as in `> [!faq]- <title>`.
+
+### Comments, Footnotes, and Tasks
+
+- Write comments with `%%`.
+- Write footnotes as `[^<label>]`, not as `^[<note>]`, which Obsidian shows only
+  in Reading view.
+- Mark tasks only with `[ ]` and `[x]`.
+- Leave `==` highlights to the user, who uses them to mark text to come back to.
+  Don't add them, and keep the ones in a note that you edit.
+
+### Characters
+
+Obsidian doesn't change punctuation as Pandoc's `smart` extension does. Type
+straight quotes, and type other characters themselves, such as `—`, `−`, and
+`°`. Don't type `--` or `---` for a dash.
+
 ## Tooling
 
 Format Markdown with Oxfmt and lint it with markdownlint-cli2. For projects
 without their own configuration, use `assets/.oxfmtrc.json` and
-`assets/.markdownlint.jsonc` from this skill, and for Pandoc files,
-`assets/pandoc/.oxfmtrc.json` and `assets/pandoc/.markdownlint.jsonc`.
+`assets/.markdownlint.jsonc` from this skill. For Pandoc files, use
+`assets/pandoc/.oxfmtrc.json` and `assets/pandoc/.markdownlint.jsonc`, and for
+Obsidian files, `assets/obsidian/.oxfmtrc.json` and
+`assets/obsidian/.markdownlint.jsonc`.
 
 Use the versions that the project pins, such as with `npx oxfmt`, and otherwise
 the latest releases, such as with `npx oxfmt@latest`. In a new project with a
@@ -234,7 +315,8 @@ When the configuration isn't in the project, pass `-c <configuration-path>` to
 Oxfmt with the path to `assets/.oxfmtrc.json`, and
 `--config <configuration-path>` to markdownlint-cli2 with the path to
 `assets/.markdownlint.jsonc`. For a Pandoc file, pass the files in
-`assets/pandoc/` instead, because the main Oxfmt configuration wraps lines at 80
+`assets/pandoc/` instead, and for an Obsidian file, the files in
+`assets/obsidian/`, because the main Oxfmt configuration wraps lines at 80
 characters.
 
 When a project has its own configuration and Pandoc files, add these settings
@@ -261,17 +343,22 @@ for the Pandoc files, asking the user first in an existing project:
   folders above it. Use `"extends"` to preserve the parent's customizations;
   without it, unspecified rules use their defaults and remain enabled.
 
-When a project with Pandoc files has an `.editorconfig` file, including a copy
-of `assets/.editorconfig`, add a section that turns off the line length for the
-Pandoc files, asking the user first in an existing project. Otherwise, some
-editors, such as Neovim, wrap each line at that length while you type. Replace
-the placeholder with an EditorConfig pattern that matches the Pandoc files, such
-as `paper/**.md`, where `**` also matches `/`:
+- When the project has an `.editorconfig` file, including a copy of
+  `assets/.editorconfig`, a section that turns off the line length for the
+  Pandoc files. Otherwise, some editors, such as Neovim, wrap each line at that
+  length while you type. Replace the placeholder with an EditorConfig pattern
+  that matches the Pandoc files, such as `paper/**.md`, where `**` also matches
+  `/`:
 
-```ini
-[PANDOC-FILE-PATTERN]
-max_line_length = off
-```
+  ```ini
+  [PANDOC-FILE-PATTERN]
+  max_line_length = off
+  ```
+
+When a project has its own configuration and Obsidian files, add the same
+settings for the Obsidian files, including the `.editorconfig` section, with two
+changes: set `proseWrap` to `"never"`, and also turn off `MD041` in the
+`.markdownlint.jsonc` file, because a note can start without a heading.
 
 The first time Oxfmt formats an existing file, it rewraps every paragraph. When
 formatting a file you change would rewrap paragraphs you didn't change, tell the

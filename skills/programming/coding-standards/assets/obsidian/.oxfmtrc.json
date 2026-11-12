@@ -1,0 +1,10 @@
+{
+  "printWidth": 80,
+  "singleQuote": true,
+  "bracketSpacing": false,
+  "proseWrap": "never",
+  "jsdoc": {
+    "addDefaultToDescription": false
+  },
+  "overrides": [{"files": ["*.jsonc"], "options": {"trailingComma": "none"}}]
+}

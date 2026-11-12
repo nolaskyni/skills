@@ -4,7 +4,8 @@ description: >-
   Apply the user's coding conventions for file structure, formatting, naming,
   language features, types, comments, documentation, and tooling across CSS,
   HTML, JSON, Markdown, Python, shell, TOML, and TypeScript. Use whenever
-  writing, editing, refactoring, or reviewing files in these languages.
+  writing, editing, refactoring, or reviewing files in these languages,
+  including Obsidian notes.
 ---
 
 # Coding Standards
