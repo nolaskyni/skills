@@ -132,8 +132,8 @@ Also follow these rules:
   quotation mark, except after a literal string that the reader types or matches
   exactly.
 - Spell out zero through nine. Use numerals for 10 or more, for versions, for
-  technical quantities and measurements, such as "8 pixels," "128 bits," or
-  "4 spaces" of indentation, and for any number in a sentence that also has one
+  technical quantities and measurements, such as "8 pixels," "128 bits," or "4
+  spaces" of indentation, and for any number in a sentence that also has one
   greater than 9.
 - Use commas as thousands separators, as in "1,532." Write "10 times," not
   "10x."
