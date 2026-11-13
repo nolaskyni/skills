@@ -172,6 +172,11 @@ non-ASCII characters are fine anywhere, but take care with characters that look
 like ASCII ones, such as the minus sign, curly quotes, and the non-breaking
 space, because raw text can't show the difference.
 
+For rendered mathematical expressions, follow the source syntax specified by
+`coding-standards` or the document's math-rendering tool. LaTeX commands such as
+`\times` and `\geq` produce mathematical symbols and aren't ASCII substitutes
+for them.
+
 Never use em dashes or en dashes. In Pandoc files, this includes `---` and `--`
 inside a sentence, which Pandoc turns into dashes. Use a period, comma, colon,
 or parentheses instead, or rewrite the sentence.

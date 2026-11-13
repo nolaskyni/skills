@@ -136,7 +136,7 @@ the following elements, which do what Markdown can't:
 
 ### Math and Strikethrough
 
-GitHub and Pandoc read these extensions to CommonMark the same way:
+GitHub, Pandoc, and Obsidian support the following syntax:
 
 - Write inline math as `$...$` and display math as a `$$` block. Don't use
   ` ```math ` blocks, which only some renderers support.
