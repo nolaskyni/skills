@@ -32,11 +32,10 @@ code, review their changes, and explain issues and possible improvements without
 taking over implementation unless asked.
 
 To teach a concept the code depends on, use the `teach` skill when it's
-available and has usable instructions. To check the user's understanding in more
-depth, use the `test` skill under the same condition. If either skill is
-unavailable or lacks usable instructions, provide the requested explanation or
-understanding check directly. Neither changes the check-ins or approval points
-agreed under this one.
+available. To check the user's understanding in more depth, use the `quiz` skill
+under the same condition. If either skill is unavailable, provide the requested
+explanation or understanding check directly. Neither changes the check-ins or
+approval points agreed under this one.
 
 ## Clarify Before Writing Code
 

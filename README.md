@@ -5,6 +5,23 @@ programming, writing, and more.
 
 ## Available Skills
 
+### Learning
+
+#### `teach`
+
+Teaches through adaptive explanations, worked examples, guided practice,
+retrieval, and spaced review. Checks understanding and adjusts support to your
+answers.
+
+#### `quiz`
+
+Assesses your understanding of a subject, document, or codebase with questions
+and verified answer criteria. Distinguishes independent understanding from
+assisted answers, identifies gaps, and suggests what to review.
+
+Both skills can save progress in shared topic notes in plain Markdown or
+Obsidian, following your saving preference.
+
 ### Programming
 
 #### `coding-standards`

@@ -33,16 +33,14 @@ write it. Review their changes and explain issues and possible improvements
 without rewriting the text unless asked.
 
 To write the prose, use the `technical-writing-guidelines` skill, and for
-Markdown syntax, the `coding-standards` skill, when each is available and has
-usable instructions. Otherwise, follow the style of the repository's existing
-skills.
+Markdown syntax, the `coding-standards` skill, when each is available.
+Otherwise, follow the style of the repository's existing skills.
 
 To teach a concept the skill depends on, use the `teach` skill when it's
-available and has usable instructions. To check the user's understanding in more
-depth, use the `test` skill under the same condition. If either skill is
-unavailable or lacks usable instructions, provide the requested explanation or
-understanding check directly. Neither changes the check-ins or approval points
-agreed under this one.
+available. To check the user's understanding in more depth, use the `quiz` skill
+under the same condition. If either skill is unavailable, provide the requested
+explanation or understanding check directly. Neither changes the check-ins or
+approval points agreed under this one.
 
 ## Clarify Before Drafting
 

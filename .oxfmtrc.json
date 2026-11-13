@@ -7,5 +7,11 @@
     "addDefaultToDescription": false
   },
   "ignorePatterns": ["**/.vscode/**", "**/*.code-workspace", "**/Code/User/**"],
-  "overrides": [{"files": ["*.jsonc"], "options": {"trailingComma": "none"}}]
+  "overrides": [
+    {"files": ["*.jsonc"], "options": {"trailingComma": "none"}},
+    {
+      "files": ["skills/learning/*/assets/obsidian/*.md"],
+      "options": {"proseWrap": "never"}
+    }
+  ]
 }
