@@ -24,8 +24,9 @@ how it works while an agent writes most of it.
 
 #### `commit-message-guidelines`
 
-Writes and reviews commit messages that follow the Conventional Commits
-specification, with a few extensions.
+Writes and reviews commit messages that follow the
+[Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/),
+with a few extensions.
 
 #### `craft-coding`
 
@@ -42,9 +43,10 @@ there, and how agents read it while an agent drafts most of the text.
 
 #### `technical-writing-guidelines`
 
-Writes and reviews documentation that follows the Google developer documentation
-style guide, with added rules for tone, word choice, symbols, headings, lists,
-code in text, and cross-references.
+Writes and reviews documentation that follows the
+[Google developer documentation style guide](https://developers.google.com/style),
+with added rules for tone, word choice, symbols, headings, lists, code in text,
+and cross-references.
 
 ## Installation
 
