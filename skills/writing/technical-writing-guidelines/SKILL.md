@@ -308,11 +308,14 @@ Git style matches Git's own documentation and doesn't clash with all-caps
 literals, such as `BREAKING CHANGE`. GitHub style is safe to paste into a shell
 and doesn't clash with angle brackets in code, such as generics or HTML.
 
-Always put a placeholder in code font. If a placeholder would need literal angle
-brackets around it, as an email address does, show a filled-in example instead.
-In a Markdown template, describe optional sections in prose rather than marking
-them with `[...]`. After a command with placeholders, explain them as the
-"Lists, Tables, and Procedures" section describes.
+Always put a placeholder in code font. In a code block, write it without
+backticks: the block is already code font, and backticks would become part of
+the text. In a template file shown as rendered Markdown, put each placeholder in
+backticks. If a placeholder would need literal angle brackets around it, as an
+email address does, show a filled-in example instead. In a Markdown template,
+describe optional sections in prose rather than marking them with `[...]`. After
+a command with placeholders, explain them as the "Lists, Tables, and Procedures"
+section describes.
 
 ## Cross-References
 
