@@ -17,8 +17,7 @@ Both skills can save progress in Markdown or Obsidian topic notes.
 ### Programming
 
 - [`coding-standards`](skills/programming/coding-standards/SKILL.md): Applies
-  coding conventions and tool configurations when writing or reviewing code
-  across [several languages](skills/programming/coding-standards/references/).
+  coding conventions and tool configurations when writing or reviewing code.
 - [`collaborative-coding`](skills/programming/collaborative-coding/SKILL.md):
   Keeps you involved and able to explain the code while an agent writes most of
   it.
