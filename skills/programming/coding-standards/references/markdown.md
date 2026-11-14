@@ -292,7 +292,7 @@ the latest releases, such as with `npx oxfmt@latest`. In a new project with a
 dependencies at exact versions, because Oxfmt hasn't reached version 1.0 and its
 output can change between releases. For each file you change, follow these steps
 within the cleanup scope defined in the "Tooling" section of
-[Coding Standards](../SKILL.md):
+[`coding-standards`](../SKILL.md):
 
 1. Apply automatic lint fixes:
 

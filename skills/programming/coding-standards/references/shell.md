@@ -149,7 +149,7 @@ Give each Bash and Zsh function a header comment in the following format:
 
 Give a header to every function in a library, and to every function in a script
 unless it is both obvious and short. Put code in backticks, as the "Comments"
-section of [Coding Standards](../SKILL.md) asks, except for the names listed
+section of [`coding-standards`](../SKILL.md) asks, except for the names listed
 under `Globals:`. For example:
 
 ```bash
@@ -271,7 +271,7 @@ Lint Bash with ShellCheck and format it with shfmt. Zsh has no widely used
 linter, so check its syntax with `zsh -n` and format it with shfmt. Check fish
 with `fish --no-execute` and format it with `fish_indent`. Follow the steps in
 the following sections for each file you change, within the cleanup scope
-defined in the "Tooling" section of [Coding Standards](../SKILL.md).
+defined in the "Tooling" section of [`coding-standards`](../SKILL.md).
 
 ### Bash and Zsh Tooling
 

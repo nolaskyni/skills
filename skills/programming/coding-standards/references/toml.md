@@ -40,7 +40,7 @@ Oxfmt doesn't apply:
   project does.
 - In a file whose structure the project defines, write keys in `kebab-case`, as
   the `pyproject.toml` file, Cargo, and Ruff do, and follow the "Naming" section
-  of [Coding Standards](../SKILL.md), as in `station-id` and
+  of [`coding-standards`](../SKILL.md), as in `station-id` and
   `sample-interval-seconds`. To read these keys in Python, see the "Records"
   section of [Python](python.md).
 
@@ -84,7 +84,7 @@ the keys, as in `status = "under-maintenance"`.
 
 ## Comments
 
-Write comments as the "Comments" section of [Coding Standards](../SKILL.md)
+Write comments as the "Comments" section of [`coding-standards`](../SKILL.md)
 describes. Put a comment that explains a table on the line above its header. Use
 a trailing comment only for a short note, as in
 `select = ["B", "D"] # Bugbear and docstrings`.
@@ -115,7 +115,7 @@ duplicate keys and syntax that only TOML 1.1.0 allows. Python's `tomllib`
 rejects both, so use it to check each file. It needs Python 3.11 or later.
 
 For each file you change, follow these steps within the cleanup scope defined in
-the "Tooling" section of [Coding Standards](../SKILL.md):
+the "Tooling" section of [`coding-standards`](../SKILL.md):
 
 1. Format the file:
 

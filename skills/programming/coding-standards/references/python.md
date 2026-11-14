@@ -53,7 +53,7 @@ might change after this reference was written.
 
 Start a function or method's docstring summary with an imperative verb, such as
 "Return" or "Calculate," including when the function has no side effects. The
-noun-phrase rule in the "Naming" section of [Coding Standards](../SKILL.md)
+noun-phrase rule in the "Naming" section of [`coding-standards`](../SKILL.md)
 applies to the function's name, not its docstring. For example, name a pure
 function `mean_temperature_celsius` and start its docstring with
 `Return the mean temperature in degrees Celsius.` A summary that starts with
@@ -216,7 +216,7 @@ otherwise the latest release, such as with `uvx ruff`. Run mypy in the
 environment that has the project's dependencies installed, such as with
 `uv run mypy`, because it needs them to check calls into libraries. For each
 file you change, follow these steps within the cleanup scope defined in the
-"Tooling" section of [Coding Standards](../SKILL.md):
+"Tooling" section of [`coding-standards`](../SKILL.md):
 
 1. Apply safe lint fixes. Don't pass `--unsafe-fixes`:
 

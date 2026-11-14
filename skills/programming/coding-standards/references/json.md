@@ -25,7 +25,7 @@ documentation. Keep the tool's names, such as `devDependencies` or
 - Use the `.jsonc` extension for a configuration file whose tool reads comments,
   when the tool accepts that name. When the tool requires a name, such as
   `tsconfig.json`, keep it, and write comments only if the tool reads them.
-  Write comments as the "Comments" section of [Coding Standards](../SKILL.md)
+  Write comments as the "Comments" section of [`coding-standards`](../SKILL.md)
   describes.
 - Use the `.geojson` extension for GeoJSON, as the "Coordinates" section
   describes.
@@ -47,7 +47,7 @@ Oxfmt formats JSON and JSONC files with 2-space indentation, and wraps them at
 ## Names
 
 Write property names in `camelCase`, and follow the "Naming" section of
-[Coding Standards](../SKILL.md). Write each acronym in uniform case, as in
+[`coding-standards`](../SKILL.md). Write each acronym in uniform case, as in
 `stationID`, and name the unit of a plain number, as in `sampleIntervalSeconds`.
 The keys of an object used as a map can be any string, such as sensor IDs or
 file paths.
@@ -160,7 +160,7 @@ three, so use it to check `.json` files. Don't use it on JSONC files, VS Code
 files, or other files that allow comments.
 
 For each file you change, follow these steps within the cleanup scope defined in
-the "Tooling" section of [Coding Standards](../SKILL.md):
+the "Tooling" section of [`coding-standards`](../SKILL.md):
 
 1. Format the file:
 

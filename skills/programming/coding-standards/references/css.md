@@ -23,7 +23,7 @@ after a 0. Leave the layout as the two tools write it.
 - Name a class for what the element is or does, not for how it looks. Write
   `.error-message`, not `.red-text` or `.clear`.
 - Write class names, custom properties, and `@keyframes` names in `kebab-case`,
-  and follow the "Naming" section of [Coding Standards](../SKILL.md). Spell
+  and follow the "Naming" section of [`coding-standards`](../SKILL.md). Spell
   words out, as in `.navigation` and `--sidebar-width`. This replaces the
   guide's rule to keep class names as short as possible, as in `.nav`.
 - Select elements by class. Don't use ID selectors, and don't qualify a class
@@ -51,7 +51,7 @@ after a 0. Leave the layout as the two tools write it.
 
 ## Comments
 
-Write comments as the "Comments" section of [Coding Standards](../SKILL.md)
+Write comments as the "Comments" section of [`coding-standards`](../SKILL.md)
 describes, with `/* */` delimiters. Put a comment that explains a rule on the
 line above its selector. When a style sheet has several parts, such as the
 styles for each component, start each part with a comment on its own line,
@@ -92,7 +92,7 @@ the latest releases, such as with `npx oxfmt@latest`. In a new project, add
 `postcss-html` as development dependencies at exact versions, because Oxfmt
 hasn't reached version 1.0 and its output can change between releases. For each
 file you change, follow these steps within the cleanup scope defined in the
-"Tooling" section of [Coding Standards](../SKILL.md):
+"Tooling" section of [`coding-standards`](../SKILL.md):
 
 1. Format the file:
 

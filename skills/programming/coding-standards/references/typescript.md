@@ -43,7 +43,7 @@ order, split it into smaller files.
 ## Naming
 
 Write each acronym, initialism, or abbreviation in uniform case, as the "Naming"
-section of [Coding Standards](../SKILL.md) describes, such as `sensorID` and
+section of [`coding-standards`](../SKILL.md) describes, such as `sensorID` and
 `parseCSVLine`. This replaces the guide's rule to treat them as words, as in
 `sensorId` and `parseCsvLine`. No lint rule checks this, so check each name
 yourself.
@@ -163,7 +163,7 @@ In a new project, add `typescript`, `oxfmt`, `oxlint`, `oxlint-tsgolint`, and
 `vitest` as development dependencies at exact versions, because Oxfmt hasn't
 reached version 1.0 and its output can change between releases. For each file
 you change, follow these steps within the cleanup scope defined in the "Tooling"
-section of [Coding Standards](../SKILL.md):
+section of [`coding-standards`](../SKILL.md):
 
 1. Apply automatic lint fixes:
 

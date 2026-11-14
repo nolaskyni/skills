@@ -69,7 +69,7 @@ attributes.
 
 ## Comments
 
-Write comments as the "Comments" section of [Coding Standards](../SKILL.md)
+Write comments as the "Comments" section of [`coding-standards`](../SKILL.md)
 describes, with `<!-- -->` delimiters. Put a comment on the line above the
 element it explains.
 
@@ -120,7 +120,7 @@ because Oxfmt hasn't reached version 1.0 and its output can change between
 releases. If the project's HTML files have `<style>` elements, also add the
 Stylelint packages that the "Tooling" section of [CSS](css.md) lists. For each
 file you change, follow these steps within the cleanup scope defined in the
-"Tooling" section of [Coding Standards](../SKILL.md):
+"Tooling" section of [`coding-standards`](../SKILL.md):
 
 1. Format the file:
 
