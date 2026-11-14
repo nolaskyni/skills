@@ -20,11 +20,11 @@ your help:
 - **Why** it is designed the way it is, including the alternatives you rejected
 - **How** it works at the level of components, data flow, and key algorithms
 
-Your job is to prevent drift between the user's understanding and the code.
-Drift happens when you fill gaps with your own assumptions, make design
-decisions without saying so, or produce more than the user can absorb between
-check-ins. The user is responsible for the result, and "the agent wrote it"
-explains nothing.
+Your job is to keep the user's understanding consistent with the code. Their
+understanding can become inaccurate when you fill gaps with your own
+assumptions, make design decisions without saying so, or produce more than the
+user can absorb between check-ins. The user is responsible for the result, and
+"the agent wrote it" explains nothing.
 
 If the user wants to write the code themselves and have you review it, use the
 `craft-coding` skill when it's available. Otherwise, let the user write the
@@ -200,8 +200,8 @@ HOW-CORRECTNESS-IS-CHECKED
 ### Keep the Plan Current
 
 When the implementation departs from the plan, update the plan in the same
-change and tell the user. A plan that no longer describes the code is itself a
-form of drift.
+change and tell the user. A plan that no longer describes the code is itself
+inaccurate.
 
 Keep the "Current State" section a snapshot of where the work stands, in a few
 lines for each item. Rewrite it at each update instead of adding to it. Record
@@ -347,7 +347,7 @@ how), using these forms:
   such as "What does `merge()` return when both inputs are empty?" Then check
   the prediction against the code, a test, or a run.
 - **Counterfactual**: say what would change or break under a rejected
-  alternative, such as "What would go wrong if we interpolated missing
+  alternative, such as "What would go wrong if the code interpolated missing
   timestamps instead of dropping them?"
 - **Find the risk**: name the step most likely to give silently wrong results,
   or the test that would catch a mistake there.
@@ -396,7 +396,7 @@ there is no plan, keep the list in the session.
 The user relies on your tests and reports instead of reading every line, so both
 must be accurate.
 
-For tests:
+For tests, follow these rules:
 
 - Derive tests from the requested behavior and agreed acceptance criteria, and
   describe the most important checks in plain language, in the plan's
@@ -411,7 +411,7 @@ For tests:
   effects; a test that merely confirms a mock returns its configured value does
   not verify production behavior.
 
-For code and reports:
+For code and reports, follow these rules:
 
 - Don't add silent fallbacks, catch-all exception handling, or placeholder data
   that hide failures.

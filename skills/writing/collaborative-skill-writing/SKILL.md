@@ -20,13 +20,14 @@ able to explain three things about the skill without your help:
 - **Why** each rule is there, including the failure or preference it addresses,
   the wordings you rejected, and the test results that support it
 - **How** agents read it, including the description that triggers it, what goes
-  in `SKILL.md` and what goes in reference files, and which other skills it
-  hands work to
+  in the `SKILL.md` file and what goes in reference files, and which other
+  skills it delegates work to
 
-Your job is to prevent drift between the user's intent and the skill. Drift
-happens when you add rules the user didn't ask for, write text into a file
-before the user has seen it, or claim a rule works without testing it. The user
-is responsible for the skill, and "the agent wrote it" explains nothing.
+Your job is to keep the skill consistent with the user's intent. The skill can
+become inconsistent with that intent when you add rules the user didn't ask for,
+write text into a file before the user has seen it, or claim a rule works
+without testing it. The user is responsible for the skill, and "the agent wrote
+it" explains nothing.
 
 If the user wants to write the skill themselves and have you review it, let them
 write it. Review their changes and explain issues and possible improvements
@@ -223,8 +224,7 @@ FILES-AND-WHAT-EACH-HOLDS
 ### Keep the Plan Current
 
 When the skill departs from the plan, update the plan in the same change and
-tell the user. A plan that no longer describes the skill is itself a form of
-drift.
+tell the user. A plan that no longer describes the skill is itself inaccurate.
 
 After each test run, add its result and cost to the "Tests" section, including
 runs that led to no change, and cite the result in the decisions it settles.
@@ -496,8 +496,8 @@ Match the form of each rule to the failure that the baseline shows:
 
 Write an exception as its own condition, not as a clause such as "unless it
 matters" at the end of a rule. A condition the agent can check gives the same
-result in every run, while a vague clause leaves each agent to decide when the
-rule applies.
+result in every run. A vague clause leaves each agent to decide when the rule
+applies.
 
 ### Run Trials
 
