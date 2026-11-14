@@ -23,9 +23,7 @@ Both skills can save progress in Markdown or Obsidian topic notes.
   Keeps you involved and able to explain the code while an agent writes most of
   it.
 - [`commit-message-guidelines`](skills/programming/commit-message-guidelines/SKILL.md):
-  Writes and reviews commit messages using
-  [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) with
-  added conventions.
+  Writes and reviews commit messages with consistent structure and formatting.
 - [`craft-coding`](skills/programming/craft-coding/SKILL.md): Provides guidance
   and review when you want to write all the code yourself. The agent doesn't
   write code, edit files, or run code.
@@ -36,9 +34,7 @@ Both skills can save progress in Markdown or Obsidian topic notes.
   Keeps you involved and able to explain an Agent Skill while an agent drafts
   most of it.
 - [`technical-writing-guidelines`](skills/writing/technical-writing-guidelines/SKILL.md):
-  Applies the
-  [Google developer documentation style guide](https://developers.google.com/style)
-  and added conventions when writing or reviewing documentation.
+  Applies consistent style and wording when writing or reviewing documentation.
 
 ## Installation
 
@@ -54,5 +50,4 @@ human review.
 ## Acknowledgements
 
 The [`craft-coding`](skills/programming/craft-coding/SKILL.md) skill is based on
-[AI coding without the vibes](https://peterbloem.nl/blog/craft-coding), an
-article by Peter Bloem.
+[an article by Peter Bloem](https://peterbloem.nl/blog/craft-coding).
