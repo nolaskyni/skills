@@ -30,9 +30,9 @@ Treat a Markdown file as an Obsidian file when any of the following is true:
   `![[<file>]]` embeds, or `%%` comments.
 
 When you treat a file as a Pandoc or Obsidian file only because of its syntax,
-say so in your reply and name the syntax, such as "I treated `notes/meeting.md`
-as an Obsidian file because it uses `[[...]]` links." The user can then correct
-you if the file is meant for another flavor.
+say so in your reply and name the syntax, such as "I treated the
+`notes/meeting.md` file as an Obsidian file because it uses `[[...]]` links."
+The user can then correct you if the file is meant for another flavor.
 
 When a file in a vault is also a Pandoc file, ask the user which flavor to
 follow.
@@ -274,17 +274,17 @@ starts collapsed, as in `> [!faq]- <title>`.
 ### Characters
 
 Obsidian doesn't change punctuation as Pandoc's `smart` extension does. Type
-straight quotes, and type other characters themselves, such as `—`, `−`, and
+straight quotes, and type other permitted characters themselves, such as `−` and
 `°`. Don't type `--` or `---` for a dash.
 
 ## Tooling
 
 Format Markdown with Oxfmt and lint it with markdownlint-cli2. For projects
-without their own configuration, use `assets/.oxfmtrc.json` and
-`assets/.markdownlint.jsonc` from this skill. For Pandoc files, use
-`assets/pandoc/.oxfmtrc.json` and `assets/pandoc/.markdownlint.jsonc`, and for
-Obsidian files, `assets/obsidian/.oxfmtrc.json` and
-`assets/obsidian/.markdownlint.jsonc`.
+without their own configuration, use the `assets/.oxfmtrc.json` and
+`assets/.markdownlint.jsonc` files from this skill. For Pandoc files, use the
+`assets/pandoc/.oxfmtrc.json` and `assets/pandoc/.markdownlint.jsonc` files, and
+for Obsidian files, the `assets/obsidian/.oxfmtrc.json` and
+`assets/obsidian/.markdownlint.jsonc` files.
 
 Use the versions that the project pins, such as with `npx oxfmt`, and otherwise
 the latest releases, such as with `npx oxfmt@latest`. In a new project with a
@@ -312,9 +312,9 @@ within the cleanup scope defined in the "Tooling" section of
    Replace `FILE-PATH` with the path to the Markdown file.
 
 When the configuration isn't in the project, pass `-c <configuration-path>` to
-Oxfmt with the path to `assets/.oxfmtrc.json`, and
-`--config <configuration-path>` to markdownlint-cli2 with the path to
-`assets/.markdownlint.jsonc`. For a Pandoc file, pass the files in
+Oxfmt with the path to the `assets/.oxfmtrc.json` file, and
+`--config <configuration-path>` to markdownlint-cli2 with the path to the
+`assets/.markdownlint.jsonc` file. For a Pandoc file, pass the files in
 `assets/pandoc/` instead, and for an Obsidian file, the files in
 `assets/obsidian/`, because the main Oxfmt configuration wraps lines at 80
 characters.

@@ -72,7 +72,7 @@ For example:
   padding: 0.25rem 0.5rem;
 }
 
-/* Matches the alert colors in `alerts.ts`. */
+/* Matches the alert colors in the `alerts.ts` file. */
 .reading-warning {
   background-color: rgb(255 200 0 / 20%);
 }
@@ -82,9 +82,9 @@ For example:
 
 Format CSS with Oxfmt and lint it with Stylelint, using the
 `stylelint-config-standard` configuration and the `stylelint-order` plugin. For
-projects without their own configuration, use `assets/.oxfmtrc.json` and
-`assets/.stylelintrc.json` from this skill. The Stylelint configuration also
-checks the CSS in `<style>` elements of HTML files through `postcss-html`.
+projects without their own configuration, use the `assets/.oxfmtrc.json` and
+`assets/.stylelintrc.json` files from this skill. The Stylelint configuration
+also checks the CSS in `<style>` elements of HTML files through `postcss-html`.
 
 Use the versions that the project pins, such as with `npx oxfmt`, and otherwise
 the latest releases, such as with `npx oxfmt@latest`. In a new project, add
@@ -117,12 +117,12 @@ Format before linting, because Oxfmt splits a one-line rule onto several lines,
 and Stylelint requires a blank line only before rules that span several lines.
 
 When the configuration isn't in the project, pass `-c <configuration-path>` to
-Oxfmt with the path to `assets/.oxfmtrc.json`. Stylelint loads the packages that
-its configuration names from the configuration's folder, so pass both
-`--config <configuration-path>` with the path to `assets/.stylelintrc.json` and
-`--config-basedir <folder>` with a folder whose `node_modules` folder has the
-packages, such as the project root. For a file outside any project, install the
-packages into a temporary folder:
+Oxfmt with the path to the `assets/.oxfmtrc.json` file. Stylelint loads the
+packages that its configuration names from the configuration's folder, so pass
+both `--config <configuration-path>` with the path to the
+`assets/.stylelintrc.json` file and `--config-basedir <folder>` with a folder
+whose `node_modules` folder has the packages, such as the project root. For a
+file outside any project, install the packages into a temporary folder:
 
 ```sh
 npm install --prefix TEMPORARY-FOLDER stylelint stylelint-config-standard stylelint-order postcss-html

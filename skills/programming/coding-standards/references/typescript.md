@@ -147,9 +147,9 @@ throw new ReadingFormatError(
 ## Tooling
 
 Format TypeScript with Oxfmt, lint it with Oxlint, and check types with
-TypeScript. For projects without their own configuration, use
-`assets/.oxfmtrc.json`, `assets/.oxlintrc.json`, and `assets/tsconfig.json` from
-this skill.
+TypeScript. For projects without their own configuration, use the
+`assets/.oxfmtrc.json`, `assets/.oxlintrc.json`, and `assets/tsconfig.json`
+files from this skill.
 
 The `tsconfig.json` file sets only type-checking options. When you copy it into
 a project, add the options for the kind of project:
@@ -199,9 +199,9 @@ vitest run FILE-PATH
 Replace `FILE-PATH` with the path to the test file.
 
 When the configuration isn't in the project, pass `-c <configuration-path>` to
-Oxlint and Oxfmt with the path to `assets/.oxlintrc.json` or
-`assets/.oxfmtrc.json`. For a file outside any project, pass the type-checking
-options to `tsc` as flags instead:
+Oxlint and Oxfmt with the path to the `assets/.oxlintrc.json` or
+`assets/.oxfmtrc.json` file. For a file outside any project, pass the
+type-checking options to `tsc` as flags instead:
 
 ```sh
 tsc --strict --noEmit --noUncheckedIndexedAccess --exactOptionalPropertyTypes FILE-PATH
@@ -210,8 +210,9 @@ tsc --strict --noEmit --noUncheckedIndexedAccess --exactOptionalPropertyTypes FI
 Replace `FILE-PATH` with the path to the TypeScript file.
 
 This command enables strict checking, checked indexed access, and exact optional
-property types. Add the other checking options from `assets/tsconfig.json` and
-the module, target, and library options that apply to the script's runtime.
+property types. Add the other checking options from the `assets/tsconfig.json`
+file and the module, target, and library options that apply to the script's
+runtime.
 
 Suppress an Oxlint finding with a comment that names the rule and gives the
 reason, such as:

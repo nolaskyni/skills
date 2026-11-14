@@ -82,8 +82,8 @@ Choose the minimum Python version by how the code is used:
   [SPEC 0](https://scientific-python.org/specs/spec-0000/) describes.
 - For a script, notebook, or model that runs in one environment, pin the newest
   Python version that all of its dependencies support. Record it in the project,
-  such as in `requires-python` in `pyproject.toml`, a `.python-version` file, or
-  the inline metadata of a single-file script.
+  such as in `requires-python` in the `pyproject.toml` file, a `.python-version`
+  file, or the inline metadata of a single-file script.
 
 When a script grows into a package that others install, switch it to SPEC 0. Do
 not change a project's minimum or pinned Python version without asking the user.
@@ -204,11 +204,12 @@ raise ValueError(
 ## Tooling
 
 Format and lint Python with Ruff, and check types with mypy. For projects
-without their own configuration, use `assets/ruff.toml` and `assets/mypy.ini`
-from this skill. The `ruff.toml` file leaves `target-version` unset. When Ruff
-discovers it in the project, Ruff can infer the minimum Python version from
-`requires-python` in a `pyproject.toml` file in the same directory. Passing a
-configuration file explicitly disables this inference.
+without their own configuration, use the `assets/ruff.toml` and
+`assets/mypy.ini` files from this skill. The `ruff.toml` file leaves
+`target-version` unset. When Ruff discovers it in the project, Ruff can infer
+the minimum Python version from `requires-python` in a `pyproject.toml` file in
+the same directory. Passing a configuration file explicitly disables this
+inference.
 
 Use the Ruff version that the project pins, such as with `uv run ruff`, and
 otherwise the latest release, such as with `uvx ruff`. Run mypy in the
@@ -245,14 +246,14 @@ file you change, follow these steps within the cleanup scope defined in the
 5. Fix type errors within that scope, and report unrelated existing errors.
 
 When the configuration isn't in the project, pass
-`--config <configuration-path>` to Ruff with the path to `assets/ruff.toml`, and
-`--config-file <configuration-path>` to mypy with the path to `assets/mypy.ini`.
-When passing a Ruff configuration file explicitly, also pass
-`--target-version <python-version>` to both `ruff check` and `ruff format`. Use
-the project's declared minimum Python version, such as `py314` for Python 3.14,
-or the declared runtime requirement for a standalone script. If no version is
-declared, use the intended runtime established by the task or environment, and
-state that assumption. Keep the project's Python requirement unchanged.
+`--config <configuration-path>` to Ruff with the path to the `assets/ruff.toml`
+file, and `--config-file <configuration-path>` to mypy with the path to the
+`assets/mypy.ini` file. When passing a Ruff configuration file explicitly, also
+pass `--target-version <python-version>` to both `ruff check` and `ruff format`.
+Use the project's declared minimum Python version, such as `py314` for Python
+3.14, or the declared runtime requirement for a standalone script. If no version
+is declared, use the intended runtime established by the task or environment,
+and state that assumption. Keep the project's Python requirement unchanged.
 
 Suppress a Ruff finding with `# noqa: <rule-code>`, such as `# noqa: N803` for a
 parameter named `X` that a scikit-learn interface requires, and a mypy error

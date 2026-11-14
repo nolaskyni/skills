@@ -228,8 +228,8 @@ The following table shows where each kind of setting goes:
 
 Also follow these rules:
 
-- End the `.bash_profile` file by sourcing `.bashrc`, because a Bash login shell
-  doesn't read it.
+- End the `.bash_profile` file by sourcing the `.bashrc` file, because a Bash
+  login shell doesn't read it.
 - Start the `.bashrc` file with `[[ $- == *i* ]] || return 0`, because Bash also
   reads it for commands run over SSH. The `.zshrc` file needs no check.
 - Leave `.zshenv`, `.zlogin`, `.bash_login`, and `.profile` unused. On macOS,

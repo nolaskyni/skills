@@ -107,11 +107,11 @@ For example:
 ## Tooling
 
 Format HTML with Oxfmt and lint it with HTML-validate. For projects without
-their own configuration, use `assets/.oxfmtrc.json` and
-`assets/.htmlvalidate.json` from this skill. The HTML-validate configuration
-extends the `recommended` and `document` presets. It also accepts the doctype
-and void elements as Oxfmt writes them, checks class and `id` names, and
-requires `integrity` only for resources from other sites.
+their own configuration, use the `assets/.oxfmtrc.json` and
+`assets/.htmlvalidate.json` files from this skill. The HTML-validate
+configuration extends the `recommended` and `document` presets. It also accepts
+the doctype and void elements as Oxfmt writes them, checks class and `id` names,
+and requires `integrity` only for resources from other sites.
 
 Use the versions that the project pins, such as with `npx oxfmt`, and otherwise
 the latest releases, such as with `npx oxfmt@latest`. In a new project, add
@@ -147,9 +147,9 @@ Format before linting, because Oxfmt adds the end tags, closing slashes, and
 double quotes that HTML-validate checks for.
 
 When the configuration isn't in the project, pass `-c <configuration-path>` to
-Oxfmt with the path to `assets/.oxfmtrc.json`, and
-`--config <configuration-path>` to HTML-validate with the path to
-`assets/.htmlvalidate.json`. For a file outside any project, run
+Oxfmt with the path to the `assets/.oxfmtrc.json` file, and
+`--config <configuration-path>` to HTML-validate with the path to the
+`assets/.htmlvalidate.json` file. For a file outside any project, run
 `npx --yes html-validate@latest`, which needs no other packages.
 
 Suppress an HTML-validate finding with a comment that names the rule and gives

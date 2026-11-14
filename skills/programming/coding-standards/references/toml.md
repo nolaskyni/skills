@@ -8,9 +8,10 @@ sections. Don't use syntax that only version 1.1.0 allows, such as an inline
 table that spans several lines, because Python's `tomllib` reads only version
 1.0.0.
 
-A file whose structure a tool defines, such as `pyproject.toml`, `Cargo.toml`,
-or `ruff.toml`, follows that tool's documentation. Keep the tool's names, such
-as `requires-python` or mypy's `disallow_untyped_defs`.
+A file whose structure a tool defines, such as a `pyproject.toml` file, a
+`Cargo.toml` file, or a `ruff.toml` file, follows that tool's documentation.
+Keep the tool's names, such as `requires-python` or mypy's
+`disallow_untyped_defs`.
 
 ## Formatting
 
@@ -38,8 +39,8 @@ Oxfmt doesn't apply:
 - Keep keys in the order they were written. Sort them only when a tool or the
   project does.
 - In a file whose structure the project defines, write keys in `kebab-case`, as
-  `pyproject.toml`, Cargo, and Ruff do, and follow the "Naming" section of
-  [Coding Standards](../SKILL.md), as in `station-id` and
+  the `pyproject.toml` file, Cargo, and Ruff do, and follow the "Naming" section
+  of [Coding Standards](../SKILL.md), as in `station-id` and
   `sample-interval-seconds`. To read these keys in Python, see the "Records"
   section of [Python](python.md).
 
@@ -98,7 +99,7 @@ status = "under-maintenance"
 started-at = 2026-11-10T14:00:00Z
 sample-interval-seconds = 600
 
-# Readings above these limits trigger the alerts in `alerts.py`.
+# Readings above these limits trigger the alerts in the `alerts.py` file.
 [thresholds]
 warning-celsius = 30
 critical-celsius = 45
@@ -106,8 +107,8 @@ critical-celsius = 45
 
 ## Tooling
 
-Format TOML with Oxfmt. For projects without their own configuration, use
-`assets/.oxfmtrc.json` from this skill.
+Format TOML with Oxfmt. For projects without their own configuration, use the
+`assets/.oxfmtrc.json` file from this skill.
 
 Oxfmt reports some syntax errors, such as an unclosed string, but it accepts
 duplicate keys and syntax that only TOML 1.1.0 allows. Python's `tomllib`
@@ -139,4 +140,4 @@ When uv isn't installed, run the check in step 2 with `python3` instead, if
 didn't run.
 
 When the configuration isn't in the project, pass `-c <configuration-path>` to
-Oxfmt with the path to `assets/.oxfmtrc.json`.
+Oxfmt with the path to the `assets/.oxfmtrc.json` file.

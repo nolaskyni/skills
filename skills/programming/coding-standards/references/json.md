@@ -13,9 +13,10 @@ doesn't apply: the top-level `apiVersion`, `context`, `id`, `method`, `params`,
 `data`, and `error` properties, and the properties it defines inside `data` and
 `error`, such as `kind`, `items`, and the paging and link properties.
 
-A file whose structure a tool defines, such as `package.json`, `tsconfig.json`,
-or a VS Code settings file, follows that tool's documentation. Keep the tool's
-names, such as `devDependencies` or `editor.formatOnSave`.
+A file whose structure a tool defines, such as a `package.json` file, a
+`tsconfig.json` file, or a VS Code settings file, follows that tool's
+documentation. Keep the tool's names, such as `devDependencies` or
+`editor.formatOnSave`.
 
 ## Files
 
@@ -40,8 +41,8 @@ Oxfmt formats JSON and JSONC files with 2-space indentation, and wraps them at
 - Oxfmt keeps an object on several lines when its first property starts on a new
   line. Put a short object on one line only when its properties form one value,
   such as `{"latitudeDegrees": 40.6894, "longitudeDegrees": -74.0447}`.
-- Oxfmt writes `package.json` as npm does, with every array and object on
-  several lines.
+- Oxfmt writes the `package.json` file as npm does, with every array and object
+  on several lines.
 
 ## Names
 
@@ -142,16 +143,16 @@ For example:
 }
 ```
 
-`assets/.oxfmtrc.json` and `assets/.editorconfig` already cover these files.
-When a project has its own Oxfmt configuration, ask the user before adding the
-`ignorePatterns` entries from `assets/.oxfmtrc.json` to it. Until they agree,
-don't run Oxfmt on these files.
+The `assets/.oxfmtrc.json` and `assets/.editorconfig` files already cover these
+files. When a project has its own Oxfmt configuration, ask the user before
+adding the `ignorePatterns` entries from the `assets/.oxfmtrc.json` file to it.
+Until they agree, don't run Oxfmt on these files.
 
 ## Tooling
 
 Format JSON and JSONC with Oxfmt. For projects without their own configuration,
-use `assets/.oxfmtrc.json` from this skill. It skips the files that the "VS Code
-Files" section lists and leaves out trailing commas in `.jsonc` files.
+use the `assets/.oxfmtrc.json` file from this skill. It skips the files that the
+"VS Code Files" section lists and leaves out trailing commas in `.jsonc` files.
 
 Oxfmt reports syntax errors, such as a missing comma, but it accepts `NaN`,
 comments, and trailing commas in `.json` files. Node's `JSON.parse` rejects all
@@ -178,4 +179,4 @@ the "Tooling" section of [Coding Standards](../SKILL.md):
    Replace `FILE-PATH` with the path to the file.
 
 When the configuration isn't in the project, pass `-c <configuration-path>` to
-Oxfmt with the path to `assets/.oxfmtrc.json`.
+Oxfmt with the path to the `assets/.oxfmtrc.json` file.
