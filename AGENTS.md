@@ -95,3 +95,6 @@ for plan creation, updates, and retention.
 
 Limit changes to the requested work and supporting updates it requires. Report
 unrelated issues without fixing them unless the user approves.
+
+Don't add agent co-author trailers to commits. The README's "AI Usage" section
+discloses how agents contribute to this repository.
