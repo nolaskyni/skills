@@ -12,6 +12,9 @@ trim_trailing_whitespace = true
 indent_size = 4
 max_line_length = 88
 
+[*.lua]
+max_line_length = 100
+
 [*.{css,geojson,html,json,jsonc,md,toml,ts,tsx}]
 max_line_length = 80
 

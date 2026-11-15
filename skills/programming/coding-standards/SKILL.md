@@ -3,7 +3,7 @@ name: coding-standards
 description: >-
   Apply the user's coding conventions for file structure, formatting, naming,
   language features, types, comments, documentation, and tooling across CSS,
-  HTML, JSON, Markdown, Python, shell, TOML, and TypeScript. Use whenever
+  HTML, JSON, Lua, Markdown, Python, shell, TOML, and TypeScript. Use whenever
   writing, editing, refactoring, or reviewing files in these languages,
   including Obsidian notes.
 ---
@@ -26,7 +26,8 @@ Before writing or reviewing a file, read the reference for its language. Read
 only the references for the languages you are touching.
 
 When the language reference leaves a relevant style question unanswered, read
-the section of its linked guide that answers it. Use the current guide rather
+the section of its linked guide that answers it, or, for a language without one,
+follow what its "Baseline" section says instead. Use the current guide rather
 than relying on memory. If it can't be retrieved, tell the user, then follow the
 reference and your knowledge of the guide.
 
@@ -37,6 +38,7 @@ The following table lists the reference for each language:
 | CSS        | `*.css`                                                                | `references/css.md`        |
 | HTML       | `*.html`                                                               | `references/html.md`       |
 | JSON       | `*.json`, `*.jsonc`, `*.geojson`, `*.code-workspace`                   | `references/json.md`       |
+| Lua        | `*.lua`                                                                | `references/lua.md`        |
 | Markdown   | `*.md`                                                                 | `references/markdown.md`   |
 | Python     | `*.py`, `*.pyi`                                                        | `references/python.md`     |
 | Shell      | `*.sh`, `*.zsh`, `*.fish`, scripts without an extension, startup files | `references/shell.md`      |
