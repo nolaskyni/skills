@@ -96,5 +96,13 @@ for plan creation, updates, and retention.
 Limit changes to the requested work and supporting updates it requires. Report
 unrelated issues without fixing them unless the user approves.
 
+## Write Commit Messages
+
+Follow `commit-message-guidelines` for commit messages. When a commit changes
+one skill, use the skill's directory name as the scope, such as
+`docs(coding-standards): add Lua rules`. Use the same scope for the skill's
+README catalog entry. Omit the scope when a commit spans multiple skills or
+changes only repository files, such as AGENTS.md, README, or root configuration.
+
 Don't add agent co-author trailers to commits. The README's "AI Usage" section
 discloses how agents contribute to this repository.
