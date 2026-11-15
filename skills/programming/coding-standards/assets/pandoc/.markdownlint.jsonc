@@ -1,6 +1,10 @@
 {
   "extends": "../.markdownlint.jsonc",
-  "MD013": false,
-  "MD025": false,
-  "MD033": {"allowed_elements": ["kbd"]}
+  // Each sentence is one line.
+  "line-length": false,
+  // The metadata block holds the title, so sections start at `#`.
+  "single-title": false,
+  // Pandoc drops `<picture>`, and the image with it, from output other than
+  // HTML.
+  "no-inline-html": {"allowed_elements": ["kbd"]}
 }

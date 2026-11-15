@@ -1,7 +1,11 @@
 {
   "extends": "../.markdownlint.jsonc",
-  "MD013": false,
-  "MD025": false,
-  "MD041": false,
-  "MD033": {"allowed_elements": ["kbd"]}
+  // Each paragraph is one line, which Obsidian wraps to the window.
+  "line-length": false,
+  // Obsidian shows the file name as the note's title, so sections start at `#`
+  // and a note can start without a heading.
+  "single-title": false,
+  "first-line-heading": false,
+  // Only GitHub files use `<picture>`.
+  "no-inline-html": {"allowed_elements": ["kbd"]}
 }

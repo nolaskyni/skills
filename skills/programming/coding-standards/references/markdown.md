@@ -335,8 +335,13 @@ for the Pandoc files, asking the user first in an existing project:
   Replace the placeholder with the path from that folder to the project's
   markdownlint configuration, such as `../.markdownlint.jsonc`:
 
+  <!-- prettier-ignore -->
   ```jsonc
-  {"extends": "PROJECT-CONFIGURATION-PATH", "MD013": false, "MD025": false}
+  {
+    "extends": "PROJECT-CONFIGURATION-PATH",
+    "line-length": false,
+    "single-title": false
+  }
   ```
 
   A `.markdownlint.jsonc` file in a folder replaces the configuration of the
@@ -357,13 +362,19 @@ for the Pandoc files, asking the user first in an existing project:
 
 When a project has its own configuration and Obsidian files, add the same
 settings for the Obsidian files, including the `.editorconfig` section, with two
-changes: set `proseWrap` to `"never"`, and also turn off `MD041` in the
-`.markdownlint.jsonc` file, because a note can start without a heading.
+changes: set `proseWrap` to `"never"`, and also turn off `first-line-heading` in
+the `.markdownlint.jsonc` file, because a note can start without a heading.
 
 The first time Oxfmt formats an existing file, it rewraps every paragraph. When
 formatting a file you change would rewrap paragraphs you didn't change, tell the
 user and offer to format the file in a separate commit first, so that the
 formatting doesn't hide your change.
+
+Refer to markdownlint rules by name, such as `line-length`, rather than by code,
+such as `MD013`, in configuration files and suppression comments, so that each
+setting shows what it changes. markdownlint reports both, as in
+`MD013/line-length`. When you change a configuration that uses codes, match its
+codes.
 
 Suppress a markdownlint finding with
 `<!-- markdownlint-disable-next-line <rule-code> -->`, such as with `MD024` for
