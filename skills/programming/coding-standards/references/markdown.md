@@ -376,6 +376,9 @@ setting shows what it changes. markdownlint reports both, as in
 `MD013/line-length`. When you change a configuration that uses codes, match its
 codes.
 
-Suppress a markdownlint finding with
-`<!-- markdownlint-disable-next-line <rule-code> -->`, such as with `MD024` for
-a heading that a template repeats.
+Suppress a markdownlint finding with a
+`<!-- markdownlint-disable <rule-name> -->` comment before the line and a
+`<!-- markdownlint-enable <rule-name> -->` comment after it, such as with
+`no-duplicate-heading` for a heading that a template repeats. Don't use
+`markdownlint-disable-next-line`, because Oxfmt adds a blank line after the
+comment, so the comment no longer covers the line.
