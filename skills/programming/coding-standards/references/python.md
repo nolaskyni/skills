@@ -170,17 +170,13 @@ addition:
 
 ### Messages
 
-Write error, warning, and log messages in the same style:
+Follow the "Messages" section of the skill, and match Python's built-in
+messages:
 
 - Start with a lowercase letter, unless the message starts with an identifier,
-  which keeps its case. Don't end with a period.
-- Put identifiers in backticks: parameter, variable, attribute, function, class,
-  and type names, and names from outside the code that the code uses by their
-  exact spelling, such as a CSV column.
+  which keeps its case.
 - Show values with `!r` and without backticks, so that strings appear in quotes
   and numbers appear bare.
-- Say what was expected, then the value received.
-- When parsing input, put the location first, followed by a colon.
 - Write the message inline in the `raise` statement or warning call. When it is
   too long for one line, split it into adjacent strings inside the parentheses.
 

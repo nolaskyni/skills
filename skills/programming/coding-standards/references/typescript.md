@@ -107,20 +107,16 @@ cause, such as `throw new ConfigurationError(message, {cause: error})`.
 
 ### Messages
 
-Write error, warning, and log messages in the style of the JavaScript runtime's
+Follow the "Messages" section of the skill, and match the JavaScript runtime's
 built-in messages:
 
 - Start with a capital letter, unless the message starts with an identifier,
-  which keeps its case. Don't end with a period.
-- Put identifiers in backticks: parameter, variable, property, function, class,
-  and type names, and names from outside the code that the code uses by their
-  exact spelling, such as a CSV column. The runtime puts names in single quotes,
-  but Node also prints string values in single quotes, so backticks keep names
-  distinct from values. Escape each backtick inside a template literal.
+  which keeps its case.
+- Escape each backtick inside a template literal. The runtime puts names in
+  single quotes, but Node also prints string values in single quotes, so
+  backticks keep names distinct from values.
 - Show string values with `JSON.stringify`, so that they appear in double quotes
   and numbers appear bare. Write allowed values in double quotes too.
-- Say what was expected, then the value received.
-- When parsing input, put the location first, followed by a colon.
 
 For example:
 

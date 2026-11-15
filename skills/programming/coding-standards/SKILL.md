@@ -180,6 +180,21 @@ comment in the same change:
   values, still hold.
 - Update examples so that they still run and show the current output.
 
+## Messages
+
+Write error, warning, and log messages in the same style. In every language:
+
+- Don't end a message with a period.
+- Put identifiers in backticks: parameter, variable, attribute, function, class,
+  and type names, and names from outside the code that the code uses by their
+  exact spelling, such as a CSV column.
+- Say what was expected, then the value received.
+- When parsing input, put the location first, followed by a colon.
+
+The language reference sets the rest, matching the messages of the language's
+own runtime: whether a message starts with a capital letter, how values are
+quoted, whether a message starts with a name, and any exceptions to these rules.
+
 ## Tooling
 
 Each language reference names the formatter, the linter, and, where the language
@@ -269,6 +284,7 @@ Check the following:
 - Names of plain numbers and strings state their unit or format when the type
   doesn't, such as `temperature_celsius` and `delay_milliseconds`.
 
-Also check documentation and messages against the language reference. Report
-which checks ran, which failed, and which couldn't run; a check that couldn't
-run provides no evidence that the code passes it.
+Also check documentation against the language reference, and messages against
+the "Messages" section and the language reference. Report which checks ran,
+which failed, and which couldn't run; a check that couldn't run provides no
+evidence that the code passes it.
