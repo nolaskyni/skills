@@ -1,3 +1,8 @@
+---
+tags:
+  - learning/topic
+---
+
 # Objectives
 
 - `LEARNING-OBJECTIVE`
@@ -14,14 +19,15 @@ Sources: `SOURCE-REFERENCES`
 
 # Current Understanding
 
-- **Independent**: `EVIDENCE-AND-DATE`
-- **Assisted**: `EVIDENCE-ASSISTANCE-AND-DATE`
-- **Unassessed**: `MATERIAL-NOT-YET-CHECKED`
-- **Ungraded**: `UNRESOLVED-JUDGMENT-AND-REASON`
+| Outcome | Assessment | Evidence |
+| --- | --- | --- |
+| `SPECIFIC-LEARNING-OUTCOME` | `INDEPENDENT-ASSISTED-UNASSESSED-OR-UNGRADED` | `EVIDENCE-DATE-AND-SESSION-REFERENCE-OR-REASON-NOT-ASSESSED-OR-UNGRADED` |
 
 # Open Gaps
 
-- [ ] `GAP-OR-MISCONCEPTION` (found `DISCOVERY-DATE`; evidence: `[[#SESSION-HEADING]]`)
+- [ ] `GAP-OR-MISCONCEPTION`
+  - **Found**: `YYYY-MM-DD`.
+  - **Evidence**: `[[#SESSION-HEADING]]`.
 
 # Resume Point
 

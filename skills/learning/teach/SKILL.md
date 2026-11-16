@@ -246,6 +246,25 @@ For new notes, use the
 [Obsidian template](assets/obsidian/topic-note-obsidian.md) or the
 [plain Markdown template](assets/topic-note-markdown.md).
 
+Repeat objective entries, outcome rows, examples, and gap entries as needed. In
+the "Current Understanding" section, give each outcome its own row so that
+assessment judgments refer to specific knowledge or skills. Link evidence to the
+supporting session entries when available.
+
+For source references, link exact page titles, preserving their capitalization,
+and identify relevant portions outside the links.
+
+For Obsidian records, use the `learning/topic` tag and relevant subject tags.
+When existing subject vocabulary fits, reuse it. Keep subjects separate from the
+`learning` hierarchy. Don't add a redundant `learning` parent tag, skill names,
+or progress states. Follow `coding-standards` for tag syntax.
+
+Plain Markdown has no tag metadata by default. When the destination has an
+established convention, follow it.
+
+Use `YYYY-MM-DD` dates for evidence, gap discovery and resolution, and session
+entries. Keep session entries in chronological order.
+
 Use the following sections for new topic notes:
 
 | Section               | Contents                                                                                                                     |
