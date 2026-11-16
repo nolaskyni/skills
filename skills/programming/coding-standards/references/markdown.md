@@ -234,7 +234,9 @@ Obsidian shows a note's file name as its title, so don't start a note with a
 title heading or add a `title` property. Start sections at `#`.
 
 Put tags in the `tags` property, as a YAML list, instead of in the text. Write
-each tag without `#`, in lowercase `kebab-case`, such as `field-work`.
+each tag without `#`. Use lowercase kebab-case for each segment, such as
+`field-work`. For nested tags, separate segments with `/`, such as
+`learning/path`.
 
 Name a note by its title, with spaces and in title case, such as
 `Drift Correction.md`, instead of in `kebab-case`, because Obsidian shows the
@@ -247,6 +249,8 @@ existing names when they differ.
   `[[Field Log#Day 2|the second day]]`, because Obsidian updates wikilinks when
   a note is renamed. When the vault's `.obsidian/app.json` file sets
   `"useMarkdownLinks": true`, use Markdown links instead.
+- For a local file outside the vault, use a Markdown link with an absolute
+  `file:///` URL. Encode spaces as `%20`.
 - Embed an image as `![[<file>|<alt-text>|<width>]]`, such as
   `![[drift-plot.png|Clock drift over 30 days|400]]`, with alt text that
   describes the image. Obsidian's help documents only the width, but Obsidian
