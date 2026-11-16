@@ -32,9 +32,13 @@
 
 ## Log
 
-### `SESSION-DATE`: `SESSION-TYPE`
+### `SESSION-HEADING`
 
-- **Covered**: `MATERIAL-TAUGHT-OR-ASSESSED`
-- **Evidence**: `USER-RESPONSES-AND-ASSISTANCE`
-- **Judgments**: `CONCLUSIONS-SUPPORTED-BY-THE-EVIDENCE`
-- **Next**: `WHERE-TO-RESUME`
+| Date           | Activity           |
+| -------------- | ------------------ |
+| `SESSION-DATE` | `SESSION-ACTIVITY` |
+
+The practice provided the following evidence:
+
+- `TASK-AND-USER-RESPONSE`
+- `ASSISTANCE-AND-SUPPORTED-CONCLUSION`

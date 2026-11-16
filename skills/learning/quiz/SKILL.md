@@ -328,8 +328,24 @@ Use the following sections for new topic notes:
 | Log                   | Dated entries recording what was taught or assessed, the user's responses, assistance supplied, and the resulting judgments. |
 
 Keep the current-state sections concise and update them as learning progresses.
-Keep the dated log as the supporting history rather than copying the full
-conversation.
+Keep the log as a compact evidence history. Give each entry a heading that names
+the specific topic or activity, not the date or session type. Beneath the
+heading, use a two-column table with Date and Activity headers and one row of
+metadata. Use `YYYY-MM-DD` dates and keep entries in chronological order.
+
+When revisiting an activity, distinguish the heading by its purpose, such as
+"Convergence Conditions: Delayed Review." If headings would otherwise be
+identical, add a trailing date.
+
+Update the same entry as a session or activity progresses. Saving after an
+exercise doesn't require a new entry. Append an entry for a later session or a
+distinct activity.
+
+Use concise bullets to record the task, the substance of the user's response,
+assistance supplied, and the supported conclusion. Preserve the distinction
+between independent and assisted performance. Keep explanations in the "Key
+Ideas" or "Examples" section and the next action in the "Resume Point" section
+rather than repeating them in each log entry.
 
 For existing notes, map this information to the user's structure rather than
 imposing these headings or reorganizing unrelated content.
@@ -356,7 +372,8 @@ resolution and its date.
 If an agent error affected the record, correct the current understanding and add
 a dated correction explaining which earlier judgment changed.
 
-Update the resume point and append a dated session entry. After saving, read
-back the changed portions to confirm that the intended update was written.
-Report the updated file's full path. If saving fails, say so rather than
-implying that progress was preserved.
+Update the "Resume Point" section and the relevant log entry. Append a new entry
+for a later session or a distinct activity. After saving, read back the changed
+portions to confirm that the intended update was written. Report the updated
+file's full path. If saving fails, say so rather than implying that progress was
+preserved.

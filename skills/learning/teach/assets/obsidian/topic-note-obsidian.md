@@ -35,9 +35,13 @@ tags:
 
 # Log
 
-## {{date:YYYY-MM-DD}}: `SESSION-TYPE`
+## `SESSION-HEADING`
 
-- **Covered**: `MATERIAL-TAUGHT-OR-ASSESSED`
-- **Evidence**: `USER-RESPONSES-AND-ASSISTANCE`
-- **Judgments**: `CONCLUSIONS-SUPPORTED-BY-THE-EVIDENCE`
-- **Next**: `WHERE-TO-RESUME`
+| Date                | Activity           |
+| ------------------- | ------------------ |
+| {{date:YYYY-MM-DD}} | `SESSION-ACTIVITY` |
+
+The practice provided the following evidence:
+
+- `TASK-AND-USER-RESPONSE`
+- `ASSISTANCE-AND-SUPPORTED-CONCLUSION`
