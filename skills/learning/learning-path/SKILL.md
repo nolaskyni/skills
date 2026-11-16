@@ -79,10 +79,10 @@ course, or reading list.
 
 Check that recommended resources exist and support the stated purpose. If you
 can't verify a resource or its relevant portion, make that limitation explicit
-rather than inventing a title, link, or section reference.
-Take each title, chapter or section number, and time estimate from the content
-you retrieved, not from memory. If the retrieved content doesn't show a number
-clearly, refer to that portion by its title instead.
+rather than inventing a title, link, or section reference. Take each title,
+chapter or section number, and time estimate from the content you retrieved, not
+from memory. If the retrieved content doesn't show a number clearly, refer to
+that portion by its title instead.
 
 Pair the resources with practice that uses the milestone's knowledge or skill.
 State what the user will produce, explain, or investigate rather than assigning
@@ -125,10 +125,10 @@ disabled.
 When saving is enabled, use the user's selected directory. For Obsidian, offer a
 `Learning` folder inside an existing vault and verify that the vault exists.
 Otherwise, offer a `Learning` folder in their `Documents` directory. Follow
-another location the user chooses.
-When no location is recorded or chosen, a request to save doesn't choose one.
-Offer the default and wait for the user's choice before creating directories,
-writing the configuration, or saving the path.
+another location the user chooses. When no location is recorded or chosen, a
+request to save doesn't choose one. Offer the default and wait for the user's
+choice before creating directories, writing the configuration, or saving the
+path.
 
 Create the selected notes directory and configuration parent directory if
 needed. Record the saving preference and, when enabled, the absolute notes
@@ -154,16 +154,62 @@ rather than implying that the path was preserved.
 
 ## Structure the Path Record
 
-For a new path record, use the following sections:
+For a new path record, read and adapt the
+[plain Markdown template](assets/path-record-markdown.md) or the
+[Obsidian template](assets/obsidian/path-record-obsidian.md), according to the
+destination. Resolve asset paths relative to this skill's directory.
 
-| Section                        | Contents                                                                                                        |
-| ------------------------------ | --------------------------------------------------------------------------------------------------------------- |
-| Destination                    | What the user wants to understand or do, including the subject emphasis, project, or paper.                     |
-| Starting Point and Constraints | Relevant background, evidence already available, study time, deadlines, and scope limits.                       |
-| Milestones                     | The coarse sequence of outcomes and dependencies, with concise progress summaries.                              |
-| Next Milestone                 | The detailed outcome, prerequisite support, resources, practice, checkpoint, and first action.                  |
-| Topic Records                  | Links to existing topic records, identifying which milestones they inform.                                      |
-| Revision Log                   | Brief dated entries stating what changed in the path and why, with links to supporting evidence when available. |
+Replace every placeholder with the path's content. Repeat milestone entries,
+resource rows, practice assignments, and checkpoint rows as needed; the
+template's single entries aren't limits.
+
+Use a concise, subject-based title without a redundant "Learning Path" suffix.
+Keep the path distinct from topic records and preserve the collision handling in
+the "Save the Path" section.
+
+Use outcome-led milestone headings without IDs by default. When the user
+requests IDs, add them. Describe dependencies through the knowledge needed,
+rather than requiring completion of particular milestones. When headings change,
+update their milestone references.
+
+Adapt the template to the path:
+
+- Add only relevant constraints, such as tools or working mode.
+- When parallel tracks are useful, replace the milestone's Outcome bullet with
+  Foundations and Implementation bullets. In the "Next Milestone" section, group
+  resources and practice under those tracks. Use "Foundations Resources,"
+  "Foundations Practice," "Implementation Resources," and "Implementation
+  Practice" as subsection headings.
+- For optional extensions, state their scope and relationship to later work
+  beneath the milestone heading. Identify any workload still to be agreed.
+- When no broader references need preserving, omit the "Supporting Resources"
+  section. Keep immediate assignments in the "Next Milestone" section rather
+  than duplicating them.
+- Replace "No topic records yet" with links to existing records and the
+  milestones they inform. Don't create empty topic records.
+
+In resource tables, link exact page titles, preserving their capitalization, and
+state assigned portions outside the links. Put source-check qualifications with
+the affected resource. When longer evidence is needed, link to it. Apply the
+verification requirements in the "Select Resources, Practice, and Checkpoints"
+section.
+
+For a new Obsidian record, use the `learning/path` tag and relevant subject
+tags. When existing subject vocabulary fits, reuse it. Keep subjects separate
+from the `learning` hierarchy, and don't add a redundant `learning` parent tag,
+skill names, or progress states. When `coding-standards` is available, follow
+its tag syntax. Otherwise, use a YAML `tags` list without hash prefixes and
+lowercase kebab-case for each slash-separated segment. Plain Markdown has no tag
+metadata by default. When the destination has an established convention, follow
+it. For an existing record, preserve its tag metadata, including its absence,
+unless the user requests a tag change.
+
+Keep the "Revision History" section as a newest-first list of substantive
+changes affecting what the user studies, how they study it, or why the sequence
+changed. Combine the change and reason. When specific supporting evidence is
+available, link to it. Use `YYYY-MM-DD` dates. For multiple entries on the same
+day, repeat the date. When ordering within the day matters, include timestamps;
+otherwise, omit them. Preserve earlier entries.
 
 Keep planned work distinct from material covered and understanding demonstrated.
 In progress summaries, identify assistance and unassessed outcomes rather than
@@ -202,8 +248,8 @@ time estimates when evidence or goals change. Give the revised next milestone
 the same concrete detail as an initial next milestone, and explain what changed
 and why.
 
-When saving is enabled, update the path's progress summaries and Next Milestone,
-and add a dated Revision Log entry for substantive changes. Link to supporting
-topic evidence rather than copying session logs. Preserve earlier revision
-entries, and verify the saved changes as described in the "Save the Path"
-section.
+When saving is enabled, update the path's progress summaries and the "Next
+Milestone" section, and add a dated entry to the "Revision History" section for
+substantive changes. Link to supporting topic evidence rather than copying
+session logs. Preserve earlier revision entries, and verify the saved changes as
+described in the "Save the Path" section.
