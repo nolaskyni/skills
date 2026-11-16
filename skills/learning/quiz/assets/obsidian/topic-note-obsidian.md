@@ -11,7 +11,7 @@ tags:
 
 `CONCEPTS-DEFINITIONS-AND-ASSUMPTIONS`
 
-Sources: `SOURCE-REFERENCES`
+**Sources**: `SOURCE-REFERENCES`
 
 # Examples
 
