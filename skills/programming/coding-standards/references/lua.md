@@ -277,8 +277,8 @@ the "Tooling" section of [`coding-standards`](../SKILL.md):
    Replace `FOLDER-PATH` with the path to the folder. Pass a folder, not a file:
    given a single file, Lua Language Server reports no problems. It checks every
    Lua file in the folder, so fix only the findings within the cleanup scope. To
-   pass this skill's configuration, add `--configpath=CONFIG-PATH`, and replace
-   `CONFIG-PATH` with the path to the `.luarc.json` file.
+   pass this skill's configuration, add `--configpath=CONFIGURATION-PATH`, and
+   replace `CONFIGURATION-PATH` with the path to the `.luarc.json` file.
 
 4. Fix the findings within that scope.
 
