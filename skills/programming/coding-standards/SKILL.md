@@ -3,9 +3,9 @@ name: coding-standards
 description: >-
   Apply the user's coding conventions for file structure, formatting, naming,
   language features, types, comments, documentation, and tooling across CSS,
-  HTML, JSON, Lua, Markdown, Python, shell, TOML, and TypeScript. Use whenever
-  writing, editing, refactoring, or reviewing files in these languages,
-  including Obsidian notes.
+  HTML, JSON, Jupyter notebooks, Lua, Markdown, Python, shell, TOML, and
+  TypeScript. Use whenever writing, editing, refactoring, or reviewing files in
+  these languages, including Obsidian notes.
 ---
 
 # Coding Standards
@@ -33,17 +33,18 @@ reference and your knowledge of the guide.
 
 The following table lists the reference for each language:
 
-| Language   | Files                                                                  | Reference                  |
-| ---------- | ---------------------------------------------------------------------- | -------------------------- |
-| CSS        | `*.css`                                                                | `references/css.md`        |
-| HTML       | `*.html`                                                               | `references/html.md`       |
-| JSON       | `*.json`, `*.jsonc`, `*.geojson`, `*.code-workspace`                   | `references/json.md`       |
-| Lua        | `*.lua`                                                                | `references/lua.md`        |
-| Markdown   | `*.md`                                                                 | `references/markdown.md`   |
-| Python     | `*.py`, `*.pyi`                                                        | `references/python.md`     |
-| Shell      | `*.sh`, `*.zsh`, `*.fish`, scripts without an extension, startup files | `references/shell.md`      |
-| TOML       | `*.toml`                                                               | `references/toml.md`       |
-| TypeScript | `*.ts`, `*.tsx`                                                        | `references/typescript.md` |
+| Language          | Files                                                                  | Reference                         |
+| ----------------- | ---------------------------------------------------------------------- | --------------------------------- |
+| CSS               | `*.css`                                                                | `references/css.md`               |
+| HTML              | `*.html`                                                               | `references/html.md`              |
+| JSON              | `*.json`, `*.jsonc`, `*.geojson`, `*.code-workspace`                   | `references/json.md`              |
+| Jupyter notebooks | `*.ipynb`                                                              | `references/jupyter-notebooks.md` |
+| Lua               | `*.lua`                                                                | `references/lua.md`               |
+| Markdown          | `*.md`                                                                 | `references/markdown.md`          |
+| Python            | `*.py`, `*.pyi`                                                        | `references/python.md`            |
+| Shell             | `*.sh`, `*.zsh`, `*.fish`, scripts without an extension, startup files | `references/shell.md`             |
+| TOML              | `*.toml`                                                               | `references/toml.md`              |
+| TypeScript        | `*.ts`, `*.tsx`                                                        | `references/typescript.md`        |
 
 ## Naming
 

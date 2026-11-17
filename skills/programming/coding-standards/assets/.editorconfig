@@ -12,6 +12,10 @@ trim_trailing_whitespace = true
 indent_size = 4
 max_line_length = 88
 
+# Jupyter writes notebooks with 1-space indentation.
+[*.ipynb]
+indent_size = 1
+
 [*.lua]
 max_line_length = 100
 
