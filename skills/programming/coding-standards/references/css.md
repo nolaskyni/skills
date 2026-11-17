@@ -83,8 +83,9 @@ For example:
 Format CSS with Oxfmt and lint it with Stylelint, using the
 `stylelint-config-standard` configuration and the `stylelint-order` plugin. For
 projects without their own configuration, use the `assets/.oxfmtrc.json` and
-`assets/.stylelintrc.json` files from this skill. The Stylelint configuration
-also checks the CSS in `<style>` elements of HTML files through `postcss-html`.
+`assets/css/.stylelintrc.json` files from this skill. The Stylelint
+configuration also checks the CSS in `<style>` elements of HTML files through
+`postcss-html`.
 
 Use the versions that the project pins, such as with `npx oxfmt`, and otherwise
 the latest releases, such as with `npx oxfmt@latest`. In a new project, add
@@ -120,9 +121,9 @@ When the configuration isn't in the project, pass `-c <configuration-path>` to
 Oxfmt with the path to the `assets/.oxfmtrc.json` file. Stylelint loads the
 packages that its configuration names from the configuration's folder, so pass
 both `--config <configuration-path>` with the path to the
-`assets/.stylelintrc.json` file and `--config-basedir <folder>` with a folder
-whose `node_modules` folder has the packages, such as the project root. For a
-file outside any project, install the packages into a temporary folder:
+`assets/css/.stylelintrc.json` file and `--config-basedir <folder>` with a
+folder whose `node_modules` folder has the packages, such as the project root.
+For a file outside any project, install the packages into a temporary folder:
 
 ```sh
 npm install --prefix TEMPORARY-FOLDER stylelint stylelint-config-standard stylelint-order postcss-html

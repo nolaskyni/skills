@@ -104,10 +104,10 @@ the spelling of names and code.
 
 - Write a link to a file in the repository as a path relative to the file that
   contains the link, such as `[Python](python.md)` or
-  `[ruff.toml](../assets/ruff.toml)`, instead of the guide's paths from the
-  repository root. GitHub resolves such paths from the file, and absolute links
-  can break in clones. In an Obsidian file, link to a note in the vault as the
-  "Links and Embeds" section describes instead.
+  `[ruff.toml](../assets/python/ruff.toml)`, instead of the guide's paths from
+  the repository root. GitHub resolves such paths from the file, and absolute
+  links can break in clones. In an Obsidian file, link to a note in the vault as
+  the "Links and Embeds" section describes instead.
 - Write a URL that is shown as itself in angle brackets, such as
   `<https://example.com>`, instead of the guide's bare URLs. GitHub and Pandoc
   render it as a link without the brackets, but Pandoc doesn't link a bare URL
@@ -285,10 +285,11 @@ straight quotes, and type other permitted characters themselves, such as `−` a
 
 Format Markdown with Oxfmt and lint it with markdownlint-cli2. For projects
 without their own configuration, use the `assets/.oxfmtrc.json` and
-`assets/.markdownlint.jsonc` files from this skill. For Pandoc files, use the
-`assets/pandoc/.oxfmtrc.json` and `assets/pandoc/.markdownlint.jsonc` files, and
-for Obsidian files, the `assets/obsidian/.oxfmtrc.json` and
-`assets/obsidian/.markdownlint.jsonc` files.
+`assets/markdown/.markdownlint.jsonc` files from this skill. For Pandoc files,
+use the `assets/markdown/pandoc/.oxfmtrc.json` and
+`assets/markdown/pandoc/.markdownlint.jsonc` files, and for Obsidian files, the
+`assets/markdown/obsidian/.oxfmtrc.json` and
+`assets/markdown/obsidian/.markdownlint.jsonc` files.
 
 Use the versions that the project pins, such as with `npx oxfmt`, and otherwise
 the latest releases, such as with `npx oxfmt@latest`. In a new project with a
@@ -318,10 +319,10 @@ within the cleanup scope defined in the "Tooling" section of
 When the configuration isn't in the project, pass `-c <configuration-path>` to
 Oxfmt with the path to the `assets/.oxfmtrc.json` file, and
 `--config <configuration-path>` to markdownlint-cli2 with the path to the
-`assets/.markdownlint.jsonc` file. For a Pandoc file, pass the files in
-`assets/pandoc/` instead, and for an Obsidian file, the files in
-`assets/obsidian/`, because the main Oxfmt configuration wraps lines at 80
-characters.
+`assets/markdown/.markdownlint.jsonc` file. For a Pandoc file, pass the files in
+`assets/markdown/pandoc/` instead, and for an Obsidian file, the files in
+`assets/markdown/obsidian/`, because the main Oxfmt configuration wraps lines at
+80 characters.
 
 When a project has its own configuration and Pandoc files, add these settings
 for the Pandoc files, asking the user first in an existing project:

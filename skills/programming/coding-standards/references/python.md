@@ -200,8 +200,8 @@ raise ValueError(
 ## Tooling
 
 Format and lint Python with Ruff, and check types with mypy. For projects
-without their own configuration, use the `assets/ruff.toml` and
-`assets/mypy.ini` files from this skill. The `ruff.toml` file leaves
+without their own configuration, use the `assets/python/ruff.toml` and
+`assets/python/mypy.ini` files from this skill. The `ruff.toml` file leaves
 `target-version` unset. When Ruff discovers it in the project, Ruff can infer
 the minimum Python version from `requires-python` in a `pyproject.toml` file in
 the same directory. Passing a configuration file explicitly disables this
@@ -242,14 +242,15 @@ file you change, follow these steps within the cleanup scope defined in the
 5. Fix type errors within that scope, and report unrelated existing errors.
 
 When the configuration isn't in the project, pass
-`--config <configuration-path>` to Ruff with the path to the `assets/ruff.toml`
-file, and `--config-file <configuration-path>` to mypy with the path to the
-`assets/mypy.ini` file. When passing a Ruff configuration file explicitly, also
-pass `--target-version <python-version>` to both `ruff check` and `ruff format`.
-Use the project's declared minimum Python version, such as `py314` for Python
-3.14, or the declared runtime requirement for a standalone script. If no version
-is declared, use the intended runtime established by the task or environment,
-and state that assumption. Keep the project's Python requirement unchanged.
+`--config <configuration-path>` to Ruff with the path to the
+`assets/python/ruff.toml` file, and `--config-file <configuration-path>` to mypy
+with the path to the `assets/python/mypy.ini` file. When passing a Ruff
+configuration file explicitly, also pass `--target-version <python-version>` to
+both `ruff check` and `ruff format`. Use the project's declared minimum Python
+version, such as `py314` for Python 3.14, or the declared runtime requirement
+for a standalone script. If no version is declared, use the intended runtime
+established by the task or environment, and state that assumption. Keep the
+project's Python requirement unchanged.
 
 Suppress a Ruff finding with `# noqa: <rule-code>`, such as `# noqa: N803` for a
 parameter named `X` that a scikit-learn interface requires, and a mypy error

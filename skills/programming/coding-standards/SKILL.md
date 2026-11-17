@@ -202,19 +202,22 @@ quoted, whether a message starts with a name, and any exceptions to these rules.
 
 Each language reference names the formatter, the linter, and, where the language
 has one, the type checker for its files. Where one exists, a configuration file
-for each tool is in `assets/`. Existing user authorization applies to the
-configuration changes described here; don't ask the user to approve them again.
-Use the tools and their configuration as follows:
+for each tool is in `assets/`. Files for one language are in a folder named for
+it, such as `assets/python/`, and the files that several languages share,
+`.editorconfig` and `.oxfmtrc.json`, are at the top of `assets/`. Existing user
+authorization applies to the configuration changes described here; don't ask the
+user to approve them again. Use the tools and their configuration as follows:
 
 - When the project configures one of these tools, use that configuration. Don't
   change it, or add rule suppressions to it, without asking the user.
 - When the project has no configuration:
   - In a new project that you create, copy into the project root only the
     configuration files that the language references name for the languages the
-    project will use. For example, copy `assets/ruff.toml` and `assets/mypy.ini`
-    for a Python project, but not `assets/tsconfig.json`. If the folder or
-    repository already has files, such as data or a README file, ask the user
-    first, as for an existing project.
+    project will use. For example, copy `assets/python/ruff.toml` and
+    `assets/python/mypy.ini` for a Python project, but not
+    `assets/typescript/tsconfig.json`. If the folder or repository already has
+    files, such as data or a README file, ask the user first, as for an existing
+    project.
   - In an existing project, ask the user before adding the configuration. Until
     they agree, pass it on the command line for the files you change.
   - For a single file outside any project, such as a standalone script, pass the

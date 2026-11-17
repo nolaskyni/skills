@@ -239,9 +239,9 @@ LuaCATS annotations to report type errors, undefined globals, and unused
 variables. For projects without their own configuration, use the following files
 from this skill:
 
-- `assets/.stylua.toml` for every Lua file
-- `assets/neovim/.luarc.json` for Neovim configurations and plugins
-- `assets/pandoc/.luarc.json` for Pandoc filters
+- `assets/lua/.stylua.toml` for every Lua file
+- `assets/lua/neovim/.luarc.json` for Neovim configurations and plugins
+- `assets/lua/pandoc/.luarc.json` for Pandoc filters
 
 For other Lua files, Lua Language Server needs a configuration file only when
 the program that runs them defines globals, such as Hammerspoon's `hs`. List
