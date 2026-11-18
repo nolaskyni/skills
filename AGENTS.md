@@ -1,8 +1,8 @@
-# Repository Instructions
+# Agent Instructions
 
-This repository contains reusable Agent Skills. Keep instructions for working in
-this repository in this file. Keep instructions that agents need when using an
-installed skill in that skill's directory.
+This repository contains reusable Agent Skills. Keep instructions for agents
+working in this repository in this file. Keep instructions that agents need when
+using an installed skill in that skill's directory.
 
 ## Before Writing
 
