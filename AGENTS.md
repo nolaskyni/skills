@@ -54,6 +54,10 @@ in `SKILL.md`. Add supporting files when they serve a specific need:
   `assets/`.
 - Put reusable executable helpers in `scripts/`.
 
+Put tests for a skill's scripts in `tests/<category>/<skill-name>/` at the
+repository root, not in the skill's directory, so that installed copies don't
+include them.
+
 Explain in `SKILL.md` when to read or use each supporting file. Resolve paths to
 supporting files relative to the skill's directory, not the working directory.
 
