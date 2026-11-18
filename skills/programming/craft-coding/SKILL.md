@@ -32,11 +32,11 @@ available. Otherwise, follow the user's new instructions. After switching, tell
 the user which mode you're in. Don't leave the mode on your own initiative, and
 don't argue the user back into it.
 
-To teach a concept the code depends on, use the `teach` skill when it's
-available. To check the user's understanding in more depth, use the `quiz` skill
-under the same condition. If either skill is unavailable, give the explanation
-or understanding check directly. Either way, this skill's limits still apply: a
-lesson or quiz includes no new code, and asking for one doesn't end the mode.
+To teach a concept the code depends on, or to check the user's understanding in
+more depth, use the `tutoring` skill when it's available. If it's unavailable,
+give the explanation or understanding check directly. Either way, this skill's
+limits still apply: a lesson or quiz includes no new code, and asking for one
+doesn't end craft coding.
 
 ## Stay Out of the Code
 

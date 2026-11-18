@@ -1,24 +1,12 @@
----
-name: learning-path
-description: >-
-  Design, resume, and revise multi-session learning paths for studying a
-  subject, completing a project, or understanding a paper. Use when the user
-  asks for a learning path, study plan, curriculum, or sequence toward a
-  learning goal. Not for a focused explanation, factual lookup, or quiz that
-  doesn't ask for a learning path.
----
-
-# Learning Path
-
-## Overview
+# Planning
 
 Build an adaptable sequence toward what the user wants to understand or do. Keep
 the overall path coarse and make the next milestone concrete. Revise the
 sequence as learning evidence and the user's goals change.
 
-This skill handles planning. Use `teach` for instruction and `quiz` for
-assessment when available. If either is unavailable, provide the requested help
-directly without requiring installation.
+This mode plans the path. For instruction and assessment, offer the teaching or
+assessment mode, as the "Choose the Mode" section in [`SKILL.md`](../SKILL.md)
+describes.
 
 The path is guidance, not an access restriction. If the user requests an
 advanced topic before planned prerequisites are complete, follow that request
@@ -90,74 +78,16 @@ reading alone.
 
 Define a checkpoint that tests the milestone outcome through observable work or
 an explanation. State what evidence would support moving on and what would call
-for more support. Use `teach` and `quiz` for the learning and assessment
-workflows described in the Overview; don't reproduce those workflows in the
-path.
-
-## Save the Path
-
-Keep the path usable in the conversation without requiring saved notes. Honor an
-explicit request not to save without changing the user's persistent saving
-preference.
-
-Use the learning configuration shared with `teach` and `quiz`. Resolve its path
-from the operating system and actual environment values:
-
-- On Linux and macOS, read `XDG_CONFIG_HOME` on its own. If its value is an
-  absolute path, use `$XDG_CONFIG_HOME/learning/config.json`. Otherwise, use
-  `~/.config/learning/config.json`.
-- On Windows, use `%LOCALAPPDATA%\learning\config.json`.
-
-Resolve environment variables and the home directory before accessing the path.
-Apply workspace restrictions, and read the configuration if it exists and access
-is allowed. It uses these properties:
-
-- `notesDirectoryPath`: the absolute path to the learning-notes directory.
-- `isNoteSavingEnabled`: a Boolean recording the saving preference.
-
-When saving is disabled, don't create or update learning records or ask again
-about the recorded preference. Continue planning in the conversation.
-
-If configuration is missing, use established choices and ask only for the saving
-preference or location still needed. Don't require a directory when saving is
-disabled.
-
-When saving is enabled, use the user's selected directory. For Obsidian, offer a
-`Learning` folder inside an existing vault and verify that the vault exists.
-Otherwise, offer a `Learning` folder in their `Documents` directory. Follow
-another location the user chooses. When no location is recorded or chosen, a
-request to save doesn't choose one. Offer the default and wait for the user's
-choice before creating directories, writing the configuration, or saving the
-path.
-
-Create the selected notes directory and configuration parent directory if
-needed. Record the saving preference and, when enabled, the absolute notes
-directory in the configuration. Read back and parse the configuration to verify
-the recorded values.
-
-If configuration is invalid or a configured directory is missing or
-inaccessible, report the problem and continue without saving. Don't silently
-choose another location or imply that persistence is ready.
-
-Within the selected directory, find and read the existing path record before
-updating it. If several records could match, ask which to use. When none exists,
-create a separate record named for the learning goal, distinguishing it from
-topic notes. Don't overwrite an unrelated file.
-
-Use `coding-standards` for the destination's Markdown conventions when
-available; otherwise, follow the existing notes' conventions. Preserve user
-content and structure.
-
-After creating or updating a path record, read back the changed portions to
-verify the intended content. Report its full path. If saving fails, say so
-rather than implying that the path was preserved.
+for more support. Leave instruction and assessment to the teaching and
+assessment modes; don't reproduce those workflows in the path.
 
 ## Structure the Path Record
 
 For a new path record, read and adapt the
-[plain Markdown template](assets/path-record-markdown.md) or the
-[Obsidian template](assets/obsidian/path-record-obsidian.md), according to the
-destination. Resolve asset paths relative to this skill's directory.
+[plain Markdown template](../assets/path-record-markdown.md) or the
+[Obsidian template](../assets/obsidian/path-record-obsidian.md), according to
+the destination. Resolve these links relative to this reference file, not the
+working directory.
 
 Replace every placeholder with the path's content. Repeat milestone entries,
 resource rows, practice assignments, and checkpoint rows as needed; the
@@ -165,7 +95,7 @@ template's single entries aren't limits.
 
 Use a concise, subject-based title without a redundant "Learning Path" suffix.
 Keep the path distinct from topic records and preserve the collision handling in
-the "Save the Path" section.
+the "Find and Update Records" section in [`SKILL.md`](../SKILL.md).
 
 Use outcome-led milestone headings without IDs by default. When the user
 requests IDs, add them. Describe dependencies through the knowledge needed,
@@ -215,10 +145,10 @@ Keep planned work distinct from material covered and understanding demonstrated.
 In progress summaries, identify assistance and unassessed outcomes rather than
 reducing each milestone to a completed checkbox.
 
-Link to the topic records used by `teach` and `quiz` for detailed explanations,
-session logs, and learning evidence. Keep only the summary needed to explain the
-planning decision in the path record. Don't copy the topic logs or create empty
-topic records merely to fill the links section.
+Link to the topic records used by teaching and assessment for detailed
+explanations, session logs, and learning evidence. Keep only the summary needed
+to explain the planning decision in the path record. Don't copy the topic logs
+or create empty topic records merely to fill the links section.
 
 When no topic record exists, use available conversation evidence and state what
 remains unknown. A missing record doesn't prevent planning.
@@ -252,4 +182,4 @@ When saving is enabled, update the path's progress summaries and the "Next
 Milestone" section, and add a dated entry to the "Revision History" section for
 substantive changes. Link to supporting topic evidence rather than copying
 session logs. Preserve earlier revision entries, and verify the saved changes as
-described in the "Save the Path" section.
+the "Find and Update Records" section in [`SKILL.md`](../SKILL.md) describes.

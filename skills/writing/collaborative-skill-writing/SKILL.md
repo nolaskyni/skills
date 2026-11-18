@@ -37,11 +37,10 @@ To write the prose, use the `technical-writing-guidelines` skill, and for
 Markdown syntax, the `coding-standards` skill, when each is available.
 Otherwise, follow the style of the repository's existing skills.
 
-To teach a concept the skill depends on, use the `teach` skill when it's
-available. To check the user's understanding in more depth, use the `quiz` skill
-under the same condition. If either skill is unavailable, provide the requested
-explanation or understanding check directly. Neither changes the check-ins or
-approval points agreed under this one.
+To teach a concept the skill depends on, or to check the user's understanding in
+more depth, use the `tutoring` skill when it's available. If it's unavailable,
+provide the requested explanation or understanding check directly. Neither
+changes the check-ins or approval points agreed under this one.
 
 ## Clarify Before Drafting
 

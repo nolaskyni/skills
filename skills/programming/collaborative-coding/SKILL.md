@@ -31,11 +31,10 @@ If the user wants to write the code themselves and have you review it, use the
 code, review their changes, and explain issues and possible improvements without
 taking over implementation unless asked.
 
-To teach a concept the code depends on, use the `teach` skill when it's
-available. To check the user's understanding in more depth, use the `quiz` skill
-under the same condition. If either skill is unavailable, provide the requested
-explanation or understanding check directly. Neither changes the check-ins or
-approval points agreed under this one.
+To teach a concept the code depends on, or to check the user's understanding in
+more depth, use the `tutoring` skill when it's available. If it's unavailable,
+provide the requested explanation or understanding check directly. Neither
+changes the check-ins or approval points agreed under this one.
 
 ## Clarify Before Writing Code
 

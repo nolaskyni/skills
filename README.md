@@ -7,15 +7,11 @@ programming, writing, and more.
 
 ### Learning
 
-- [`learning-path`](skills/learning/learning-path/SKILL.md): Designs, resumes,
-  and revises multi-session learning paths for studying a subject, completing a
-  project, or understanding a paper.
-- [`teach`](skills/learning/teach/SKILL.md): Explains topics and guides practice
-  when you want to learn or deepen your understanding.
-- [`quiz`](skills/learning/quiz/SKILL.md): Tests your understanding of a
-  subject, document, or codebase and identifies what to review.
+- [`tutoring`](skills/learning/tutoring/SKILL.md): Plans multi-session learning
+  paths, teaches topics with guided practice, and quizzes you on a subject,
+  document, or codebase to identify what to review.
 
-`teach` and `quiz` can save progress in Markdown or Obsidian topic notes.
+`tutoring` can save progress and learning paths in Markdown or Obsidian notes.
 
 ### Programming
 
