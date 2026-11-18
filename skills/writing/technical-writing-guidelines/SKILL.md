@@ -358,7 +358,16 @@ Chicago Manual of Style_.
 
 ## Final Check
 
-Before you finish, search the text outside code for the following:
+Before presenting a documentation draft for approval, review it against all
+applicable rules in this skill and correct violations. Review intermediate
+drafts, not only text you write to a file or present as finished.
+
+Treat documentation inside Markdown code fences as documentation during this
+review. Exclude actual code examples and literal strings from prose-only checks.
+Preserve explicit user-approved exceptions.
+
+Use the following checks as part of the review, not as a substitute for checking
+the rest of this skill. Search the prose for the following:
 
 - Em dashes, en dashes, and arrows (`—`, `–`, `→`, and `->`)
 - `~` used for "about," and `>` between menu names
