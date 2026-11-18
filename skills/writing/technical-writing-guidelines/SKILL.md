@@ -366,6 +366,51 @@ Treat documentation inside Markdown code fences as documentation during this
 review. Exclude actual code examples and literal strings from prose-only checks.
 Preserve explicit user-approved exceptions.
 
+When command execution and temporary-file creation are permitted, save the
+complete proposed reply, including surrounding prose and fenced documentation,
+to a temporary Markdown file. Before presenting the draft, run the
+`scripts/check_draft_style.py` file with the following command:
+
+```sh
+uv run --no-project --no-python-downloads --python 3.14 \
+  "SKILL-DIRECTORY/scripts/check_draft_style.py" "DRAFT-PATH"
+```
+
+Replace the following:
+
+- `SKILL-DIRECTORY` with the absolute path to this skill's directory
+- `DRAFT-PATH` with the absolute path to the temporary Markdown file
+
+The command requires uv and an available Python 3.14 interpreter. uv prepares
+the declared parser dependency in an isolated environment.
+
+Read the helper's JSON report. A report with exit `0` means no candidates, and a
+report with exit `1` means candidates need review. Treat a missing report, exit
+`2`, or a launcher failure as an incomplete check.
+
+The report names a rule for each candidate. Review each candidate against the
+matching rule:
+
+- `list-introduction`: the introduction rule in the "Lists, Tables, and
+  Procedures" section
+- `filename-word`: the rule to add "file" after a filename, in the "Code in Text
+  and Placeholders" section
+- `bold-label-colon`: the bold-label rule in the "Lists, Tables, and Procedures"
+  section
+
+Correct genuine violations, update the temporary file, and rerun the helper.
+Preserve approved exceptions rather than changing text only to clear a finding.
+Present the text of the last checked file as your reply, without rewording it.
+If you change anything, including notes or a summary, save the change to the
+file and check it again first.
+
+The helper cannot judge sentence completeness or whether a heading introduces a
+list. Its report does not replace the full prose review.
+
+If the check cannot complete with the available permissions and tools, perform
+the review manually and state that the helper did not complete. Don't install
+tools or change project configuration as a fallback.
+
 Use the following checks as part of the review, not as a substitute for checking
 the rest of this skill. Search the prose for the following:
 
