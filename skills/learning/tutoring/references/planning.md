@@ -5,8 +5,8 @@ the overall path coarse and make the next milestone concrete. Revise the
 sequence as learning evidence and the user's goals change.
 
 This mode plans the path. For instruction and assessment, offer the teaching or
-assessment mode, as the "Choose the Mode" section in [`SKILL.md`](../SKILL.md)
-describes.
+assessment mode, as the "Choose the Mode" section in the
+[`SKILL.md`](../SKILL.md) file describes.
 
 The path is guidance, not an access restriction. If the user requests an
 advanced topic before planned prerequisites are complete, follow that request
@@ -95,7 +95,7 @@ template's single entries aren't limits.
 
 Use a concise, subject-based title without a redundant "Learning Path" suffix.
 Keep the path distinct from topic records and preserve the collision handling in
-the "Find and Update Records" section in [`SKILL.md`](../SKILL.md).
+the "Find and Update Records" section in the [`SKILL.md`](../SKILL.md) file.
 
 Use outcome-led milestone headings without IDs by default. When the user
 requests IDs, add them. Describe dependencies through the knowledge needed,
@@ -110,8 +110,10 @@ Adapt the template to the path:
   resources and practice under those tracks. Use "Foundations Resources,"
   "Foundations Practice," "Implementation Resources," and "Implementation
   Practice" as subsection headings.
-- For optional extensions, state their scope and relationship to later work
-  beneath the milestone heading. Identify any workload still to be agreed.
+- For optional extensions, start the milestone's list with a **Scope** bullet
+  that states their scope and relationship to later work. Identify any workload
+  still to be agreed. Give a capstone an **Outcome** bullet in the same way, so
+  that each milestone's list directly follows its heading.
 - When no broader references need preserving, omit the "Supporting Resources"
   section. Keep immediate assignments in the "Next Milestone" section rather
   than duplicating them.
@@ -182,4 +184,5 @@ When saving is enabled, update the path's progress summaries and the "Next
 Milestone" section, and add a dated entry to the "Revision History" section for
 substantive changes. Link to supporting topic evidence rather than copying
 session logs. Preserve earlier revision entries, and verify the saved changes as
-the "Find and Update Records" section in [`SKILL.md`](../SKILL.md) describes.
+the "Find and Update Records" section in the [`SKILL.md`](../SKILL.md) file
+describes.

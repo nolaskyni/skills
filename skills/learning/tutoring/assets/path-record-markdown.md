@@ -55,6 +55,8 @@ Record which outcomes were independently demonstrated, which needed assistance,
 and which remain unassessed. Link to detailed evidence in topic records when
 available.
 
+Choose the next step from the evidence:
+
 - **Continue**:
   `EVIDENCE-SUPPORTING-THE-NEXT-STEP-AND-ANY-UNFINISHED-OUTCOMES-TO-CARRY-FORWARD`.
 - **Add support**:
