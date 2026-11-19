@@ -1,2 +1,3 @@
-# Allow Markdown to be detected by Linguist.
-*.md linguist-detectable
+# Linguist ignores Markdown by default. Count only the skills' Markdown so that
+# the language statistics reflect the skills, not files such as `README.md`.
+skills/**/*.md linguist-detectable
