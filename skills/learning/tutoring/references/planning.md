@@ -57,6 +57,49 @@ Use checkpoint evidence to decide whether to continue, add support, or revise
 the sequence. Completing a reading or covering a lesson doesn't by itself
 demonstrate the milestone outcome.
 
+## Plan a Placement Check
+
+A new path's first milestone isn't always the right place to start, because the
+user's experience can cover several milestones. A placement check samples the
+milestone outcomes in order to choose the starting milestone from evidence.
+
+Make a placement check the new path's first action when both of the following
+are true:
+
+- The user reports experience that might cover at least one milestone.
+- Available learning records don't show which milestone outcomes the user has
+  demonstrated.
+
+Skip it when the user is new to the subject or asks to start from the first
+milestone. Then plan the first milestone's first action as usual.
+
+Before planning the check, read the topic records and other path records in the
+notes directory for evidence about the path's milestone outcomes. Don't retest
+an outcome that a record shows was demonstrated independently; cite that record
+in the path instead. Include assisted and unassessed outcomes in the check.
+
+Design the check as follows:
+
+- Ask one or two questions about the core outcome of each milestone, in
+  milestone order, and stop when the user can't demonstrate an outcome that
+  later milestones depend on. Ask about 10 questions at most.
+- When a core outcome is a skill shown through work, such as debugging a
+  training run, ask the user to explain or predict instead. Treat a correct
+  answer as support for starting later, not as evidence of the skill.
+
+Run the check in assessment mode after the user accepts it, as the "Choose the
+Mode" section in the [`SKILL.md`](../SKILL.md) file describes. Use the path's
+milestone outcomes as the assessment scope.
+
+After the check, start the path at the earliest milestone whose core outcome
+wasn't demonstrated, and revise the "Next Milestone" section for it. For each
+milestone the user starts after, record which outcomes the check demonstrated
+and which remain unassessed. Don't record the milestone as complete. Record the
+results in the topic records, so that other paths can reuse them.
+
+A milestone's own first action can still include a diagnostic, which chooses
+resources within that milestone rather than where the path starts.
+
 ## Select Resources, Practice, and Checkpoints
 
 For the next milestone, choose a small set of learning resources that support
