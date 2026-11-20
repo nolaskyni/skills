@@ -3,9 +3,9 @@ name: coding-standards
 description: >-
   Apply the user's coding conventions for file structure, formatting, naming,
   language features, types, comments, documentation, and tooling across CSS,
-  HTML, JSON, Jupyter notebooks, Lua, Markdown, Python, shell, TOML, and
-  TypeScript. Use whenever writing, editing, refactoring, or reviewing files in
-  these languages, including Obsidian notes.
+  HTML, JSON, Jupyter notebooks, Lua, Markdown, Python, reStructuredText, shell,
+  TOML, and TypeScript. Use whenever writing, editing, refactoring, or reviewing
+  files in these languages, including Obsidian notes.
 ---
 
 # Coding Standards
@@ -42,6 +42,7 @@ The following table lists the reference for each language:
 | Lua               | `*.lua`                                                                | `references/lua.md`               |
 | Markdown          | `*.md`                                                                 | `references/markdown.md`          |
 | Python            | `*.py`, `*.pyi`                                                        | `references/python.md`            |
+| reStructuredText  | `*.rst`                                                                | `references/restructuredtext.md`  |
 | Shell             | `*.sh`, `*.zsh`, `*.fish`, scripts without an extension, startup files | `references/shell.md`             |
 | TOML              | `*.toml`                                                               | `references/toml.md`              |
 | TypeScript        | `*.ts`, `*.tsx`                                                        | `references/typescript.md`        |

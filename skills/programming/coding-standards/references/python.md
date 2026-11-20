@@ -51,6 +51,10 @@ describes, including its advice to keep LaTeX to a minimum and to show simple
 equations as code. Treat that guide as the authority on docstrings, because it
 might change after this reference was written.
 
+For the reStructuredText markup inside docstrings, such as backticks, links, and
+code blocks, and for the linter that checks it, follow
+[reStructuredText](restructuredtext.md).
+
 Start a function or method's docstring summary with an imperative verb, such as
 "Return" or "Calculate," including when the function has no side effects. The
 noun-phrase rule in the "Naming" section of [`coding-standards`](../SKILL.md)

@@ -19,6 +19,10 @@ indent_size = 1
 [*.lua]
 max_line_length = 100
 
+[*.rst]
+indent_size = 3
+max_line_length = 80
+
 [*.{css,geojson,html,json,jsonc,md,toml,ts,tsx}]
 max_line_length = 80
 
