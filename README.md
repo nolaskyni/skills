@@ -22,9 +22,9 @@ programming, writing, and more.
   it.
 - [`commit-message-guidelines`](skills/programming/commit-message-guidelines/SKILL.md):
   Writes and reviews commit messages with consistent structure and formatting.
-- [`craft-coding`](skills/programming/craft-coding/SKILL.md): Provides guidance
-  and review when you want to write all the code yourself. The agent doesn't
-  write code, edit files, or run code.
+- [`craft-coding`](skills/programming/craft-coding/SKILL.md): Coaches and
+  reviews as you author a solution, with examples, incomplete scaffolds,
+  concrete draft edits, and routine operations you explicitly request.
 
 ### Writing
 
