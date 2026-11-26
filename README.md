@@ -40,6 +40,12 @@ programming, writing, and more.
 npx skills add nolaskyni/skills
 ```
 
+After installation, name the skill in your request to the agent. For example:
+
+```text
+Use the tutoring skill to help me build a study plan for linear algebra.
+```
+
 ## AI Usage
 
 AI assists with drafting, reviewing, refining, and testing Agent Skills, with
@@ -47,5 +53,5 @@ human review.
 
 ## Acknowledgements
 
-The [`craft-coding`](skills/programming/craft-coding/SKILL.md) skill is based on
+The `craft-coding` skill is based on
 [an article by Peter Bloem](https://peterbloem.nl/blog/craft-coding).
