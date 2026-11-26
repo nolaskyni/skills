@@ -44,6 +44,43 @@ the guide's index. Don't read the whole guide first. If the guide can't be
 retrieved, tell the user, and continue from this skill and what you know of the
 guide.
 
+## READMEs
+
+Use Google's [README guidance][google-readmes] as the content baseline for a
+README, and use GitHub's [repository README guidance][github-readmes] for
+GitHub-specific behavior. Keep a README short enough to help readers start using
+or contributing to a project, and link to dedicated documentation for detailed
+material.
+
+Name the `README.md` file exactly, including its capitalization, and put it in
+the top-level directory of the project or package. Don't put a project or
+package README in its documentation directory.
+
+When you create a project or package `README.md` file, or the user asks you to
+reorganize one, read `assets/readme-template.md` and use it as an outline. Treat
+every section in the template as conditional. Include a section only when it
+helps the intended reader understand, install, use, develop, or support the
+project. Remove sections that don't apply, and change the order when another
+order better serves the project.
+
+When you edit an existing README without a request to reorganize it, preserve
+its structure. Fill information gaps in place instead of replacing the document
+with the template.
+
+A package-level README must identify what the package contains and does, its
+status, how to use it, where to get help, and where to find fuller
+documentation. A repository README must explain what the project does, why it is
+useful, how to start, and where users can get help or contribute.
+
+Include an "AI Usage" section only when the user requests it, the project
+already discloses AI involvement, or a policy requires the disclosure. Describe
+the actual AI involvement and the actual review or testing process. Don't claim
+human review, validation, or authorship that didn't happen.
+
+[google-readmes]: https://google.github.io/styleguide/docguide/READMEs.html
+[github-readmes]:
+  https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes
+
 ## Tone
 
 Write in a conversational, direct voice, and address the reader as "you." Avoid

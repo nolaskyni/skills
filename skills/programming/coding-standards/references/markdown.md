@@ -144,6 +144,21 @@ GitHub, Pandoc, and Obsidian support the following syntax:
 
 ## GitHub Files
 
+### README Files
+
+For a new project or package `README.md` file, or a README the user asks you to
+reorganize, follow the README structure and template rules in
+`technical-writing-guidelines` when that skill is available. That skill owns
+content and section selection. This reference owns Markdown syntax, formatting,
+and tooling.
+
+If `technical-writing-guidelines` isn't available, keep the README focused on
+the project's purpose, status, setup, usage, support, and relevant links. Omit
+sections that don't apply. Add an "AI Usage" section only when the user requests
+it, the project already discloses AI involvement, or a policy requires it.
+
+For other GitHub-specific Markdown, follow these rules:
+
 - Use an alert, such as `> [!WARNING]`, only for something the reader must not
   miss, and never put two alerts in a row. GitHub defines five types: `NOTE`,
   `TIP`, `IMPORTANT`, `WARNING`, and `CAUTION`.
