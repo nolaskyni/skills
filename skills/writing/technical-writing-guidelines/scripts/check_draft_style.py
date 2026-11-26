@@ -2,7 +2,7 @@
 # requires-python = "==3.14.*"
 # dependencies = ["markdown-it-py==4.0.0"]
 # ///
-"""Report possible style violations in a Markdown draft, read-only."""
+"""Report style violations without modifying a Markdown draft."""
 
 import argparse
 import json
@@ -130,7 +130,8 @@ def _document_findings(
         raise ValueError(
             f"expected at most 8 nested Markdown draft fences, got {fence_depth}"
         )
-    # Import here so help and dependency errors work without the parser.
+    # Import lazily so `--help` and missing `markdown-it-py` errors work
+    # without the dependency.
     try:
         from markdown_it import MarkdownIt
         from markdown_it.tree import SyntaxTreeNode
