@@ -239,6 +239,35 @@ intended changes and makes no unsupported claims. Check the header and prose
 lengths, backtick use, type and scope, breaking-change and deprecation markers,
 issue labels, and confirmed attribution against these rules.
 
+When command execution and temporary-file creation are permitted, save the
+complete proposed message to a temporary text file and run the structural
+checker with the following command:
+
+```sh
+uv run --no-project --no-python-downloads --python 3.14 \
+  "SKILL-DIRECTORY/scripts/check_commit_message.py" "MESSAGE-PATH"
+```
+
+Replace the following:
+
+- `SKILL-DIRECTORY` with the absolute path to this skill's directory
+- `MESSAGE-PATH` with the absolute path to the temporary message file
+
+The checker is read-only. An exit `0` means it found no structural candidates,
+an exit `1` means its JSON report contains candidates to review, and an exit `2`
+means the input or checker failed. Treat a missing report or launcher failure as
+an incomplete check.
+
+The checker covers header syntax, allowed types, line lengths, section spacing,
+summary punctuation, breaking-change and deprecation layout, issue and
+attribution footer syntax, footer ordering, and duplicate attribution trailers.
+Review each finding against the relevant rule. Preserve intentional exceptions,
+such as a capitalized identifier or proper name at the start of a summary.
+
+The checker doesn't verify the change's type or scope, imperative mood, factual
+claims, `backtick` use, issue resolution, or whether a contributor qualifies for
+credit. Its report doesn't replace the full review in this section.
+
 ## Message Review
 
 Always print the complete commit message in the reply, in a fenced `text` code
