@@ -383,6 +383,13 @@ mostly read raw Markdown, and a link to a heading breaks when the heading is
 renamed. In a long document that people read on GitHub, you can link to the
 section instead, as in `see the [Backticks](#backticks) section`.
 
+Capitalize the label in a reference to a numbered or lettered part of a
+publication, such as Figure 1, Algorithm 1, Section 3.2, Equation (1), Table 2,
+or Appendix A. Preserve the source's numbering, including parentheses around
+equation numbers. For example, write "Equation (1)" if the source labels it
+`(1)`, and "Equation 1" if the source labels it `1`. Use lowercase for generic
+references, such as "the figure," "the algorithm," and "the next section."
+
 Refer to another skill by name in code font, as in `coding-standards`, without a
 link. Skills are often installed one folder at a time, so a relative path from
 one skill to another can break.
