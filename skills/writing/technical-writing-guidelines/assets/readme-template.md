@@ -45,6 +45,13 @@ USAGE-COMMAND
 Include this section when users need to set options, credentials, environment
 variables, or other configuration.
 
+Use the table when each setting's purpose and requirements fit in short entries.
+When settings need conditions, caveats, or examples, replace the table with one
+heading per setting. Put the details under each heading rather than shortening
+them to fit a cell.
+
+The following table shows the format for brief settings:
+
 | Setting         | Purpose                 | Required    |
 | --------------- | ----------------------- | ----------- |
 | `CONFIGURATION` | `CONFIGURATION-PURPOSE` | `YES-OR-NO` |

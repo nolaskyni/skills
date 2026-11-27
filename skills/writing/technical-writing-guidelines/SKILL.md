@@ -281,9 +281,10 @@ For lists, follow these rules:
 - A bold label can start an item. Put the colon outside the bold, as in
   `**Fast**: uploads only the files that changed`.
 
-Use a table when each item has three or more pieces of information. A table of
-pairs, such as a word and its replacement, is fine when it has enough rows that
-two columns are quicker to scan than a list.
+Use a table when readers benefit from comparing entries side by side, not just
+because the entries have several fields. A table of pairs, such as a word and
+its replacement, is fine when it has enough rows that two columns are quicker to
+scan than a list.
 
 For procedures, follow these rules:
 
