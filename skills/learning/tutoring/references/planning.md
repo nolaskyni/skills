@@ -116,8 +116,10 @@ from memory. If the retrieved content doesn't show a number clearly, refer to
 that portion by its title instead.
 
 Pair the resources with practice that uses the milestone's knowledge or skill.
-State what the user will produce, explain, or investigate rather than assigning
-reading alone.
+In the "Next Milestone" section, write the practice as a short Markdown task
+list. State what the user will produce, explain, or investigate rather than
+assigning reading alone. Checked items record work done, not understanding
+demonstrated.
 
 Define a checkpoint that tests the milestone outcome through observable work or
 an explanation. State what evidence would support moving on and what would call

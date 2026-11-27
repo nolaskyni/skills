@@ -46,7 +46,7 @@ The sequence is provisional. Detailed practice and resources appear in the "Next
 
 ## Practice
 
-1. `CONCRETE-PRACTICE-ASSIGNMENT`.
+- [ ] `CONCRETE-PRACTICE-ASSIGNMENT`
 
 ## Checkpoint
 

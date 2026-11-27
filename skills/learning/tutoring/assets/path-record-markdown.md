@@ -44,7 +44,7 @@ Milestone" section.
 
 ### Practice
 
-1. `CONCRETE-PRACTICE-ASSIGNMENT`.
+- [ ] `CONCRETE-PRACTICE-ASSIGNMENT`
 
 ### Checkpoint
 
