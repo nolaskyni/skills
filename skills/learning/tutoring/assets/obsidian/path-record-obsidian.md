@@ -30,15 +30,19 @@ The sequence is provisional. Detailed practice and resources appear in the "Next
 
 # Next Milestone
 
-- **Milestone**: [[#OUTCOME-LED-MILESTONE-TITLE|OUTCOME-LED-MILESTONE-TITLE]].
+- **Milestone**: [[#OUTCOME-LED-MILESTONE-TITLE]].
 - **Focus**: `IMMEDIATE-WORK`.
-- **Estimated study time**: `ESTIMATED-HOURS`, including `WORK-INCLUDED`. Revise the estimate from learning evidence.
+- **Estimated study time**: `ESTIMATED-DURATION` for `WORK-INCLUDED`.
 
 ## Learning Resources
 
-| Role | Resource and Portion | Purpose |
-| --- | --- | --- |
-| `PRIMARY-ALTERNATIVE-OR-SUPPORT` | `LINKED-EXACT-PAGE-TITLE-AND-ASSIGNED-PORTION` | `WHAT-THIS-RESOURCE-SUPPORTS` |
+### Primary Resources
+
+#### `LINKED-RESOURCE-TITLE`
+
+`ASSIGNED-PORTION-AND-WHERE-TO-STOP`
+
+`WHAT-TO-LOOK-FOR-AND-HOW-IT-SUPPORTS-THE-MILESTONE`
 
 ## Practice
 

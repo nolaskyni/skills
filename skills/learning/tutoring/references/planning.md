@@ -132,9 +132,8 @@ For a new path record, read and adapt the
 the destination. Resolve these links relative to this reference file, not the
 working directory.
 
-Replace every placeholder with the path's content. Repeat milestone entries,
-resource rows, practice assignments, and checkpoint rows as needed; the
-template's single entries aren't limits.
+Replace every placeholder with the path's content. Repeat milestones, resource
+entries, practice assignments, and checkpoint rows as needed.
 
 Use a concise, subject-based title without a redundant "Learning Path" suffix.
 Keep the path distinct from topic records and preserve the collision handling in
@@ -144,6 +143,10 @@ Use outcome-led milestone headings without IDs by default. When the user
 requests IDs, add them. Describe dependencies through the knowledge needed,
 rather than requiring completion of particular milestones. When headings change,
 update their milestone references.
+
+In the "Next Milestone" section, link the milestone title to its heading in the
+same record. For plain Markdown, use the heading's GitHub-style anchor. For
+Obsidian, use a same-note heading link that follows the vault's link convention.
 
 Adapt the template to the path:
 
@@ -163,11 +166,21 @@ Adapt the template to the path:
 - Replace "No topic records yet" with links to existing records and the
   milestones they inform. Don't create empty topic records.
 
-In resource tables, link exact page titles, preserving their capitalization, and
-state assigned portions outside the links. Put source-check qualifications with
-the affected resource. When longer evidence is needed, link to it. Apply the
-verification requirements in the "Select Resources, Practice, and Checkpoints"
-section.
+Group the next milestone's resources by role: "Primary Resources" for the main
+assignments, "Alternative Resources" for substitutes, and "Supplementary
+Resources" for additional support. Omit empty groups. Give each resource its own
+heading under its group. Use the resource's exact title as the link text.
+
+Under each title, state the assigned portion and where to stop. Then explain
+what to look for and how it supports the milestone. Link directly to a section
+when the source provides a section URL. Use the section heading as the link text
+or use a short descriptive phrase. State any verification limits in the resource
+entry. Follow the verification requirements in the "Select Resources, Practice,
+and Checkpoints" section.
+
+Use the path-wide "Supporting Resources" table as an index. Link each resource
+by its exact title, list the milestones it supports, and state its purpose. Put
+reading assignments with the milestone that uses them, not in the index.
 
 For a new Obsidian record, use the `learning/path` tag and relevant subject
 tags. When existing subject vocabulary fits, reuse it. Keep subjects separate

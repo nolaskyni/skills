@@ -89,14 +89,15 @@ changes it.
 If configuration is missing, use established choices for the saving preference
 and notes location, asking only for information still missing.
 
-When saving is enabled, use the user's selected folder. If they select Obsidian,
-offer a `Learning` folder inside their existing vault and verify that the vault
-exists. Otherwise, offer an ordinary `Learning` folder in their `Documents`
-directory. Obsidian isn't required. Follow another location the user chooses.
+When saving is enabled, use the configured notes directory or another location
+the user chooses. When no location is configured or chosen, offer to save plain
+Markdown in a `Learning` folder in the user's `Documents` directory. If the user
+asks to use Obsidian without specifying a folder, offer a `Learning` folder
+inside their existing vault instead. Verify that the vault exists.
 
-When no location is recorded or chosen, a request to save doesn't choose one.
-Offer the default and wait for the user's choice before creating directories,
-writing the configuration, or saving a record.
+A request to save doesn't select a location. When no location is configured or
+chosen, wait for the user's choice before creating directories, writing the
+configuration, or saving a record.
 
 Resolve the selected notes directory to an absolute path and create it if it
 doesn't exist. Create the configuration's parent directory if needed, then write
