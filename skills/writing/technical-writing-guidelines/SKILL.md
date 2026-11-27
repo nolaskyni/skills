@@ -317,7 +317,9 @@ Also follow these rules for code in text:
   the data."
 - Never make code plural or possessive. Write "the value of `ADDRESS`," not
   "`ADDRESS`'s value."
-- Add "file" after a filename, as in "the `.gitignore` file."
+- Add "file" after a filename, as in "the `.gitignore` file." When the filename
+  is linked, keep "file" outside the link, as in "the [`.gitignore`](.gitignore)
+  file."
 - Don't put quotation marks around code unless they're part of the code.
 - Use code font, not `<kbd>`, for text that the reader types, such as a command.
 
