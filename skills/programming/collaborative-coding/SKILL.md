@@ -138,63 +138,21 @@ to produce silently wrong results. See the "Explain-Back Checks" section.
 
 ### Plan Template
 
-Use the following template for each plan. Replace each placeholder, and list
-milestones in the order they will be done. Set each `STATUS` to `approved` for a
-choice the user made or confirmed, or `default` for a choice you made within the
-authorized scope. Set each `SOURCE` to `user` or `default` in the same way.
+Use the [Markdown plan template](assets/plan-record-markdown.md) for each plan.
+Replace each placeholder, list milestones in order, and give each a brief
+outcome. When work remains, use "Active Milestone" to describe the current
+deliverable and the evidence needed to move on. Keep "Next" in "Current State"
+to a short summary that agrees with "First Action."
 
-```markdown
-# WORK-NAME
+Use "Verification" for checks that apply across the plan and "Checkpoint" for
+the evidence needed at the active milestone. Naming a check does not authorize
+running it. If work is blocked, make the first action identify the approval,
+decision, or evidence needed to proceed. If the user has an explicit learning
+goal, add "Practice" or "Resources" when they help with the active milestone.
 
-## Goal
-
-PROBLEM-AND-AUDIENCE
-
-## Non-Goals
-
-- OUT-OF-SCOPE-ITEM
-
-## Inputs and Outputs
-
-DATA-FORMATS-INTERFACES-AND-EXPECTED-RESULTS
-
-## Design
-
-COMPONENTS-AND-DATA-FLOW
-
-## Decisions
-
-- **DECISION** (STATUS): REASON
-  - Rejected: ALTERNATIVE, because WHY-REJECTED
-
-## Verification
-
-HOW-CORRECTNESS-IS-CHECKED
-
-## Milestones
-
-- [ ] MILESTONE
-
-## Current State
-
-- Implemented: COMPLETED-WORK
-- Verified: CHECKS-RUN-AND-RESULTS
-- Unverified or blocked: REMAINING-GAPS
-- Next: NEXT-AUTHORIZED-STEP
-
-## Check-Ins
-
-- Frequency: FREQUENCY (SOURCE)
-- Explain-back checks: ON-OR-OFF (SOURCE)
-
-### Revisit
-
-- [ ] POINT-TO-REVISIT (added YYYY-MM-DD)
-
-## Open Questions
-
-- [ ] QUESTION (decided by: DECIDER)
-```
+Set each `STATUS` to `approved` for a choice the user made or confirmed, or
+`default` for a choice you made within the authorized scope. Set each `SOURCE`
+to `user` or `default` in the same way.
 
 ### Keep the Plan Current
 

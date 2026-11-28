@@ -93,39 +93,18 @@ user chose, but it can't contain missing solution logic, a code patch,
 implementation pseudocode, or the contents of the user's `TODO` markers. Don't
 create a plan for a short task that can finish in the current conversation.
 
-Use the following template so later agents can resume consistently:
+Use the [Markdown plan template](assets/plan-record-markdown.md) to write or
+update a handoff plan. List milestones in order and give each a brief outcome.
+When work remains, use "Active Milestone" to describe the current deliverable
+and how the user can tell it is ready. Keep "Next" in "Current State" to a short
+summary that agrees with "First Action."
 
-```markdown
-# WORK-NAME
-
-## Goal
-
-PROBLEM-AND-INTENDED-RESULT
-
-## Boundaries and Non-Goals
-
-- SCOPE-BOUNDARY
-
-## User Decisions
-
-- **DECISION**: REASON-AND-EVIDENCE
-
-## Milestones
-
-- [ ] MILESTONE
-
-## Current State
-
-- User work: COMPLETED-DRAFT-OR-IMPLEMENTATION
-- Agent review: REVIEW-OR-HANDOFF-WORK
-- User-run checks: COMMAND-OR-PROCEDURE-AND-RESULT
-- Unverified or blocked: REMAINING-GAP
-- Next: NEXT-STEP
-
-## Open Questions
-
-- [ ] QUESTION (decided by: DECIDER)
-```
+A checkpoint can use a user explanation, a review of the user's draft, or a
+check the user runs and reports. A checkpoint does not authorize the agent to
+write implementation code or run behavioral checks. If work is blocked, make the
+first action identify the decision or evidence needed to proceed. If the user
+has an explicit learning goal, add "Practice" or "Resources" when they help with
+the active milestone.
 
 Rewrite "Current State" after each meaningful handoff instead of accumulating a
 history. Tell the user which plan file you created or updated.
