@@ -149,76 +149,19 @@ section.
 
 ### Plan Template
 
-Use the following template for each plan. Replace each placeholder, and list
-milestones in the order they will be done. Set each `STATUS` to `approved` for a
-choice the user made or confirmed, or `default` for a choice you made within the
-authorized scope. Set each `SOURCE` to `user` or `default` in the same way. Add
-an "Evidence" line under each decision that a test settled, such as "3 of 3 runs
-grouped entries by type (2026-11-09)."
+Use the [Markdown plan template](assets/plan-record-markdown.md) for each plan.
+Replace each placeholder, list milestones in order, and give each a brief
+outcome. When work remains, use "Active Milestone" to describe the current
+deliverable and the evidence needed to move on. Keep "Next" in "Current State"
+to a short summary that agrees with "First Action." If work is blocked, make the
+first action identify the approval, decision, or evidence needed to proceed.
+Naming a test does not authorize running it.
 
-```markdown
-# SKILL-NAME
-
-## Goal
-
-BEHAVIOR-THE-SKILL-CHANGES-AND-FOR-WHOM
-
-## Non-Goals
-
-- OUT-OF-SCOPE-ITEM
-
-## Triggers
-
-- Must trigger: REQUEST
-- Must not trigger: SIMILAR-REQUEST
-
-## Related Skills
-
-- `RELATED-SKILL`: RELATIONSHIP
-
-## Structure
-
-FILES-AND-WHAT-EACH-HOLDS
-
-## Decisions
-
-- **DECISION** (STATUS): REASON
-  - Rejected: ALTERNATIVE, because WHY-REJECTED
-  - Evidence: TEST-RESULT (YYYY-MM-DD)
-
-## Tests
-
-- Setup: HOW-TRIALS-ARE-RUN
-- **TEST-NAME**: SCENARIO; passes when PASS-CRITERION
-  - YYYY-MM-DD: RESULT-AND-BASELINE-RESULT, COST
-
-## Milestones
-
-- [ ] MILESTONE
-
-## Current State
-
-- Drafted: SECTIONS-SHOWN-BUT-NOT-APPROVED
-- Approved: SECTIONS-APPROVED-BUT-NOT-WRITTEN
-- Written: SECTIONS-IN-FILES
-- Tested: SECTIONS-WHOSE-BEHAVIOR-WAS-TESTED
-- Unverified or blocked: REMAINING-GAPS
-- Next: NEXT-AUTHORIZED-STEP
-
-## Check-Ins
-
-- Draft size: SIZE (SOURCE)
-- Frequency: FREQUENCY (SOURCE)
-- Explain-back checks: ON-OR-OFF (SOURCE)
-
-### Revisit
-
-- [ ] POINT-TO-REVISIT (added YYYY-MM-DD)
-
-## Open Questions
-
-- [ ] QUESTION (decided by: DECIDER)
-```
+Set each `STATUS` to `approved` for a choice the user made or confirmed, or
+`default` for a choice you made within the authorized scope. Set each `SOURCE`
+to `user` or `default` in the same way. Add an "Evidence" line under each
+decision that a test settled, such as "3 of 3 runs grouped entries by type
+(2026-11-09)."
 
 ### Keep the Plan Current
 
