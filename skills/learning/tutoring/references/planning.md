@@ -135,7 +135,7 @@ the destination. Resolve these links relative to this reference file, not the
 working directory.
 
 Replace every placeholder with the path's content. Repeat milestones, resource
-entries, practice assignments, and checkpoint rows as needed.
+entries, practice assignments, and checkpoint examples as needed.
 
 Use a concise, subject-based title without a redundant "Learning Path" suffix.
 Keep the path distinct from topic records and preserve the collision handling in
@@ -146,32 +146,33 @@ requests IDs, add them. Describe dependencies through the knowledge needed,
 rather than requiring completion of particular milestones. When headings change,
 update their milestone references.
 
-In the "Next Milestone" section, link the milestone title to its heading in the
-same record. For plain Markdown, use the heading's GitHub-style anchor. For
-Obsidian, use a same-note heading link that follows the vault's link convention.
+In the "Next Milestone" section, replace both the link text and the heading
+target. For plain Markdown, use the GitHub-style anchor generated from the
+actual milestone heading. For Obsidian, use a same-note heading link that
+follows the vault's link convention. Verify that the link points to the
+milestone heading in the saved record.
+
+Write milestone outcomes in prose by default. State prerequisites where they
+affect what the learner can do next. Include progress when it informs a planning
+decision, and distinguish completed practice from demonstrated understanding.
 
 Adapt the template to the path:
 
 - Add only relevant constraints, such as tools or working mode.
-- When parallel tracks are useful, replace the milestone's Outcome bullet with
-  Foundations and Implementation bullets. In the "Next Milestone" section, group
-  resources and practice under those tracks. Use "Foundations Resources,"
-  "Foundations Practice," "Implementation Resources," and "Implementation
-  Practice" as subsection headings.
+- When parallel tracks are useful, use Foundations and Implementation bullets
+  for the milestone outcomes. In the "Next Milestone" section, group resources
+  and practice under those tracks. Use "Foundations Resources," "Foundations
+  Practice," "Implementation Resources," and "Implementation Practice" as
+  subsection headings.
 - For optional extensions, start the milestone's list with a **Scope** bullet
   that states their scope and relationship to later work. Identify any workload
   still to be agreed. Give a capstone an **Outcome** bullet in the same way, so
   that each milestone's list directly follows its heading.
-- When no broader references need preserving, omit the "Supporting Resources"
-  section. Keep immediate assignments in the "Next Milestone" section rather
-  than duplicating them.
-- Replace "No topic records yet" with links to existing records and the
-  milestones they inform. Don't create empty topic records.
 
-Group the next milestone's resources by role: "Primary Resources" for the main
-assignments, "Alternative Resources" for substitutes, and "Supplementary
-Resources" for additional support. Omit empty groups. Give each resource its own
-heading under its group. Use the resource's exact title as the link text.
+Give each assigned resource a heading directly under "Learning Resources." When
+the distinction helps the reader choose, group the headings under "Primary
+Resources," "Alternative Resources," or "Supplementary Resources." Use the
+resource's exact title as the link text.
 
 Under each title, state the assigned portion and where to stop. Then explain
 what to look for and how it supports the milestone. Link directly to a section
@@ -180,9 +181,16 @@ or use a short descriptive phrase. State any verification limits in the resource
 entry. Follow the verification requirements in the "Select Resources, Practice,
 and Checkpoints" section.
 
-Use the path-wide "Supporting Resources" table as an index. Link each resource
-by its exact title, list the milestones it supports, and state its purpose. Put
-reading assignments with the milestone that uses them, not in the index.
+Write checkpoints in prose by default. Use a table when comparing several
+outcomes with their evidence is easier side by side. In either format, state
+what the learner must show to move on and what targeted support to use if the
+evidence falls short.
+
+Add a "Later Resources" section when references are worth keeping for future
+milestones. Keep immediate assignments with the milestone that uses them. Add a
+"Connect the Paths" section when another path offers a useful next step. Include
+a "Topic Records" section only when there are relevant records to link to.
+Explain which milestones those records inform.
 
 For a new Obsidian record, use the `learning/path` tag and relevant subject
 tags. When existing subject vocabulary fits, reuse it. Keep subjects separate
