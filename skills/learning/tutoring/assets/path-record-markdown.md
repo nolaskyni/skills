@@ -19,8 +19,7 @@ Milestone" section.
 
 ## Next Milestone
 
-Start with [`OUTCOME-LED-MILESTONE-TITLE`](#outcome-led-milestone-title).
-`IMMEDIATE-WORK-AND-ESTIMATED-STUDY-TIME`
+Start with `NEXT-MILESTONE-LINK`. `IMMEDIATE-WORK-AND-ESTIMATED-STUDY-TIME`
 
 ### Learning Resources
 

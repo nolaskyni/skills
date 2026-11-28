@@ -152,6 +152,13 @@ actual milestone heading. For Obsidian, use a same-note heading link that
 follows the vault's link convention. Verify that the link points to the
 milestone heading in the saved record.
 
+For a plain Markdown heading named `Interpret a Power Spectrum`, write the link
+as follows:
+
+```markdown
+Start with [Interpret a Power Spectrum](#interpret-a-power-spectrum).
+```
+
 Write milestone outcomes in prose by default. State prerequisites where they
 affect what the learner can do next. Include progress when it informs a planning
 decision, and distinguish completed practice from demonstrated understanding.
